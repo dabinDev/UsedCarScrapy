@@ -13,7 +13,7 @@ from dongchedi_precise_crawler import DongchediPreciseCrawler
 class BrandAnalyzer:
     def __init__(self):
         self.crawler = DongchediPreciseCrawler()
-        self.output_file = "brands_analysis.json"
+        self.output_file = "dongchedi_brand.json"
     
     async def analyze_all_brands(self):
         """分析所有品牌的数据量"""
@@ -40,21 +40,30 @@ class BrandAnalyzer:
             print(f"\n📊 [{i}/{len(brands)}] 分析品牌: {brand_name}")
             print("-" * 40)
             
+            timestamp = datetime.now().isoformat()
+            
             try:
                 # 计算品牌数据量
                 result = await self.crawler.calculate_brand_total_data(brand_id, brand_name)
                 
                 if result:
+                    total_pages = result['total_pages']
+                    requires_series = total_pages >= 167
                     brand_info = {
                         "brand_id": brand_id,
                         "brand_name": brand_name,
-                        "total_pages": result['total_pages'],
+                        "total_pages": total_pages,
                         "data_range": result['data_range'],
                         "min_total_data": result['min_total_data'],
                         "max_total_data": result['max_total_data'],
                         "current_page_count": result['current_page_count'],
                         "calculation_method": result.get('calculation_method', 'unknown'),
-                        "data_level": self._get_data_level(result['total_pages'])
+                        "data_level": "超大数据" if requires_series else self._get_data_level(total_pages),
+                        "requires_series_analysis": requires_series,
+                        "warning": f"数据量过大 ({total_pages}页)，建议按车系细分查询" if requires_series else None,
+                        "processed_by": "single_thread",
+                        "last_updated": timestamp,
+                        "success": True
                     }
                     
                     analyzed_brands.append(brand_info)
@@ -63,9 +72,10 @@ class BrandAnalyzer:
                     print(f"   - 总页数: {result['total_pages']}")
                     print(f"   - 数据范围: {result['data_range']} 条")
                     print(f"   - 数据级别: {brand_info['data_level']}")
+                    if requires_series:
+                        print(f"   - ⚠️ 建议: {brand_info['warning']}")
                 else:
                     print(f"❌ {brand_name} 分析失败")
-                    # 仍然保存基本信息，但标记为分析失败
                     brand_info = {
                         "brand_id": brand_id,
                         "brand_name": brand_name,
@@ -75,13 +85,15 @@ class BrandAnalyzer:
                         "max_total_data": 0,
                         "current_page_count": 0,
                         "calculation_method": "failed",
-                        "data_level": "未知"
+                        "data_level": "未知",
+                        "processed_by": "single_thread",
+                        "last_updated": timestamp,
+                        "success": False
                     }
                     analyzed_brands.append(brand_info)
                 
             except Exception as e:
                 print(f"❌ 分析 {brand_name} 时出错: {e}")
-                # 保存错误信息
                 brand_info = {
                     "brand_id": brand_id,
                     "brand_name": brand_name,
@@ -92,6 +104,9 @@ class BrandAnalyzer:
                     "current_page_count": 0,
                     "calculation_method": "error",
                     "data_level": "错误",
+                    "processed_by": "single_thread",
+                    "last_updated": timestamp,
+                    "success": False,
                     "error": str(e)
                 }
                 analyzed_brands.append(brand_info)
@@ -120,10 +135,43 @@ class BrandAnalyzer:
     
     async def _save_analysis_results(self, analyzed_brands):
         """保存分析结果到JSON文件"""
+        level_stats = {}
+        total_data_min = 0
+        total_data_max = 0
+        requires_series = 0
+        successful_brands = 0
+        
+        for brand in analyzed_brands:
+            level = brand.get('data_level', '未知')
+            level_stats[level] = level_stats.get(level, 0) + 1
+            
+            if brand.get('success') and brand.get('total_pages', 0) > 0:
+                successful_brands += 1
+                total_data_min += brand.get('min_total_data', 0)
+                total_data_max += brand.get('max_total_data', 0)
+            
+            if brand.get('requires_series_analysis'):
+                requires_series += 1
+        
         analysis_data = {
-            "analysis_time": datetime.now().isoformat(),
-            "total_brands": len(analyzed_brands),
-            "brands": analyzed_brands
+            "metadata": {
+                "source": "dongchedi",
+                "data_type": "brand_summary",
+                "generator": "brand_analyzer",
+                "generated_at": datetime.now().isoformat(),
+                "version": "1.0",
+                "thread_count": 1
+            },
+            "summary": {
+                "total_brands": len(analyzed_brands),
+                "processed_brands": len(analyzed_brands),
+                "successful_brands": successful_brands,
+                "total_data_min": total_data_min,
+                "total_data_max": total_data_max,
+                "requires_series_analysis": requires_series,
+                "data_level_distribution": level_stats
+            },
+            "data": analyzed_brands
         }
         
         try:

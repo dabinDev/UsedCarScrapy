@@ -1,0 +1,24 @@
+{
+  "stage": "series",
+  "timestamp": "2026-02-07T17:33:17.152110",
+  "brand": {
+    "brand_id": 18,
+    "name": "奇瑞",
+    "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-18-x-110000-1-x-x-x-x-x"
+  },
+  "methods": {
+    "filter": {
+      "count": 0,
+      "data": []
+    },
+    "api1": {
+      "count": 0,
+      "data": []
+    },
+    "api2": {
+      "count": 0,
+      "data": []
+    }
+  },
+  "merged": []
+}

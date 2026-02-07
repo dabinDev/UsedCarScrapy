@@ -13,8 +13,9 @@ from dongchedi_precise_crawler import DongchediPreciseCrawler
 class DataCollector:
     def __init__(self):
         self.crawler = DongchediPreciseCrawler()
-        self.brands_file = "brands_analysis.json"
+        self.brands_file = "dongchedi_brand.json"
         self.output_dir = "brand_data"
+        self.summary_file = "dongchedi_car_detail.json"
         self.collected_data = []
     
     async def load_brands_analysis(self):
@@ -23,15 +24,23 @@ class DataCollector:
             with open(self.brands_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
+            metadata = data.get('metadata', {})
+            summary = data.get('summary', {})
+            brands = data.get('data') or data.get('brands') or []
+            
             print(f"✅ 成功加载品牌分析结果")
-            print(f"📅 分析时间: {data['analysis_time']}")
-            print(f"📊 总品牌数: {data['total_brands']}")
+            if metadata:
+                print(f"📅 生成时间: {metadata.get('generated_at', '未知')}")
+            if summary:
+                print(f"📊 总品牌数: {summary.get('total_brands', len(brands))}")
+            else:
+                print(f"📊 总品牌数: {len(brands)}")
             
-            return data['brands']
-            
+            return brands
+        
         except FileNotFoundError:
             print(f"❌ 未找到品牌分析文件: {self.brands_file}")
-            print("请先运行 brand_analyzer.py 进行品牌分析")
+            print("请先运行 brand_analyzer.py 或 brand_analyzer_fast.py 进行品牌分析")
             return None
         except Exception as e:
             print(f"❌ 加载品牌分析失败: {e}")
@@ -75,6 +84,7 @@ class DataCollector:
                     "collected_count": len(brand_data),
                     "pages_crawled": pages_to_crawl,
                     "collection_time": datetime.now().isoformat(),
+                    "data_file": self._build_brand_filename(brand_name, len(brand_data)),
                     "success": True
                 }
                 
@@ -124,9 +134,7 @@ class DataCollector:
         # 创建输出目录
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # 生成文件名（去除特殊字符）
-        safe_name = "".join(c for c in brand_name if c.isalnum() or c in (' ', '-', '_')).rstrip()
-        filename = f"{safe_name}_{len(brand_data)}_records.json"
+        filename = self._build_brand_filename(brand_name, len(brand_data))
         filepath = os.path.join(self.output_dir, filename)
         
         try:
@@ -191,23 +199,38 @@ class DataCollector:
     
     async def _save_collection_summary(self, results, total_collected):
         """保存采集总结"""
+        successful = [r for r in results if r['success']]
+        failed = [r for r in results if not r['success']]
         summary = {
-            "collection_time": datetime.now().isoformat(),
-            "total_brands_attempted": len(results),
-            "successful_collections": len([r for r in results if r['success']]),
-            "failed_collections": len([r for r in results if not r['success']]),
-            "total_records_collected": total_collected,
-            "results": results
+            "metadata": {
+                "source": "dongchedi",
+                "data_type": "car_collection",
+                "generator": "data_collector",
+                "generated_at": datetime.now().isoformat(),
+                "version": "1.0"
+            },
+            "summary": {
+                "total_brands_attempted": len(results),
+                "successful_collections": len(successful),
+                "failed_collections": len(failed),
+                "total_records_collected": total_collected
+            },
+            "data": results
         }
         
         try:
-            with open("collection_summary.json", 'w', encoding='utf-8') as f:
+            with open(self.summary_file, 'w', encoding='utf-8') as f:
                 json.dump(summary, f, ensure_ascii=False, indent=2)
             
-            print(f"\n💾 采集总结已保存到: collection_summary.json")
-            
+            print(f"\n💾 采集总结已保存到: {self.summary_file}")
+        
         except Exception as e:
             print(f"❌ 保存采集总结失败: {e}")
+
+    def _build_brand_filename(self, brand_name, record_count):
+        """生成品牌数据文件名"""
+        safe_name = "".join(c for c in brand_name if c.isalnum() or c in (' ', '-', '_')).rstrip()
+        return f"{safe_name}_{record_count}_records.json"
     
     def _show_collection_stats(self, results, total_collected):
         """显示采集统计"""

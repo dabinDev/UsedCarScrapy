@@ -17,7 +17,8 @@ from dongchedi_precise_crawler import DongchediPreciseCrawler
 class ThreadSafeBrandAnalyzer:
     def __init__(self, max_workers=5):
         self.crawler = DongchediPreciseCrawler()
-        self.output_file = "brands_analysis.json"
+        self.output_file = "dongchedi_brand.json"
+        self.progress_file = "dongchedi_brand_progress.json"
         self.max_workers = max_workers
         self.results_lock = threading.Lock()
         self.results = []
@@ -130,24 +131,52 @@ class ThreadSafeBrandAnalyzer:
         brand_id = brand["brand_id"]
         brand_name = brand["name"]
         
+        timestamp = datetime.now().isoformat()
+        
         try:
             # 计算品牌数据量
             result = await crawler.calculate_brand_total_data(brand_id, brand_name)
             
             if result:
-                brand_info = {
-                    "brand_id": brand_id,
-                    "brand_name": brand_name,
-                    "total_pages": result['total_pages'],
-                    "data_range": result['data_range'],
-                    "min_total_data": result['min_total_data'],
-                    "max_total_data": result['max_total_data'],
-                    "current_page_count": result['current_page_count'],
-                    "calculation_method": result.get('calculation_method', 'unknown'),
-                    "data_level": self._get_data_level(result['total_pages']),
-                    "processed_by": f"thread_{thread_id}",
-                    "success": True
-                }
+                total_pages = result['total_pages']
+                
+                # 检查是否超过懂车帝默认查询上限
+                if total_pages >= 167:
+                    print(f"⚠️ 品牌 {brand_name} 数据量过大 ({total_pages}页)，需要按车系细分查询")
+                    
+                    # 标记为需要细分查询的大数据品牌
+                    brand_info = {
+                        "brand_id": brand_id,
+                        "brand_name": brand_name,
+                        "total_pages": total_pages,
+                        "data_range": result['data_range'],
+                        "min_total_data": result['min_total_data'],
+                        "max_total_data": result['max_total_data'],
+                        "current_page_count": result['current_page_count'],
+                        "calculation_method": "needs_subdivision",
+                        "data_level": "超大数据",
+                        "processed_by": f"thread_{thread_id}",
+                        "last_updated": timestamp,
+                        "success": True,
+                        "warning": f"数据量过大 ({total_pages}页)，建议按车系细分查询",
+                        "requires_series_analysis": True
+                    }
+                else:
+                    # 正常品牌数据
+                    brand_info = {
+                        "brand_id": brand_id,
+                        "brand_name": brand_name,
+                        "total_pages": total_pages,
+                        "data_range": result['data_range'],
+                        "min_total_data": result['min_total_data'],
+                        "max_total_data": result['max_total_data'],
+                        "current_page_count": result['current_page_count'],
+                        "calculation_method": result.get('calculation_method', 'unknown'),
+                        "data_level": self._get_data_level(total_pages),
+                        "processed_by": f"thread_{thread_id}",
+                        "last_updated": timestamp,
+                        "success": True
+                    }
                 
                 return brand_info
             else:
@@ -163,6 +192,7 @@ class ThreadSafeBrandAnalyzer:
                     "calculation_method": "failed",
                     "data_level": "未知",
                     "processed_by": f"thread_{thread_id}",
+                    "last_updated": timestamp,
                     "success": False
                 }
                 
@@ -181,6 +211,7 @@ class ThreadSafeBrandAnalyzer:
                 "calculation_method": "error",
                 "data_level": "错误",
                 "processed_by": f"thread_{thread_id}",
+                "last_updated": timestamp,
                 "success": False,
                 "error": str(e)
             }
@@ -197,8 +228,10 @@ class ThreadSafeBrandAnalyzer:
             return "中等"
         elif total_pages <= 100:
             return "大量"
-        else:
+        elif total_pages < 167:
             return "海量"
+        else:
+            return "超大数据"
     
     def _save_progress(self):
         """保存进度到临时文件"""
@@ -211,20 +244,46 @@ class ThreadSafeBrandAnalyzer:
         }
         
         try:
-            with open("brands_analysis_progress.json", 'w', encoding='utf-8') as f:
+            with open(self.progress_file, 'w', encoding='utf-8') as f:
                 json.dump(progress_data, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"⚠️ 保存进度失败: {e}")
     
     async def _save_final_results(self):
         """保存最终分析结果"""
+        duration = time.time() - self.start_time
+        level_stats = {}
+        total_data_min = 0
+        total_data_max = 0
+        requires_series = 0
+
+        for brand in self.results:
+            level = brand.get('data_level', '未知')
+            level_stats[level] = level_stats.get(level, 0) + 1
+            total_data_min += brand.get('min_total_data', 0)
+            total_data_max += brand.get('max_total_data', 0)
+            if brand.get('requires_series_analysis'):
+                requires_series += 1
+
         analysis_data = {
-            "analysis_time": datetime.now().isoformat(),
-            "total_brands": self.total_brands,
-            "processed_count": self.processed_count,
-            "thread_count": self.max_workers,
-            "total_processing_time": time.time() - self.start_time,
-            "brands": self.results
+            "metadata": {
+                "source": "dongchedi",
+                "data_type": "brand_summary",
+                "generator": "brand_analyzer_fast",
+                "generated_at": datetime.now().isoformat(),
+                "version": "1.0",
+                "thread_count": self.max_workers
+            },
+            "summary": {
+                "total_brands": self.total_brands,
+                "processed_brands": self.processed_count,
+                "duration_seconds": duration,
+                "total_data_min": total_data_min,
+                "total_data_max": total_data_max,
+                "requires_series_analysis": requires_series,
+                "data_level_distribution": level_stats
+            },
+            "data": self.results
         }
         
         try:
@@ -234,8 +293,8 @@ class ThreadSafeBrandAnalyzer:
             print(f"\n💾 最终结果已保存到: {self.output_file}")
             
             # 删除进度文件
-            if os.path.exists("brands_analysis_progress.json"):
-                os.remove("brands_analysis_progress.json")
+            if os.path.exists(self.progress_file):
+                os.remove(self.progress_file)
             
         except Exception as e:
             print(f"❌ 保存最终结果失败: {e}")
@@ -261,6 +320,7 @@ class ThreadSafeBrandAnalyzer:
         level_stats = {}
         total_data_min = 0
         total_data_max = 0
+        needs_subdivision_brands = []
         
         for brand in self.results:
             level = brand['data_level']
@@ -269,11 +329,22 @@ class ThreadSafeBrandAnalyzer:
             if brand['total_pages'] > 0:
                 total_data_min += brand['min_total_data']
                 total_data_max += brand['max_total_data']
+            
+            # 收集需要车系细分的品牌
+            if brand.get('requires_series_analysis', False):
+                needs_subdivision_brands.append(brand)
         
         print(f"\n📊 数据级别分布:")
         for level, count in sorted(level_stats.items()):
             percentage = (count / len(self.results)) * 100
             print(f"   - {level}: {count} 个品牌 ({percentage:.1f}%)")
+        
+        # 显示需要车系细分的品牌
+        if needs_subdivision_brands:
+            print(f"\n⚠️ 需要按车系细分查询的品牌 ({len(needs_subdivision_brands)}个):")
+            for brand in needs_subdivision_brands:
+                print(f"   - {brand['brand_name']}: {brand['total_pages']}页 ({brand['data_range']}条)")
+            print(f"\n💡 建议: 对这些品牌进行车系级别的细分查询以获取完整数据")
         
         print(f"\n📈 总体数据量:")
         print(f"   - 总数据量范围: {total_data_min:,} - {total_data_max:,} 条")

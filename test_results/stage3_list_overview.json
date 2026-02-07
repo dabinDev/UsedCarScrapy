@@ -1,0 +1,70 @@
+{
+  "stage": "list_overview",
+  "timestamp": "2026-02-07T17:33:24.670710",
+  "brand": {
+    "brand_id": 18,
+    "name": "奇瑞",
+    "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-18-x-110000-1-x-x-x-x-x"
+  },
+  "series": null,
+  "url": "https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-18-x-1-1-x-x-x-x-x",
+  "total_cards": 60,
+  "parsed_count": 5,
+  "data": [
+    {
+      "index": 1,
+      "car_id": "22676374",
+      "href": "/usedcar/22676374",
+      "detail_url": "https://www.dongchedi.com/usedcar/22676374",
+      "title": "",
+      "all_text": "瑞虎3x 2022款 钻石版 1.5L CVT3克拉II型 |  | 沈阳检测报告过户1次.新车指导价: .",
+      "prices": [],
+      "thumbnail": "https://p3-dcd-sign.byteimg.com/tos-cn-i-f042mdwyw7/3401327f8bab4e0a8b8db733a35192b7~tplv-f042mdwyw7-auto-webp:480:0.jpg?rk3s=4892dee6&x-expires=1771666399&x-signature=%2BxwIt5T0J17atlq%2BBxlRsSUtbdI%3D&psm=motor.sh.pack",
+      "card_html_length": 2502
+    },
+    {
+      "index": 2,
+      "car_id": "22718252",
+      "href": "/usedcar/22718252",
+      "detail_url": "https://www.dongchedi.com/usedcar/22718252",
+      "title": "",
+      "all_text": "瑞虎5 2015款 2.0L CVT家悦版 | . | 汕过户0次.新车指导价: .",
+      "prices": [],
+      "thumbnail": "https://p3-dcd-sign.byteimg.com/tos-cn-i-f042mdwyw7/4a3ef6364e0b4e98889a9ba1078698e6~tplv-f042mdwyw7-auto-webp:480:0.jpg?rk3s=4892dee6&x-expires=1771666399&x-signature=Q%2Bik3mCr4GlxAPmVZRuhE0b%2BfR4%3D&psm=motor.sh.pack",
+      "card_html_length": 2080
+    },
+    {
+      "index": 3,
+      "car_id": "22348221",
+      "href": "/usedcar/22348221",
+      "detail_url": "https://www.dongchedi.com/usedcar/22348221",
+      "title": "",
+      "all_text": "艾瑞泽7 2016款 1.6L CVT致享版 | . | 汕过户1次.新车指导价: .",
+      "prices": [],
+      "thumbnail": "https://p3-dcd-sign.byteimg.com/tos-cn-i-f042mdwyw7/250c9a0719b64fb9be012874e5eeabdf~tplv-f042mdwyw7-auto-webp:480:0.jpg?rk3s=4892dee6&x-expires=1771666399&x-signature=f17FrwLYc0jBsftMq5BU6JUwzAo%3D&psm=motor.sh.pack",
+      "card_html_length": 2264
+    },
+    {
+      "index": 4,
+      "car_id": "22734758",
+      "href": "/usedcar/22734758",
+      "detail_url": "https://www.dongchedi.com/usedcar/22734758",
+      "title": "",
+      "all_text": "奇瑞E3 2013款 1.5L 手动智尚型 | . | 江过户0次.新车指导价: .",
+      "prices": [],
+      "thumbnail": "https://p3-dcd-sign.byteimg.com/tos-cn-i-f042mdwyw7/6798005569aa42a384a4dfe713cf02ae~tplv-f042mdwyw7-auto-webp:480:0.jpg?rk3s=4892dee6&x-expires=1771666399&x-signature=aAnemKTXpwxDzBcHrVsjHItVrB8%3D&psm=motor.sh.pack",
+      "card_html_length": 2075
+    },
+    {
+      "index": 5,
+      "car_id": "22613746",
+      "href": "/usedcar/22613746",
+      "detail_url": "https://www.dongchedi.com/usedcar/22613746",
+      "title": "",
+      "all_text": "艾瑞泽7 2014款 1.6L CVT致享魔力版 | . | 汕过户3次.新车指导价: .",
+      "prices": [],
+      "thumbnail": "https://p3-dcd-sign.byteimg.com/tos-cn-i-f042mdwyw7/84a1cd16d4b345e4a5af6bf352757cc7~tplv-f042mdwyw7-auto-webp:480:0.jpg?rk3s=4892dee6&x-expires=1771666399&x-signature=6tbs%2F4SFNT4mDFJNIUTqZF%2FJtIY%3D&psm=motor.sh.pack",
+      "card_html_length": 2679
+    }
+  ]
+}

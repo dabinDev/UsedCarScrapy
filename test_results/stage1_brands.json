@@ -1,0 +1,3192 @@
+{
+  "stage": "brands",
+  "timestamp": "2026-02-07T17:33:07.918396",
+  "total": 637,
+  "data": [
+    {
+      "brand_id": 1,
+      "name": "大众",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-1-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 2,
+      "name": "奥迪",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-2-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 3,
+      "name": "奔驰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-3-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 4,
+      "name": "宝马",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-4-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 5,
+      "name": "丰田",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-5-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 6,
+      "name": "雪佛兰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-6-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 7,
+      "name": "福特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-7-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 8,
+      "name": "长城",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-8-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 9,
+      "name": "本田",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-9-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10,
+      "name": "日产",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 11,
+      "name": "现代",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-11-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 12,
+      "name": "别克",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-12-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 13,
+      "name": "起亚",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-13-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 14,
+      "name": "Jeep",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-14-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 15,
+      "name": "马自达",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-15-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 16,
+      "name": "比亚迪",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-16-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 17,
+      "name": "哈弗",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-17-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 18,
+      "name": "奇瑞",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-18-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 19,
+      "name": "路虎",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-19-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 20,
+      "name": "保时捷",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-20-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 21,
+      "name": "雪铁龙",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-21-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 22,
+      "name": "雷克萨斯",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-22-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 23,
+      "name": "斯柯达",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-23-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 24,
+      "name": "沃尔沃",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-24-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 25,
+      "name": "迈巴赫",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-25-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 26,
+      "name": "三菱",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-26-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 27,
+      "name": "奔腾",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-27-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 28,
+      "name": "中华",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-28-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 29,
+      "name": "英菲尼迪",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-29-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 30,
+      "name": "凯迪拉克",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-30-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 31,
+      "name": "捷豹",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-31-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 32,
+      "name": "江汽集团",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-32-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 33,
+      "name": "斯巴鲁",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-33-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 34,
+      "name": "名爵",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-34-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 35,
+      "name": "长安",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-35-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 36,
+      "name": "荣威",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-36-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 37,
+      "name": "东风风神",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-37-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 38,
+      "name": "讴歌",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-38-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 39,
+      "name": "五菱汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-39-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 40,
+      "name": "广汽传祺",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-40-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 41,
+      "name": "劳斯莱斯",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-41-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 42,
+      "name": "兰博基尼",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-42-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 43,
+      "name": "莲花汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-43-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 44,
+      "name": "法拉利",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-44-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 45,
+      "name": "玛莎拉蒂",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-45-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 46,
+      "name": "雷诺",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-46-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 47,
+      "name": "宾利",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-47-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 48,
+      "name": "smart",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-48-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 49,
+      "name": "悍马",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-49-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 50,
+      "name": "铃木",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-50-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 51,
+      "name": "阿尔法·罗密欧",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-51-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 52,
+      "name": "北京越野",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-52-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 53,
+      "name": "海马",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-53-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 54,
+      "name": "道奇",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-54-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 55,
+      "name": "DS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-55-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 56,
+      "name": "菲亚特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-56-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 57,
+      "name": "福田",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-57-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 58,
+      "name": "观致",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-58-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 59,
+      "name": "红旗",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-59-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 60,
+      "name": "北汽昌河",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-60-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 61,
+      "name": "标致",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-61-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 62,
+      "name": "林肯",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-62-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 63,
+      "name": "特斯拉",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-63-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 64,
+      "name": "众泰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-64-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 65,
+      "name": "MINI",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-65-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 66,
+      "name": "魏牌",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-66-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 67,
+      "name": "一汽",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-67-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 68,
+      "name": "北京汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-68-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 69,
+      "name": "北汽威旺",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-69-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 70,
+      "name": "东风风行",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-70-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 72,
+      "name": "华泰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-72-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 73,
+      "name": "吉利汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-73-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 74,
+      "name": "金杯",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-74-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 75,
+      "name": "欧宝",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-75-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 76,
+      "name": "猎豹汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-76-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 77,
+      "name": "东南",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-77-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 78,
+      "name": "北京汽车制造厂",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-78-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 79,
+      "name": "东风小康",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-79-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 80,
+      "name": "阿斯顿·马丁",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-80-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 82,
+      "name": "布加迪",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-82-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 83,
+      "name": "科尼赛克",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-83-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 84,
+      "name": "克莱斯勒",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-84-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 85,
+      "name": "莲花跑车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-85-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 86,
+      "name": "迈凯伦",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-86-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 87,
+      "name": "纳智捷",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-87-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 88,
+      "name": "帕加尼",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-88-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 89,
+      "name": "西雅特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-89-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 90,
+      "name": "依维柯",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-90-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 91,
+      "name": "东风",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-91-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 92,
+      "name": "东风风度",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-92-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 93,
+      "name": "北汽新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-93-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 94,
+      "name": "北汽幻速",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-94-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 95,
+      "name": "东风风光",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-95-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 96,
+      "name": "GMC",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-96-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 97,
+      "name": "广汽吉奥",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-97-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 98,
+      "name": "哈飞",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-98-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 99,
+      "name": "华泰新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-99-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 100,
+      "name": "江铃",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-100-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 101,
+      "name": "力帆汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-101-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 102,
+      "name": "陆风",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-102-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 103,
+      "name": "萨博",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-103-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 104,
+      "name": "骐铃汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-104-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 105,
+      "name": "思铭",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-105-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 106,
+      "name": "五十铃",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-106-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 107,
+      "name": "野马汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-107-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 108,
+      "name": "大通",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-108-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 109,
+      "name": "启辰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-109-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 110,
+      "name": "欧朗",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-110-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 111,
+      "name": "理念",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-111-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 112,
+      "name": "蔚来",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-112-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 113,
+      "name": "AC Schnitzer",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-113-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 114,
+      "name": "ALPINA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-114-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 115,
+      "name": "安凯客车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-115-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 116,
+      "name": "宝沃",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-116-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 117,
+      "name": "比速汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-117-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 118,
+      "name": "博速",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-118-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 119,
+      "name": "长安欧尚",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-119-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 120,
+      "name": "成功汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-120-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 121,
+      "name": "大发",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-121-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 122,
+      "name": "福迪",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-122-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 123,
+      "name": "新龙马汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-123-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 124,
+      "name": "光冈",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-124-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 125,
+      "name": "海格",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-125-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 126,
+      "name": "汉腾汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-126-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 127,
+      "name": "恒天",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-127-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 128,
+      "name": "华凯",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-128-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 129,
+      "name": "华利",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-129-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 130,
+      "name": "华普",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-130-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 131,
+      "name": "华颂",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-131-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 132,
+      "name": "黄海",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-132-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 133,
+      "name": "金旅",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-133-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 134,
+      "name": "九龙",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-134-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 135,
+      "name": "卡尔森",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-135-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 136,
+      "name": "江铃集团新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-136-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 137,
+      "name": "卡升",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-137-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 138,
+      "name": "卡威",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-138-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 139,
+      "name": "开瑞",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-139-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 140,
+      "name": "金龙",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-140-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 141,
+      "name": "KTM",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-141-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 142,
+      "name": "凯翼",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-142-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 143,
+      "name": "全球鹰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-143-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 144,
+      "name": "LOCAL MOTORS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-144-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 145,
+      "name": "Lorinser",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-145-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 146,
+      "name": "陆地方舟",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-146-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 147,
+      "name": "摩根",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-147-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 148,
+      "name": "创维商用车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-148-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 149,
+      "name": "前途",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-149-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 150,
+      "name": "如虎",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-150-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 151,
+      "name": "瑞麒",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-151-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 152,
+      "name": "赛麟",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-152-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 153,
+      "name": "陕汽通家",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-153-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 154,
+      "name": "世爵",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-154-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 155,
+      "name": "双环",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-155-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 156,
+      "name": "斯达泰克",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-156-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 157,
+      "name": "SWM斯威汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-157-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 158,
+      "name": "泰卡特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-158-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 159,
+      "name": "腾势",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-159-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 160,
+      "name": "威麟",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-160-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 161,
+      "name": "威兹曼",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-161-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 162,
+      "name": "中国重汽VGV",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-162-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 163,
+      "name": "双龙",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-163-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 164,
+      "name": "新凯",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-164-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 165,
+      "name": "Icona",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-165-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 166,
+      "name": "永源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-166-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 167,
+      "name": "驭胜",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-167-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 168,
+      "name": "知豆",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-168-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 169,
+      "name": "中兴",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-169-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 170,
+      "name": "之诺",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-170-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 171,
+      "name": "长安凯程",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-171-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 172,
+      "name": "宇通",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-172-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 173,
+      "name": "御捷",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-173-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 174,
+      "name": "领克",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-174-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 175,
+      "name": "北汽道达",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-175-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 176,
+      "name": "ARCFOX极狐",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-176-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 177,
+      "name": "Arash",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-177-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 178,
+      "name": "艾康尼克",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-178-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 180,
+      "name": "长江·EV",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-180-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 183,
+      "name": "Dacia",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-183-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 184,
+      "name": "华骐",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-184-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 185,
+      "name": "威马汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-185-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 188,
+      "name": "云度",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-188-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 190,
+      "name": "君马汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-190-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 191,
+      "name": "国金汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-191-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 192,
+      "name": "拉达",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-192-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 193,
+      "name": "鑫源汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-193-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 194,
+      "name": "裕路",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-194-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 195,
+      "name": "小鹏汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-195-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 196,
+      "name": "Polestar极星",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-196-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 197,
+      "name": "电咖",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-197-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 198,
+      "name": "瑞驰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-198-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 199,
+      "name": "哪吒汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-199-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 200,
+      "name": "NEVS国能汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-200-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 202,
+      "name": "理想汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-202-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 204,
+      "name": "拜腾",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-204-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 205,
+      "name": "Fisker",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-205-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 206,
+      "name": "云雀汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-206-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 207,
+      "name": "零跑汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-207-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 208,
+      "name": "游侠",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-208-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 209,
+      "name": "捷途",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-209-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 210,
+      "name": "长安跨越",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-210-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 211,
+      "name": "ABT",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-211-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 212,
+      "name": "绿驰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-212-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 213,
+      "name": "Rimac",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-213-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 214,
+      "name": "拉共达",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-214-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 215,
+      "name": "正道汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-215-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 216,
+      "name": "塔塔",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-216-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 217,
+      "name": "Corbellati",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-217-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 218,
+      "name": "Zenvo",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-218-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 219,
+      "name": "宾尼法利纳",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-219-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 220,
+      "name": "Hennessey",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-220-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 221,
+      "name": "泰克鲁斯·腾风",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-221-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 222,
+      "name": "W Motors",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-222-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 223,
+      "name": "Italdesign",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-223-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 224,
+      "name": "Aria",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-224-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 225,
+      "name": "奇点汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-225-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 226,
+      "name": "保斐利",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-226-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 227,
+      "name": "昶洧",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-227-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 228,
+      "name": "Caterham",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-228-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 229,
+      "name": "Faraday Future",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-229-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 230,
+      "name": "东风·瑞泰特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-230-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 231,
+      "name": "SERES赛力斯",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-231-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 232,
+      "name": "爱驰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-232-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 233,
+      "name": "刺猬汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-233-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 234,
+      "name": "新特汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-234-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 235,
+      "name": "思皓",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-235-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 236,
+      "name": "乔治·巴顿",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-236-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 237,
+      "name": "广汽集团",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-237-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 238,
+      "name": "欧拉",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-238-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 240,
+      "name": "北京清行",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-240-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 241,
+      "name": "红星汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-241-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 242,
+      "name": "埃安",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-242-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 244,
+      "name": "容大智造",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-244-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 245,
+      "name": "西尔贝",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-245-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 246,
+      "name": "大乘汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-246-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 247,
+      "name": "领途汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-247-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 248,
+      "name": "罗夫哈特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-248-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 249,
+      "name": "高合",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-249-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 250,
+      "name": "天际汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-250-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 251,
+      "name": "星途",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-251-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 252,
+      "name": "RIVIAN",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-252-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 253,
+      "name": "Karma",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-253-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 254,
+      "name": "宝腾汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-254-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 256,
+      "name": "AEV ROBOTICS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-256-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 257,
+      "name": "Dianchè",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-257-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 258,
+      "name": "钧天汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-258-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 259,
+      "name": "开云汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-259-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 260,
+      "name": "捷达",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-260-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 261,
+      "name": "Mole",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-261-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 262,
+      "name": "Piëch",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-262-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 263,
+      "name": "博郡汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-263-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 264,
+      "name": "吉利几何",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-264-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 265,
+      "name": "清源汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-265-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 266,
+      "name": "国机智骏",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-266-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 267,
+      "name": "GFG Style",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-267-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 268,
+      "name": "GYON",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-268-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 270,
+      "name": "博世",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-270-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 271,
+      "name": "格罗夫",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-271-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 272,
+      "name": "迈莎锐",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-272-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 273,
+      "name": "捷尼赛思",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-273-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 274,
+      "name": "沃克斯豪尔",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-274-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 275,
+      "name": "Scion",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-275-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 276,
+      "name": "Noble",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-276-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 277,
+      "name": "蓝旗亚",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-277-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 278,
+      "name": "霍顿",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-278-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 279,
+      "name": "Rinspeed",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-279-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 280,
+      "name": "佩奇奥",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-280-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 281,
+      "name": "Apollo",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-281-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 282,
+      "name": "雷丁",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-282-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 283,
+      "name": "Gumpert",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-283-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 284,
+      "name": "弗那萨利",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-284-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 285,
+      "name": "TVR",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-285-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 287,
+      "name": "凯佰赫",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-287-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 288,
+      "name": "VLF Automotive",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-288-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 289,
+      "name": "Venturi",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-289-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 290,
+      "name": "GAZ",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-290-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 291,
+      "name": "Datsun",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-291-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 292,
+      "name": "Rezvani",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-292-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 293,
+      "name": "Elemental",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-293-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 294,
+      "name": "Donkervoort",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-294-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 295,
+      "name": "DeLorean",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-295-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 296,
+      "name": "Mazzanti",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-296-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 297,
+      "name": "MELKUS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-297-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 298,
+      "name": "LeSEE",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-298-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 299,
+      "name": "nanoFLOWCELL",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-299-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 300,
+      "name": "Vinfast",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-300-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 301,
+      "name": "雷诺三星",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-301-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 302,
+      "name": "银隆新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-302-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 303,
+      "name": "合创汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-303-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 304,
+      "name": "车驰汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-304-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 305,
+      "name": "Tramontana",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-305-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 306,
+      "name": "谢尔比",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-306-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 307,
+      "name": "英飒",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-307-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 308,
+      "name": "远程汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-308-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 309,
+      "name": "领志",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-309-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 310,
+      "name": "朗世",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-310-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 311,
+      "name": "上海",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-311-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 312,
+      "name": "Aurus",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-312-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 313,
+      "name": "ATS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-313-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 314,
+      "name": "Agile Automotive",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-314-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 315,
+      "name": "BAC",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-315-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 316,
+      "name": "Conquest",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-316-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 317,
+      "name": "FM Auto",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-317-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 318,
+      "name": "Ginetta",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-318-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 320,
+      "name": "GLM",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-320-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 321,
+      "name": "GTA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-321-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 322,
+      "name": "Hispano Suiza",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-322-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 323,
+      "name": "Inferno",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-323-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 324,
+      "name": "LEVC翼真汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-324-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 325,
+      "name": "Lucid",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-325-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 327,
+      "name": "MAGNA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-327-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 329,
+      "name": "Puritalia",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-329-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 330,
+      "name": "RENOVO",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-330-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 331,
+      "name": "SPIRRA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-331-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 332,
+      "name": "YAMAHA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-332-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 333,
+      "name": "斯太尔",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-333-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 334,
+      "name": "比德文汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-334-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 335,
+      "name": "广通客车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-335-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 336,
+      "name": "AUXUN傲旋",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-336-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 337,
+      "name": "De Tomaso",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-337-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 338,
+      "name": "Sono Motors",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-338-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 339,
+      "name": "Ultima",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-339-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 340,
+      "name": "首望",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-340-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 341,
+      "name": "Cupra",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-341-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 342,
+      "name": "谷歌",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-342-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 343,
+      "name": "汉龙汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-343-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 344,
+      "name": "星驰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-344-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 345,
+      "name": "Canoo",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-345-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 346,
+      "name": "Bollinger",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-346-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 348,
+      "name": "Uniti",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-348-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 349,
+      "name": "迈迈",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-349-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 350,
+      "name": "Karlmann King",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-350-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 351,
+      "name": "Mahindra",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-351-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 352,
+      "name": "罗孚",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-352-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 353,
+      "name": "Drako",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-353-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 354,
+      "name": "Jannarelly",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-354-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 355,
+      "name": "开利",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-355-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 356,
+      "name": "敏安汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-356-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 357,
+      "name": "欧联",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-357-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 358,
+      "name": "Radical",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-358-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 359,
+      "name": "Share2Drive",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-359-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 360,
+      "name": "SIN CARS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-360-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 361,
+      "name": "TOROIDION",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-361-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 362,
+      "name": "Vanda Electric",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-362-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 363,
+      "name": "Neuron EV",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-363-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 364,
+      "name": "Aspark",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-364-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 365,
+      "name": "上喆",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-365-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 366,
+      "name": "宝骏",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-366-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 367,
+      "name": "一汽凌河",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-367-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 368,
+      "name": "创维汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-368-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 369,
+      "name": "TOGG",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-369-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 370,
+      "name": "SONY",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-370-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 371,
+      "name": "Lordstown Motors",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-371-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 372,
+      "name": "大运",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-372-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 373,
+      "name": "东风富康",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-373-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 374,
+      "name": "VANTAS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-374-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 375,
+      "name": "Troller",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-375-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 376,
+      "name": "Czinger",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-376-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 377,
+      "name": "瓦滋",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-377-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 378,
+      "name": "Nikola",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-378-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 379,
+      "name": "Vega Innovations",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-379-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 380,
+      "name": "APEX",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-380-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 381,
+      "name": "睿蓝汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-381-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 383,
+      "name": "金冠汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-383-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 384,
+      "name": "凌宝汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-384-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 387,
+      "name": "INKAS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-387-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 388,
+      "name": "IED",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-388-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 389,
+      "name": "Triton",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-389-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 390,
+      "name": "速达",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-390-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 391,
+      "name": "Hudson",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-391-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 392,
+      "name": "Elektron",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-392-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 393,
+      "name": "英力士",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-393-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 394,
+      "name": "英致汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-394-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 395,
+      "name": "岚图",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-395-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 396,
+      "name": "神州",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-396-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 397,
+      "name": "DAVID BROWN",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-397-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 398,
+      "name": "IZERA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-398-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 399,
+      "name": "恒驰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-399-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 400,
+      "name": "GMA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-400-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 401,
+      "name": "飞凡汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-401-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 402,
+      "name": "Ariel",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-402-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 403,
+      "name": "Hyperion",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-403-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 404,
+      "name": "飞碟汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-404-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 405,
+      "name": "克蒂汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-405-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 406,
+      "name": "Touring Superleggera",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-406-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 407,
+      "name": "北汽泰普",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-407-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 408,
+      "name": "松散机车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-408-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 410,
+      "name": "晓澳汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-410-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 411,
+      "name": "比克汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-411-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 412,
+      "name": "LUMMA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-412-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 413,
+      "name": "华晨新日",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-413-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 414,
+      "name": "摩登汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-414-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 415,
+      "name": "龙程汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-415-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 416,
+      "name": "WALD",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-416-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 417,
+      "name": "东风纳米",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-417-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 418,
+      "name": "宏远汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-418-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 419,
+      "name": "智己汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-419-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 420,
+      "name": "朋克汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-420-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 421,
+      "name": "橙仕",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-421-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 423,
+      "name": "G-POWER",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-423-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 424,
+      "name": "Novitec",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-424-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 425,
+      "name": "坦克",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-425-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 426,
+      "name": "极氪",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-426-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 427,
+      "name": "dÄHLer",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-427-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 429,
+      "name": "小虎",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-429-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 431,
+      "name": "阿莫迪罗",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-431-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 432,
+      "name": "NEXT LEVEL",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-432-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 433,
+      "name": "GUNTHER WERKS",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-433-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 434,
+      "name": "Spofec",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-434-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 435,
+      "name": "奇鲁汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-435-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 436,
+      "name": "VIRITECH",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-436-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 437,
+      "name": "HOFELE",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-437-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 438,
+      "name": "Kimera",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-438-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 439,
+      "name": "雅升汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-439-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 441,
+      "name": "恒润汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-441-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 442,
+      "name": "Pogea Racing",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-442-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 443,
+      "name": "Manhart",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-443-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 444,
+      "name": "北汽瑞翔",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-444-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 445,
+      "name": "GEMBALLA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-445-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 446,
+      "name": "易电易行",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-446-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 448,
+      "name": "Posaidon",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-448-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 450,
+      "name": "TopCar",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-450-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 451,
+      "name": "电动屋",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-451-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 452,
+      "name": "Bowler",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-452-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 453,
+      "name": "RAM",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-453-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 454,
+      "name": "申龙客车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-454-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 455,
+      "name": "Mobilize",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-455-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 456,
+      "name": "E-Legend",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-456-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 457,
+      "name": "KHANN",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-457-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 458,
+      "name": "Continental",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-458-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 459,
+      "name": "百智新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-459-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 460,
+      "name": "G&B Design",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-460-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 461,
+      "name": "奇瑞新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-461-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 462,
+      "name": "法诺新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-462-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 463,
+      "name": "上汽集团",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-463-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 464,
+      "name": "MILITEM",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-464-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 465,
+      "name": "智点汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-465-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 466,
+      "name": "Foxtron",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-466-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 467,
+      "name": "莱茵汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-467-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 468,
+      "name": "中植汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-468-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 469,
+      "name": "华梓汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-469-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 470,
+      "name": "凯马汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-470-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 472,
+      "name": "EdisonFuture",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-472-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 473,
+      "name": "Spyros Panopoulos",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-473-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 474,
+      "name": "Aviar",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-474-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 475,
+      "name": "阿维塔",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-475-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 476,
+      "name": "Atlis",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-476-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 477,
+      "name": "新吉奥汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-477-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 478,
+      "name": "沙龙汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-478-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 480,
+      "name": "伟昊汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-480-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 481,
+      "name": "WayRay",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-481-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 482,
+      "name": "克慕勒",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-482-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 483,
+      "name": "AITO",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-483-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 484,
+      "name": "智行盒子",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-484-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 485,
+      "name": "自游家",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-485-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 486,
+      "name": "嘉远汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-486-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 487,
+      "name": "Moke",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-487-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 488,
+      "name": "INDI",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-488-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 489,
+      "name": "极越",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-489-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 490,
+      "name": "悠跑科技",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-490-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 491,
+      "name": "STI",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-491-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 502,
+      "name": "庞蒂亚克",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-502-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 506,
+      "name": "国新新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-506-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 507,
+      "name": "宝能汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-507-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 508,
+      "name": "LIMGENE凌际",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-508-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 509,
+      "name": "DEUS Automobiles",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-509-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 510,
+      "name": "智锐汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-510-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 511,
+      "name": "Aznom",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-511-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 512,
+      "name": "江淮瑞风",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-512-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 513,
+      "name": "焜驰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-513-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 515,
+      "name": "深蓝汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-515-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 516,
+      "name": "金杯新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-516-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 517,
+      "name": "Lightyear",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-517-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 518,
+      "name": "拓锐斯特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-518-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 520,
+      "name": "华人运通",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-520-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 521,
+      "name": "东风氢舟",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-521-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 522,
+      "name": "Electra Meccanica",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-522-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 523,
+      "name": "Delage",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-523-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 524,
+      "name": "Radford",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-524-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 526,
+      "name": "百度Apollo",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-526-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 527,
+      "name": "猛士",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-527-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 528,
+      "name": "万象汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-528-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 529,
+      "name": "Meyers Manx",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-529-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 530,
+      "name": "远航汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-530-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 531,
+      "name": "华夏领舰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-531-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 532,
+      "name": "江南汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-532-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 533,
+      "name": "AEHRA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-533-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 534,
+      "name": "小跑车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-534-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 535,
+      "name": "小米汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-535-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 536,
+      "name": "越界",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-536-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 537,
+      "name": "NamX",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-537-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 538,
+      "name": "Abarth",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-538-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 539,
+      "name": "Alpine",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-539-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 540,
+      "name": "悠宝利",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-540-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 541,
+      "name": "e.GO",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-541-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 542,
+      "name": "Hopium",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-542-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 543,
+      "name": "XEV",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-543-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 544,
+      "name": "迈越",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-544-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 545,
+      "name": "BeyonCa",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-545-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 546,
+      "name": "仰望",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-546-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 548,
+      "name": "LIUX",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-548-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 549,
+      "name": "Alpha Motor",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-549-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 550,
+      "name": "777 Motors",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-550-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 551,
+      "name": "大力牛魔王",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-551-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 553,
+      "name": "金琥新能源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-553-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 556,
+      "name": "Munro",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-556-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 557,
+      "name": "Praga",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-557-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 558,
+      "name": "盛唐",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-558-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 559,
+      "name": "国吉商用车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-559-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 560,
+      "name": "Bertone",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-560-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 561,
+      "name": "阿尔特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-561-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 563,
+      "name": "AFEELA",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-563-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 569,
+      "name": "瑞腾汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-569-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 570,
+      "name": "Vanwall",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-570-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 855,
+      "name": "未奥汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-855-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 856,
+      "name": "中国重汽",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-856-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 858,
+      "name": "吉利银河",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-858-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 861,
+      "name": "方程豹",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-861-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 865,
+      "name": "雷驰汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-865-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 867,
+      "name": "曹操汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-867-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 868,
+      "name": "蓝电",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-868-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 870,
+      "name": "长安启源",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-870-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 871,
+      "name": "江淮钇为",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-871-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 873,
+      "name": "AC Cars",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-873-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 876,
+      "name": "活越",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-876-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 877,
+      "name": "菱势汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-877-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 878,
+      "name": "ROX极石",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-878-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 879,
+      "name": "AIM",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-879-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 880,
+      "name": "广汽昊铂",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-880-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 882,
+      "name": "江淮汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-882-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 883,
+      "name": "智界",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-883-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 886,
+      "name": "佳跃",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-886-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 887,
+      "name": "Theon Design",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-887-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 888,
+      "name": "Fresco",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-888-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 890,
+      "name": "Bizzarrini",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-890-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 891,
+      "name": "东风奕派",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-891-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 901,
+      "name": "灵悉",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-901-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 904,
+      "name": "恒信致远",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-904-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 905,
+      "name": "江铃晶马汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-905-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 906,
+      "name": "巴菲特",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-906-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 907,
+      "name": "3D Design",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-907-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 908,
+      "name": "怡亚通",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-908-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 909,
+      "name": "iCAR",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-909-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 910,
+      "name": "吉祥汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-910-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 911,
+      "name": "珑致汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-911-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 912,
+      "name": "REVO ZERO",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-912-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 915,
+      "name": "Micro",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-915-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 916,
+      "name": "Silence",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-916-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 917,
+      "name": "THK",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-917-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 918,
+      "name": "乐道",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-918-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 920,
+      "name": "小鹏汇天",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-920-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 921,
+      "name": "Mullen",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-921-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 922,
+      "name": "世极",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-922-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 925,
+      "name": "水星",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-925-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 931,
+      "name": "享界",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-931-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 938,
+      "name": "烨",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-938-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 939,
+      "name": "JAECOO",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-939-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10012,
+      "name": "212",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10012-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10291,
+      "name": "Red Bull",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10291-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10293,
+      "name": "尊界",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10293-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10294,
+      "name": "览众房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10294-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10295,
+      "name": "新星房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10295-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10296,
+      "name": "七狼房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10296-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10297,
+      "name": "瑞弗",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10297-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10298,
+      "name": "威尔特芬",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10298-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10299,
+      "name": "KALMAR",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10299-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10300,
+      "name": "戴德房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10300-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10301,
+      "name": "隆翠房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10301-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10302,
+      "name": "江铃旅居房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10302-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10303,
+      "name": "齐星房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10303-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10304,
+      "name": "星海狮",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10304-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10305,
+      "name": "中房房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10305-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10307,
+      "name": "皓旅房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10307-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10308,
+      "name": "赛德房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10308-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10309,
+      "name": "歌睿途",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10309-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10311,
+      "name": "大驰房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10311-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10314,
+      "name": "易游房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10314-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10315,
+      "name": "骐蔚汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10315-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10316,
+      "name": "尚旅房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10316-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10318,
+      "name": "Lion-Peugeot",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10318-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10319,
+      "name": "De Dion-Bouton",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10319-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10320,
+      "name": "Maxwell",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10320-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10321,
+      "name": "Schacht",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10321-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10322,
+      "name": "International Harvester",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10322-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10323,
+      "name": "Napier",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10323-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10324,
+      "name": "Minerva",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10324-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10325,
+      "name": "Saxon",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10325-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10326,
+      "name": "Swift",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10326-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10327,
+      "name": "Isotta Fraschini",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10327-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10328,
+      "name": "Packard",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10328-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10329,
+      "name": "Edsel",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10329-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10332,
+      "name": "Scout",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10332-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10334,
+      "name": "阿娜亚",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10334-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10337,
+      "name": "AIXAM",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10337-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10338,
+      "name": "利吉尔",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10338-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10339,
+      "name": "KILOW",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10339-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10340,
+      "name": "Devalliet",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10340-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10341,
+      "name": "DEVINCI",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10341-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10342,
+      "name": "星军房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10342-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10343,
+      "name": "亚特房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10343-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10344,
+      "name": "爱旅房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10344-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10345,
+      "name": "旅美房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10345-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10348,
+      "name": "途酷房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10348-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10352,
+      "name": "旌航房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10352-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10354,
+      "name": "宽大房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10354-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10360,
+      "name": "赛家房车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10360-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10362,
+      "name": "奥迪AUDI",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10362-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10363,
+      "name": "firefly萤火虫",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10363-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10364,
+      "name": "Nilu",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10364-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10402,
+      "name": "予风汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10402-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10403,
+      "name": "卡文汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10403-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10404,
+      "name": "骏驰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10404-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10405,
+      "name": "ZOOX",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10405-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10406,
+      "name": "Vanderhal",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10406-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10407,
+      "name": "Aptera",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10407-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10408,
+      "name": "Faraday X",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10408-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10409,
+      "name": "奇瑞风云",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10409-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10410,
+      "name": "示界",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10410-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10419,
+      "name": "尚界",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10419-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10420,
+      "name": "富古汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10420-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10422,
+      "name": "Giamaro",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10422-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10423,
+      "name": "Bovensiepen",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10423-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10424,
+      "name": "礼骊汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10424-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10425,
+      "name": "捷途山海",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10425-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10427,
+      "name": "中通客车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10427-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10428,
+      "name": "货拉拉多拉",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10428-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10429,
+      "name": "捷途纵横",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10429-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10430,
+      "name": "普曼·巅峰",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10430-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10431,
+      "name": "追觅",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10431-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10433,
+      "name": "埃尚",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10433-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10434,
+      "name": "启境",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10434-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10435,
+      "name": "扎加托",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10435-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10437,
+      "name": "夏普",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10437-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10438,
+      "name": "广汽领程",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10438-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10439,
+      "name": "沃森威尔",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10439-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10440,
+      "name": "Santana",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10440-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10441,
+      "name": "CEER",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10441-x-110000-1-x-x-x-x-x"
+    },
+    {
+      "brand_id": 10443,
+      "name": "领汇汽车",
+      "href": "/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10443-x-110000-1-x-x-x-x-x"
+    }
+  ]
+}
