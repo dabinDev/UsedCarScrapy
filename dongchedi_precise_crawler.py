@@ -109,9 +109,8 @@ class DongchediPreciseCrawler:
         os.makedirs("data", exist_ok=True)
     
     async def get_all_brands(self):
-        """动态获取所有品牌信息"""
+        """获取所有品牌信息 - 只从热门页面获取"""
         print("🔍 正在获取所有品牌信息...")
-        brands = []
         
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=True)
@@ -122,97 +121,283 @@ class DongchediPreciseCrawler:
                 await page.goto("https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x", wait_until="domcontentloaded")
                 await page.wait_for_timeout(5000)
                 
-                # 获取所有字母按钮（A-Z）- 完整获取所有品牌
-                letters = ['热门'] + [chr(i) for i in range(ord('A'), ord('Z') + 1)]  # 获取所有字母
+                # 只从热门页面获取品牌
+                print("📋 获取热门品牌...")
                 
-                for letter in letters:
-                    print(f"  📋 获取 {letter} 字母下的品牌...")
-                    
+                # 等待品牌列表加载
+                await page.wait_for_timeout(3000)
+                
+                # 获取品牌链接 - 使用多种选择器尝试
+                selectors = [
+                    'a[href*="-330100-"]',
+                    'a[href*="x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-"]',
+                    'div[ref*="155"] a',
+                    'div[ref*="17"] a',
+                    'a[href*="usedcar/"]'
+                ]
+                
+                brand_items = []
+                for selector in selectors:
+                    brand_items = await page.query_selector_all(selector)
+                    if len(brand_items) > 0:
+                        break
+                
+                for item in brand_items:
                     try:
-                        # 点击字母按钮
-                        if letter == '热门':
-                            # 热门品牌默认显示，不需要点击
-                            pass
-                        else:
-                            # 点击字母按钮
-                            letter_button = await page.query_selector(f'text="{letter}"')
-                            if letter_button:
-                                await letter_button.click()
-                                await page.wait_for_timeout(1000)
+                        href = await item.get_attribute('href')
+                        text = await item.text_content()
+                        
+                        if href and text and text.strip():
+                            # 过滤掉“不限”和其他非品牌链接
+                            if text.strip() == "不限":
+                                continue
+                            
+                            # 提取品牌ID - 支持多种URL格式
+                            # 格式1: x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-330100-1-x-x-x-x-x
+                            brand_id = None
+                            
+                            # 尝试从URL中提取品牌ID
+                            match = re.search(r'-(\d+)-x-330100-1-', href)
+                            if match:
+                                brand_id = int(match.group(1))
                             else:
-                                print(f"    ⚠️ 未找到 {letter} 字母按钮")
-                                continue
-                        
-                        # 等待品牌列表加载
-                        await page.wait_for_timeout(1500)
-                        
-                        # 获取当前显示的品牌列表 - 使用更精确的选择器
-                        # 品牌链接通常在特定的容器中
-                        brand_items = await page.query_selector_all('div[ref*="155"] a[href*="x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-"]')
-                        
-                        # 如果没有找到，尝试其他选择器
-                        if not brand_items:
-                            brand_items = await page.query_selector_all('div[ref*="17"] a[href*="x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-"]')
-                        
-                        # 如果还是没有找到，尝试更通用的选择器
-                        if not brand_items:
-                            brand_items = await page.query_selector_all('a[href*="x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-"]')
-                        
-                        print(f"    🔍 找到 {len(brand_items)} 个品牌链接")
-                        
-                        for item in brand_items:
-                            try:
-                                href = await item.get_attribute('href')
-                                text = await item.text_content()
+                                # 尝试其他格式
+                                match = re.search(r'-(\d+)-x-', href)
+                                if match:
+                                    brand_id = int(match.group(1))
+                            
+                            if brand_id and brand_id not in [b["brand_id"] for b in self.brands]:
+                                # 清理品牌名称
+                                brand_name = text.strip()
+                                # 移除重复的品牌名（如“奔驰 奔驰”）
+                                if ' ' in brand_name:
+                                    parts = brand_name.split(' ')
+                                    if len(parts) >= 2 and parts[0] == parts[1]:
+                                        brand_name = parts[0]
                                 
-                                if href and text:
-                                    # 提取品牌ID - 支持多种URL格式
-                                    # 格式1: x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-110000-1-x-x-x-x-x
-                                    match = re.search(r'-(\d+)-x-110000-1-x-x-x-x-x$', href)
-                                    
-                                    if match:
-                                        brand_id = match.group(1)
-                                        brand_name = text.strip()
-                                        
-                                        # 过滤掉非品牌链接（如价格、车型等）
-                                        if brand_name not in ['不限', '全部', '轿车', 'SUV', 'MPV', '跑车', '微型车', '3万以下', '3-5万', '5-10万', '10-15万', '15-20万', '20万以上'] and not brand_name.replace(',', '').replace('.', '').replace('-', '').replace('!', '').isdigit():
-                                            # 避免重复
-                                            if not any(b['brand_id'] == brand_id for b in brands):
-                                                brands.append({
-                                                    'name': brand_name,
-                                                    'brand_id': brand_id,
-                                                    'letter': letter
-                                                })
-                                                print(f"      ✅ 找到品牌: {brand_name} (ID: {brand_id})")
-                                    else:
-                                        # 调试信息：显示不匹配的链接（关闭以提高效率）
-                                        pass
-                            except Exception as e:
-                                continue
-                        
-                        print(f"    ✅ {letter} 字母下找到 {len([b for b in brands if b['letter'] == letter])} 个品牌")
-                        
+                                self.brands.append({
+                                    "brand_id": brand_id,
+                                    "name": brand_name
+                                })
+                                print(f"      ✅ 找到品牌: {brand_name} (ID: {brand_id})")
+                    
                     except Exception as e:
-                        print(f"    ❌ 获取 {letter} 字母下的品牌失败: {e}")
                         continue
                 
-                # 按品牌名称排序
-                brands.sort(key=lambda x: x['name'])
+                print(f"✅ 热门页面找到 {len(self.brands)} 个品牌")
                 
-                print(f"\n🎉 品牌获取完成！共找到 {len(brands)} 个品牌")
+                # 按品牌ID排序
+                self.brands.sort(key=lambda x: x["brand_id"])
+                
+                print(f"🎉 总共获取到 {len(self.brands)} 个品牌")
                 
                 # 保存品牌信息到文件
-                with open('data/all_brands.json', 'w', encoding='utf-8') as f:
-                    json.dump(brands, f, ensure_ascii=False, indent=2)
-                print(f"💾 品牌信息已保存到: data/all_brands.json")
+                try:
+                    with open("data/all_brands.json", "w", encoding="utf-8") as f:
+                        json.dump(self.brands, f, ensure_ascii=False, indent=2)
+                    print(f"💾 品牌信息已保存到: data/all_brands.json")
+                except Exception as save_error:
+                    print(f"⚠️ 保存品牌信息失败: {save_error}")
                 
             except Exception as e:
                 print(f"❌ 获取品牌信息失败: {e}")
             finally:
                 await browser.close()
         
-        self.brands = brands
-        return brands
+        return self.brands
+    
+    async def calculate_brand_total_data(self, brand_id, brand_name):
+        """计算指定品牌的总数据量"""
+        print(f"🔍 正在计算 {brand_name} 品牌的总数据量...")
+        
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=True)
+            page = await browser.new_page()
+            
+            try:
+                # 访问品牌第一页 - 使用正确的URL格式，所有筛选条件为不限，地区为杭州（330100）
+                url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-1-1-x-x-x-x-x"
+                await page.goto(url, wait_until="domcontentloaded")
+                await page.wait_for_timeout(5000)
+                
+                # 获取当前页的车辆数量
+                vehicle_cards = await page.query_selector_all('a.usedcar-card_card__3vUrx')
+                current_page_count = len(vehicle_cards)
+                
+                # 查找分页信息
+                pagination_info = await self.get_pagination_info(page)
+                
+                if pagination_info:
+                    total_pages = pagination_info.get('total_pages', 1)
+                    current_page = pagination_info.get('current_page', 1)
+                    
+                    # 计算数据量范围 - 修正逻辑
+                    if total_pages > 1:
+                        # 前面所有完整页面的数据量
+                        full_pages_data = (total_pages - 1) * current_page_count
+                        # 最后一页数据量未知，范围是1到current_page_count
+                        min_total = full_pages_data + 1
+                        max_total = full_pages_data + current_page_count
+                        calculation_method = "range_estimation"
+                    else:
+                        # 只有1页的情况
+                        min_total = current_page_count
+                        max_total = current_page_count
+                        calculation_method = "direct_count"
+                    
+                    print(f"📊 {brand_name} 数据量估算:")
+                    print(f"  • 当前页: {current_page} 页")
+                    print(f"  • 总页数: {total_pages} 页")
+                    print(f"  • 每页约: {current_page_count} 条")
+                    if total_pages > 1:
+                        print(f"  • 数据范围: {min_total}-{max_total} 条")
+                        print(f"  • 前面完整页: {(total_pages-1)} * {current_page_count} = {full_pages_data} 条")
+                        print(f"  • 最后一页: 1-{current_page_count} 条")
+                    else:
+                        print(f"  • 总数据量: {current_page_count} 条")
+                    
+                    return {
+                        'total_pages': total_pages,
+                        'current_page_count': current_page_count,
+                        'min_total_data': min_total,
+                        'max_total_data': max_total,
+                        'data_range': f"{min_total}-{max_total}",
+                        'calculation_method': calculation_method,
+                        'current_page': current_page
+                    }
+                else:
+                    # 没有分页，只有当前页数据
+                    print(f"📊 {brand_name} 数据量估算:")
+                    print(f"  • 当前页: 1 页")
+                    print(f"  • 总页数: 1 页")
+                    print(f"  • 每页: {current_page_count} 条")
+                    print(f"  • 总数据量: {current_page_count} 条")
+                    
+                    return {
+                        'total_pages': 1,
+                        'current_page_count': current_page_count,
+                        'min_total_data': current_page_count,
+                        'max_total_data': current_page_count,
+                        'data_range': f"{current_page_count}",
+                        'calculation_method': 'direct_count',
+                        'current_page': 1
+                    }
+                    
+            except Exception as e:
+                print(f"❌ 计算 {brand_name} 数据量失败: {e}")
+                return None
+            finally:
+                await browser.close()
+    
+    async def get_pagination_info(self, page):
+        """获取分页信息 - 改进版本"""
+        try:
+            # 等待页面加载
+            await page.wait_for_timeout(2000)
+            
+            # 查找分页组件 - 使用正确的选择器
+            pagination_selectors = [
+                'div[class*="jsx-1325911405"]',
+                'div[class*="pagination"]',
+                'ul[class*="pagination"]',
+                '.pagination'
+            ]
+            
+            pagination_element = None
+            for selector in pagination_selectors:
+                pagination_element = await page.query_selector(selector)
+                if pagination_element:
+                    break
+            
+            if pagination_element:
+                # 获取所有分页链接，不限制数量
+                page_links = await pagination_element.query_selector_all('a')
+                pages = []
+                
+                print(f"    📄 找到 {len(page_links)} 个分页链接")
+                
+                for link in page_links:
+                    href = await link.get_attribute('href')
+                    text = await link.text_content()
+                    
+                    # 检查href是否包含正确的分页格式
+                    if href and '-1-1-' in href:
+                        # 从href中提取页码
+                        parts = href.split('-1-1-')
+                        if len(parts) > 1:
+                            page_part = parts[1].split('-')[0]
+                            if page_part.isdigit():
+                                pages.append(int(page_part))
+                                print(f"      📄 从href提取页码: {page_part}")
+                    
+                    # 同时从文本中提取页码
+                    if text and text.strip().isdigit():
+                        page_num = int(text.strip())
+                        if page_num not in pages:
+                            pages.append(page_num)
+                            print(f"      📄 从文本提取页码: {page_num}")
+                
+                print(f"    📊 提取到的页码: {sorted(pages)}")
+                
+                if pages:
+                    total_pages = max(pages)
+                    current_page = 1  # 默认当前页为1
+                    
+                    # 尝试找到当前页（通过检查哪个链接没有href或href指向当前页）
+                    for link in page_links:
+                        href = await link.get_attribute('href')
+                        text = await link.text_content()
+                        if text and text.strip().isdigit():
+                            page_num = int(text.strip())
+                            # 检查是否是当前页（通常当前页的样式不同或没有href）
+                            class_attr = await link.get_attribute('class')
+                            if class_attr and ('active' in class_attr.lower() or 'current' in class_attr.lower()):
+                                current_page = page_num
+                                break
+                    
+                    return {'total_pages': total_pages, 'pages': sorted(set(pages)), 'current_page': current_page}
+            
+            # 如果没有找到分页组件，尝试通过检查下一页是否存在来判断
+            try:
+                # 检查第2页是否有数据 - 使用正确的URL格式
+                test_url = "https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10409-x-1-2-x-x-x-x-x"
+                await page.goto(test_url, wait_until="domcontentloaded")
+                await page.wait_for_timeout(2000)
+                
+                # 检查是否有车辆数据
+                vehicle_cards = await page.query_selector_all('a.usedcar-card_card__3vUrx')
+                
+                if vehicle_cards:
+                    # 有数据，继续检查更多页面
+                    max_pages = 2
+                    
+                    # 尝试检查更多页面 - 使用正确的URL格式
+                    for page_num in range(3, 11):  # 最多检查10页
+                        test_url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-10409-x-1-{page_num}-x-x-x-x-x"
+                        await page.goto(test_url, wait_until="domcontentloaded")
+                        await page.wait_for_timeout(1500)
+                        
+                        cards = await page.query_selector_all('a.usedcar-card_card__3vUrx')
+                        if cards:
+                            max_pages = page_num
+                        else:
+                            break
+                    
+                    return {
+                        'total_pages': max_pages,
+                        'pages': list(range(1, max_pages + 1))
+                    }
+                else:
+                    # 第2页没有数据，只有1页
+                    return None
+                    
+            except Exception as e:
+                print(f"    ⚠️ 检查分页时出错: {e}")
+                return None
+                
+        except Exception as e:
+            print(f"    ❌ 获取分页信息失败: {e}")
+            return None
     
     def extract_car_id_from_href(self, href):
         """从href中提取车辆ID"""
@@ -226,17 +411,135 @@ class DongchediPreciseCrawler:
         
         return None
     
+    async def crawl_brand_with_limit(self, brand_id, brand_name, data_limit=-1):
+        """按数据量限制爬取品牌数据"""
+        print(f"🎯 开始爬取 {brand_name} 品牌，目标数据量: {'全部' if data_limit == -1 else f'{data_limit}条'}")
+        
+        # 先计算总数据量
+        data_info = await self.calculate_brand_total_data(brand_id, brand_name)
+        
+        if not data_info:
+            print(f"❌ 无法获取 {brand_name} 的数据信息")
+            return []
+        
+        min_total_data = data_info['min_total_data']
+        current_page_count = data_info['current_page_count']
+        
+        # 计算需要爬取的页数
+        if data_limit == -1:
+            # 全部数据
+            pages_to_crawl = data_info['total_pages']
+            target_data = min_total_data
+        else:
+            # 指定数据量
+            target_data = data_limit
+            pages_to_crawl = (data_limit + current_page_count - 1) // current_page_count  # 向上取整
+            pages_to_crawl = min(pages_to_crawl, data_info['total_pages'])  # 不超过总页数
+        
+        print(f"📋 爬取计划:")
+        print(f"  • 目标数据: {target_data} 条")
+        print(f"  • 预计页数: {pages_to_crawl} 页")
+        print(f"  • 每页约: {current_page_count} 条")
+        
+        all_vehicles_data = []
+        collected_data = 0
+        
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=False)  # 保持浏览器打开
+            page = await browser.new_page()
+            
+            try:
+                for page_num in range(1, pages_to_crawl + 1):
+                    print(f"\n📄 正在爬取 {brand_name} 第 {page_num}/{pages_to_crawl} 页...")
+                    
+                    # 构建URL - 使用正确的分页格式
+                    url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-1-{page_num}-x-x-x-x-x"
+                    
+                    await page.goto(url, wait_until="networkidle")
+                    await page.wait_for_timeout(3000)
+                    
+                    # 获取车辆卡片
+                    vehicle_cards = await page.query_selector_all('a.usedcar-card_card__3vUrx')
+                    
+                    if not vehicle_cards:
+                        print(f"❌ 第 {page_num} 页未找到车辆卡片")
+                        break
+                    
+                    print(f"✅ 第 {page_num} 页找到 {len(vehicle_cards)} 个车辆卡片")
+                    
+                    # 处理当前页的车辆
+                    page_vehicles = []
+                    for i, card in enumerate(vehicle_cards):
+                        # 检查是否达到目标数据量
+                        if data_limit != -1 and collected_data >= data_limit:
+                            print(f"🎯 已达到目标数据量 {data_limit} 条，停止爬取")
+                            break
+                        
+                        try:
+                            href = await card.get_attribute('href')
+                            title_element = await card.query_selector('div[class*="title"]')
+                            title = await title_element.text_content() if title_element else ""
+                            
+                            car_id = self.extract_car_id_from_href(href)
+                            filename = f"{page_num:02d}-{i+1:02d}"
+                            screenshot_path = f"{self.screenshot_dir}/{filename}.png"
+                            
+                            # 截图
+                            await card.screenshot(path=screenshot_path)
+                            
+                            vehicle_info = {
+                                "filename": filename,
+                                "car_id": car_id,
+                                "href": href,
+                                "title": title,
+                                "brand_id": brand_id,
+                                "brand_name": brand_name,
+                                "screenshot_path": screenshot_path,
+                                "page": page_num,
+                                "index": i + 1,
+                                "crawl_time": datetime.now().isoformat()
+                            }
+                            
+                            page_vehicles.append(vehicle_info)
+                            collected_data += 1
+                            
+                            print(f"  🚗 {collected_data}/{target_data}: {title}")
+                            
+                        except Exception as e:
+                            print(f"    ⚠️ 处理卡片 {i+1} 失败: {e}")
+                            continue
+                    
+                    all_vehicles_data.extend(page_vehicles)
+                    
+                    # 如果达到目标数据量，退出循环
+                    if data_limit != -1 and collected_data >= data_limit:
+                        break
+                    
+                    # 滚动到底部准备翻页
+                    await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+                    await page.wait_for_timeout(1000)
+                    
+                print(f"\n🎉 {brand_name} 爬取完成！共获取 {len(all_vehicles_data)} 条数据")
+                
+            except Exception as e:
+                print(f"❌ 爬取 {brand_name} 失败: {e}")
+            finally:
+                # 不关闭浏览器，保持打开状态
+                print(f"🌐 浏览器保持打开状态，可手动查看页面")
+                
+        return all_vehicles_data
+    
     async def crawl_page(self, page_num, brand_id=None):
         """爬取指定页面和品牌 - 所有筛选条件不限，地区全国"""
         if brand_id:
-            # 针对特定品牌的URL - 所有条件不限，地区全国(110000)
-            # URL格式: /usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-110000-{page}-x-x-x-x-x
-            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-110000-{page_num}-x-x-x-x-x"
+            # 针对特定品牌的URL - 所有条件不限，地区杭州(330100)
+            # URL格式: /usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-1-{page}-x-x-x-x-x
+            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-1-{page_num}-x-x-x-x-x"
             brand_name = next((b["name"] for b in self.brands if b["brand_id"] == brand_id), f"品牌{brand_id}")
             print(f"📄 正在爬取 {brand_name} 第 {page_num} 页 (全国，不限条件)...")
         else:
-            # 全部车型的URL - 所有条件不限，地区全国
-            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-110000-{page_num}-x-x-x-x-x"
+            # 全部车型的URL - 所有条件不限，地区杭州
+            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-1-{page_num}-x-x-x-x-x"
             print(f"📄 正在爬取全部车型第 {page_num} 页 (全国，不限条件)...")
             
         print(f"🔗 URL: {url}")
@@ -248,14 +551,6 @@ class DongchediPreciseCrawler:
             try:
                 await page.goto(url, wait_until="networkidle")
                 await page.wait_for_timeout(3000)
-                
-                # 滚动加载
-                await page.evaluate("""
-                    () => {
-                        window.scrollTo(0, document.body.scrollHeight);
-                        return new Promise(resolve => setTimeout(resolve, 2000));
-                    }
-                """)
                 
                 # 精准查找车辆卡片
                 await page.wait_for_selector('a.usedcar-card_card__3vUrx', timeout=10000)
@@ -277,36 +572,19 @@ class DongchediPreciseCrawler:
                     try:
                         print(f"  🚗 处理第 {i+1} 个车辆卡片...")
                         
-                        # 提取href链接
                         href = await card.get_attribute('href')
-                        car_id = self.extract_car_id_from_href(href)
-                        
-                        if not car_id:
-                            car_id = f"page{page_num}_car{i+1:02d}"
-                        
-                        print(f"    🆔 车辆ID: {car_id}")
-                        print(f"    🔗 链接: {href}")
-                        
-                        # 生成文件名: 页码-序号 (01-1, 01-2, ..., 10-99)
-                        filename = f"{page_num:02d}-{i+1:02d}"
-                        
-                        # 截取整个卡片
-                        screenshot_path = os.path.join(self.screenshot_dir, f"{filename}.png")
-                        
-                        # 滚动到卡片位置
-                        await card.scroll_into_view_if_needed()
-                        await page.wait_for_timeout(500)
-                        
-                        # 截图
-                        await card.screenshot(path=screenshot_path)
-                        print(f"    📸 截图保存: {filename}.png")
-                        
-                        # 提取基本信息
-                        # 车型名称
-                        title_element = await card.query_selector('p.line-1')
+                        title_element = await card.query_selector('div[class*="title"]')
                         title = await title_element.text_content() if title_element else ""
                         
                         print(f"    📝 车型: {title}")
+                        
+                        car_id = self.extract_car_id_from_href(href)
+                        filename = f"{page_num:02d}-{i+1:02d}"
+                        screenshot_path = f"{self.screenshot_dir}/{filename}.png"
+                        
+                        # 截图
+                        await card.screenshot(path=screenshot_path)
+                        print(f"    📸 截图已保存: {screenshot_path}")
                         
                         # 保存车辆信息
                         vehicle_info = {
@@ -772,21 +1050,90 @@ async def main():
                             print("❌ 输入格式错误")
                             continue
             
-            # 页数选择
-            page_input = input("\n📝 请输入要爬取的页数 (0=全部页面, 1-50=指定页数): ").strip()
-            
-            if not page_input:
-                print("❌ 请输入有效数字")
-                continue
-            
-            page_num = int(page_input)
-            
-            if page_num < 0:
-                print("❌ 页数不能为负数")
-                continue
-            elif page_num > 50:
-                print("⚠️ 页数过多，限制为50页")
-                page_num = 50
+            # 数据量选择
+            if len(brands_to_crawl) == 1:
+                # 单个品牌，显示数据量信息并让用户选择
+                selected_brand = brands_to_crawl[0]
+                print(f"\n🔍 正在分析 {selected_brand['name']} 品牌数据量...")
+                
+                data_info = await crawler.calculate_brand_total_data(selected_brand['brand_id'], selected_brand['name'])
+                
+                if data_info:
+                    min_total_data = data_info.get('min_total_data', data_info['estimated_total'])
+                    print(f"\n📊 {selected_brand['name']} 数据量分析:")
+                    print(f"  • 预计最少数据量: {min_total_data} 条")
+                    print(f"  • 总页数: {data_info['total_pages']} 页")
+                    print(f"  • 每页约: {data_info['current_page_count']} 条")
+                    
+                    while True:
+                        try:
+                            data_input = input(f"\n📝 请输入要采集的数据量 (默认-1为全部，或输入具体数字如: 100): ").strip()
+                            
+                            if not data_input:
+                                data_limit = -1
+                            elif data_input == '-1':
+                                data_limit = -1
+                            else:
+                                data_limit = int(data_input)
+                                if data_limit <= 0:
+                                    print("❌ 数据量必须大于0")
+                                    continue
+                                if data_limit > min_total_data:
+                                    print(f"⚠️ 请求数据量 {data_limit} 超过预计最少数据量 {min_total_data}，将采集全部可用数据")
+                                    data_limit = -1
+                            
+                            target_text = "全部" if data_limit == -1 else f"{data_limit}条"
+                            print(f"🎯 将采集 {selected_brand['name']} {target_text} 数据")
+                            break
+                            
+                        except ValueError:
+                            print("❌ 请输入有效数字或 -1")
+                            continue
+                        except KeyboardInterrupt:
+                            print("\n👋 用户取消操作")
+                            return
+                    
+                    # 使用新的智能爬取方法
+                    vehicles_data = await crawler.crawl_brand_with_limit(
+                        selected_brand['brand_id'], 
+                        selected_brand['name'], 
+                        data_limit
+                    )
+                    
+                else:
+                    print(f"❌ 无法获取 {selected_brand['name']} 的数据量信息")
+                    vehicles_data = []
+                    
+            else:
+                # 多个品牌，使用传统方式
+                while True:
+                    try:
+                        page_input = input(f"\n📝 请输入要爬取的页数 (0=全部页面, 1-50=指定页数): ").strip()
+                        
+                        if not page_input:
+                            print("❌ 请输入有效数字")
+                            continue
+                        
+                        page_num = int(page_input)
+                        
+                        if page_num < 0:
+                            print("❌ 页数不能为负数")
+                            continue
+                        elif page_num > 50:
+                            print("⚠️ 页数过多，限制为50页")
+                            page_num = 50
+                        
+                        break
+                        
+                    except ValueError:
+                        print("❌ 请输入有效数字")
+                        continue
+                    except KeyboardInterrupt:
+                        print("\n👋 用户取消操作")
+                        return
+                
+                # 使用传统爬取方法
+                vehicles_data = await crawler.crawl_all_pages(max_pages=page_num, brands_to_crawl=brands_to_crawl)
             
             break
             
@@ -797,11 +1144,51 @@ async def main():
             print("\n👋 用户取消操作")
             return
     
+    # 初始化变量
+    vehicles_data = []
+    page_num = 0
+    
     print(f"\n🎯 开始爬取: {'全部页面' if page_num == 0 else f'{page_num}页'}")
     print("="*60)
     
     # 爬取数据
-    vehicles_data = await crawler.crawl_all_pages(max_pages=page_num, brands_to_crawl=brands_to_crawl)
+    if len(brands_to_crawl) == 1 and 'vehicles_data' in locals() and vehicles_data:
+        # 单品牌智能爬取已完成
+        pass
+    else:
+        # 多品牌传统爬取或单品牌爬取失败
+        if len(brands_to_crawl) == 1:
+            # 单品牌但智能爬取失败，使用传统方式
+            while True:
+                try:
+                    page_input = input(f"\n📝 请输入要爬取的页数 (0=全部页面, 1-50=指定页数): ").strip()
+                    
+                    if not page_input:
+                        print("❌ 请输入有效数字")
+                        continue
+                    
+                    page_num = int(page_input)
+                    
+                    if page_num < 0:
+                        print("❌ 页数不能为负数")
+                        continue
+                    elif page_num > 50:
+                        print("⚠️ 页数过多，限制为50页")
+                        page_num = 50
+                    
+                    break
+                    
+                except ValueError:
+                    print("❌ 请输入有效数字")
+                    continue
+                except KeyboardInterrupt:
+                    print("\n👋 用户取消操作")
+                    return
+            
+            vehicles_data = await crawler.crawl_all_pages(max_pages=page_num, brands_to_crawl=brands_to_crawl)
+        else:
+            # 多品牌传统爬取
+            vehicles_data = await crawler.crawl_all_pages(max_pages=page_num, brands_to_crawl=brands_to_crawl)
     
     if vehicles_data:
         crawler.print_statistics(vehicles_data)

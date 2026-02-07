@@ -13,6 +13,8 @@
 - 从懂车帝二手车频道抓取汽车品牌数据
 - 获取各品牌下的车系信息
 - 收集具体车型的详细数据
+- **智能分页检测和数据量估算**
+- **分离式架构：品牌分析 + 数据采集**
 - 数据存储为 JSON 格式
 
 ## 🛠️ 技术栈
@@ -26,32 +28,102 @@
 
 ```
 carInfoHandle/
-├── dongchedi_precise_crawler.py    # 主爬虫代码
-├── data/                           # 数据存储目录
-│   ├── dongchedi_precise_crawl.json # 抓取的数据
-│   └── filename_mapping.json       # 文件名映射
-├── screenshots/                     # 截图目录
-└── README.md                       # 项目说明
+├── dongchedi_precise_crawler.py  # 核心爬虫类
+├── brand_analyzer.py             # 品牌分析程序
+├── data_collector.py             # 数据采集程序
+├── brands_analysis.json          # 品牌分析结果（自动生成）
+├── collection_summary.json       # 采集总结（自动生成）
+├── brand_data/                   # 品牌数据目录（自动生成）
+└── README.md                     # 使用说明
 ```
 
-## 🚀 快速开始
+## 🚀 使用步骤
 
-### 环境要求
-
-- Python 3.7+
-- 安装 Playwright 浏览器
-
-### 安装依赖
-
+### 第一步：品牌分析
 ```bash
-pip install playwright requests
-playwright install
+python brand_analyzer.py
 ```
 
-### 运行项目
+**功能：**
+- 获取所有品牌信息
+- 计算每个品牌的大概数据量
+- 生成 `brands_analysis.json` 文件
 
+### 第二步：数据采集
 ```bash
-python dongchedi_precise_crawler.py
+python data_collector.py
+```
+
+**功能：**
+- 读取品牌分析结果
+- 循环采集各品牌的具体数据
+- 保存到 `brand_data/` 目录
+- 生成采集总结
+
+## ⚙️ 配置选项
+
+### 限制采集数量
+在 `data_collector.py` 的 `main()` 函数中修改：
+
+```python
+# 每个品牌最多采集1000条数据
+max_records_per_brand = 1000
+
+# 只采集指定品牌
+selected_brands = ['大众', '丰田', '本田']
+```
+
+### 采集所有数据
+```python
+# 采集所有数据
+max_records_per_brand = None
+selected_brands = None
+```
+
+## 📊 输出文件说明
+
+### brands_analysis.json
+品牌分析结果，包含每个品牌的：
+- 品牌ID和名称
+- 总页数
+- 数据量范围
+- 数据级别（少量/中等/大量/海量）
+
+### collection_summary.json
+采集总结，包含：
+- 采集时间
+- 成功/失败统计
+- 总记录数
+- 每个品牌的采集结果
+
+### brand_data/*.json
+各品牌的具体数据，每个文件包含：
+- 品牌名称
+- 采集时间
+- 总记录数
+- 详细车辆数据
+
+## 🎯 使用场景
+
+### 测试场景
+```python
+# 只采集少量数据进行测试
+max_records_per_brand = 100
+selected_brands = ['奇瑞风云']  # 选择数据量少的品牌
+```
+
+### 生产场景
+```python
+# 采集所有数据
+max_records_per_brand = None
+selected_brands = None
+```
+
+### 定向采集
+```python
+# 只采集特定品牌
+max_records_per_brand = 5000
+selected_brands = ['大众', '丰田', '本田', '奥迪']
 ```
 
 ## 📚 学习要点
@@ -67,11 +139,14 @@ python dongchedi_precise_crawler.py
    - 动态内容抓取
    - 数据结构化存储
    - 错误处理和重试机制
+   - **智能分页检测**
+   - **数据量估算算法**
 
 3. **项目组织**
    - 代码结构设计
    - 数据管理
    - 日志记录
+   - **分离式架构设计**
 
 ## ⚖️ 免责声明
 
@@ -85,6 +160,33 @@ python dongchedi_precise_crawler.py
 1. 请合理控制爬取频率，避免对目标网站造成压力
 2. 建议在学习和测试环境中使用
 3. 定期检查目标网站的结构变化，及时调整代码
+4. **运行顺序：** 必须先运行 `brand_analyzer.py` 再运行 `data_collector.py`
+5. **网络延迟：** 程序已内置延迟避免请求过快
+6. **数据量：** 大品牌可能有上万条数据，采集时间较长
+
+## 🔧 故障排除
+
+### 品牌分析失败
+- 检查网络连接
+- 确认懂车帝网站可正常访问
+- 查看错误信息并重试
+
+### 数据采集失败
+- 检查 `brands_analysis.json` 是否存在
+- 确认品牌ID正确
+- 查看具体错误信息
+
+### 内存不足
+- 减少 `max_records_per_brand` 值
+- 分批采集品牌数据
+- 增加系统内存
+
+## 📈 性能优化建议
+
+1. **分批采集：** 将大量品牌分成小批次采集
+2. **限流设置：** 调整延迟时间避免被封IP
+3. **存储优化：** 定期清理旧数据文件
+4. **监控资源：** 监控CPU和内存使用情况
 
 ## 🤝 贡献
 
