@@ -101,28 +101,110 @@ class DongchediPreciseCrawler:
         self.all_vehicles = []
         self.screenshot_dir = "screenshots"
         
-        # 品牌信息映射
-        self.brands = [
-            {"name": "奔驰", "brand_id": "3"},
-            {"name": "宝马", "brand_id": "4"},
-            {"name": "奥迪", "brand_id": "2"},
-            {"name": "大众", "brand_id": "1"},
-            {"name": "迈巴赫", "brand_id": "25"},
-            {"name": "丰田", "brand_id": "5"},
-            {"name": "本田", "brand_id": "6"},
-            {"name": "日产", "brand_id": "7"},
-            {"name": "别克", "brand_id": "8"},
-            {"name": "福特", "brand_id": "9"},
-            {"name": "雪佛兰", "brand_id": "10"},
-            {"name": "现代", "brand_id": "11"},
-            {"name": "起亚", "brand_id": "12"},
-            {"name": "马自达", "brand_id": "13"},
-            {"name": "比亚迪", "brand_id": "14"}
-        ]
+        # 品牌信息映射 - 将通过动态获取初始化
+        self.brands = []
         
         # 创建目录
         os.makedirs(self.screenshot_dir, exist_ok=True)
         os.makedirs("data", exist_ok=True)
+    
+    async def get_all_brands(self):
+        """动态获取所有品牌信息"""
+        print("🔍 正在获取所有品牌信息...")
+        brands = []
+        
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=False, slow_mo=1000)
+            page = await browser.new_page()
+            
+            try:
+                # 访问二手车页面
+                await page.goto("https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x", wait_until="domcontentloaded")
+                await page.wait_for_timeout(5000)
+                
+                # 获取所有字母按钮（A-Z）- 先测试几个字母
+                letters = ['热门', 'A', 'B', 'C', 'D']  # 测试前几个字母
+                
+                for letter in letters:
+                    print(f"  📋 获取 {letter} 字母下的品牌...")
+                    
+                    try:
+                        # 点击字母按钮
+                        if letter == '热门':
+                            # 热门品牌默认显示，不需要点击
+                            pass
+                        else:
+                            # 点击字母按钮
+                            letter_button = await page.query_selector(f'text="{letter}"')
+                            if letter_button:
+                                await letter_button.click()
+                                await page.wait_for_timeout(1000)
+                            else:
+                                print(f"    ⚠️ 未找到 {letter} 字母按钮")
+                                continue
+                        
+                        # 等待品牌列表加载
+                        await page.wait_for_timeout(1500)
+                        
+                        # 获取当前显示的品牌列表 - 使用更准确的选择器
+                        brand_items = await page.query_selector_all('div[ref*="17"] a[href*="-330100-1-"]')
+                        
+                        # 如果没有找到，尝试其他选择器
+                        if not brand_items:
+                            brand_items = await page.query_selector_all('a[href*="-330100-1-"]')
+                        
+                        # 如果还是没有找到，尝试更通用的选择器
+                        if not brand_items:
+                            brand_items = await page.query_selector_all('a[href*="x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-"]')
+                        
+                        print(f"    🔍 找到 {len(brand_items)} 个品牌链接")
+                        
+                        for item in brand_items:
+                            try:
+                                href = await item.get_attribute('href')
+                                text = await item.text_content()
+                                
+                                if href and text and '-330100-1-' in href:
+                                    # 提取品牌ID
+                                    match = re.search(r'-(\d+)-x-330100-1-x-x-x-x-x$', href)
+                                    if match:
+                                        brand_id = match.group(1)
+                                        brand_name = text.strip()
+                                        
+                                        # 避免重复
+                                        if not any(b['brand_id'] == brand_id for b in brands):
+                                            brands.append({
+                                                'name': brand_name,
+                                                'brand_id': brand_id,
+                                                'letter': letter
+                                            })
+                                            print(f"      ✅ 找到品牌: {brand_name} (ID: {brand_id})")
+                            except Exception as e:
+                                continue
+                        
+                        print(f"    ✅ {letter} 字母下找到 {len([b for b in brands if b['letter'] == letter])} 个品牌")
+                        
+                    except Exception as e:
+                        print(f"    ❌ 获取 {letter} 字母下的品牌失败: {e}")
+                        continue
+                
+                # 按品牌名称排序
+                brands.sort(key=lambda x: x['name'])
+                
+                print(f"\n🎉 品牌获取完成！共找到 {len(brands)} 个品牌")
+                
+                # 保存品牌信息到文件
+                with open('data/all_brands.json', 'w', encoding='utf-8') as f:
+                    json.dump(brands, f, ensure_ascii=False, indent=2)
+                print(f"💾 品牌信息已保存到: data/all_brands.json")
+                
+            except Exception as e:
+                print(f"❌ 获取品牌信息失败: {e}")
+            finally:
+                await browser.close()
+        
+        self.brands = brands
+        return brands
     
     def extract_car_id_from_href(self, href):
         """从href中提取车辆ID"""
@@ -398,6 +480,10 @@ class DongchediPreciseCrawler:
     
     async def crawl_all_pages(self, max_pages=None, brands_to_crawl=None):
         """爬取所有页面（支持多品牌）"""
+        # 确保品牌信息已获取
+        if not self.brands:
+            await self.get_all_brands()
+        
         if brands_to_crawl is None:
             brands_to_crawl = self.brands  # 默认爬取所有品牌
         
@@ -419,7 +505,7 @@ class DongchediPreciseCrawler:
             print(f"📊 检测到总页数: {total_pages}")
             max_pages = total_pages
         
-        print(f"🎯 将爬取 {len(brands_to_crawl)} 个品牌: {', '.join([b['name'] for b in brands_to_crawl])}")
+        print(f"🎯 将爬取 {len(brands_to_crawl)} 个品牌: {', '.join([b['name'] for b in brands_to_crawl[:10]])}{'...' if len(brands_to_crawl) > 10 else ''}")
         
         # 1. 爬取每个品牌的页面和截图
         for brand in brands_to_crawl:
@@ -608,42 +694,74 @@ async def main():
     crawler = DongchediPreciseCrawler()
     
     # 显示可选品牌
-    print("\n🏷️ 可选品牌:")
-    for i, brand in enumerate(crawler.brands, 1):
-        print(f"  {i:2d}. {brand['name']} (ID: {brand['brand_id']})")
-    print(f"  {len(crawler.brands)+1:2d}. 全部品牌")
+    print("\n🏷️ 正在获取品牌信息...")
+    await crawler.get_all_brands()
+    
+    if crawler.brands:
+        print(f"\n📋 可选品牌 (共 {len(crawler.brands)} 个):")
+        for i, brand in enumerate(crawler.brands, 1):
+            print(f"  {i:3d}. {brand['name']} (ID: {brand['brand_id']})")
+        print(f"  {len(crawler.brands)+1:3d}. 全部品牌")
+    else:
+        print("❌ 未获取到品牌信息，使用默认品牌列表")
+        return
     
     # 获取用户输入
     while True:
         try:
             # 品牌选择
-            brand_input = input("\n📝 请选择品牌 (输入数字，如: 1,2,3 或 'all' 表示全部): ").strip()
+            brand_input = input("\n📝 请选择品牌 (输入数字，如: 1,2,3 或 'all' 表示全部，或输入品牌名称搜索): ").strip()
             
             brands_to_crawl = None
             if brand_input.lower() == 'all':
                 brands_to_crawl = crawler.brands
-                print(f"🎯 已选择全部品牌")
-            else:
-                try:
-                    brand_indices = [int(x.strip()) for x in brand_input.split(',')]
-                    brands_to_crawl = []
-                    for idx in brand_indices:
-                        if 1 <= idx <= len(crawler.brands):
-                            brands_to_crawl.append(crawler.brands[idx-1])
-                        else:
-                            print(f"❌ 品牌编号 {idx} 无效")
-                            raise ValueError
-                    
-                    if not brands_to_crawl:
-                        print("❌ 未选择有效品牌")
-                        continue
-                        
-                    brand_names = [b['name'] for b in brands_to_crawl]
-                    print(f"🎯 已选择品牌: {', '.join(brand_names)}")
-                    
-                except ValueError:
-                    print("❌ 请输入有效数字或 'all'")
+                print(f"🎯 已选择全部品牌 ({len(brands_to_crawl)} 个)")
+            elif brand_input.isdigit():
+                # 按数字选择
+                brand_indices = [int(x.strip()) for x in brand_input.split(',')]
+                brands_to_crawl = []
+                for idx in brand_indices:
+                    if 1 <= idx <= len(crawler.brands):
+                        brands_to_crawl.append(crawler.brands[idx-1])
+                    else:
+                        print(f"❌ 品牌编号 {idx} 无效")
+                        raise ValueError
+                
+                if not brands_to_crawl:
+                    print("❌ 未选择有效品牌")
                     continue
+                    
+                brand_names = [b['name'] for b in brands_to_crawl]
+                print(f"🎯 已选择品牌: {', '.join(brand_names)}")
+            else:
+                # 按品牌名称搜索
+                search_term = brand_input.lower()
+                matched_brands = [b for b in crawler.brands if search_term in b['name'].lower()]
+                
+                if not matched_brands:
+                    print(f"❌ 未找到包含 '{brand_input}' 的品牌")
+                    continue
+                elif len(matched_brands) == 1:
+                    brands_to_crawl = matched_brands
+                    print(f"🎯 已选择品牌: {matched_brands[0]['name']}")
+                else:
+                    print(f"🔍 找到 {len(matched_brands)} 个匹配品牌:")
+                    for i, brand in enumerate(matched_brands, 1):
+                        print(f"  {i}. {brand['name']} (ID: {brand['brand_id']})")
+                    
+                    choice = input("请选择 (输入数字或 'all' 选择全部): ").strip()
+                    if choice.lower() == 'all':
+                        brands_to_crawl = matched_brands
+                    else:
+                        try:
+                            choice_indices = [int(x.strip()) for x in choice.split(',')]
+                            brands_to_crawl = []
+                            for idx in choice_indices:
+                                if 1 <= idx <= len(matched_brands):
+                                    brands_to_crawl.append(matched_brands[idx-1])
+                        except ValueError:
+                            print("❌ 输入格式错误")
+                            continue
             
             # 页数选择
             page_input = input("\n📝 请输入要爬取的页数 (0=全部页面, 1-50=指定页数): ").strip()
