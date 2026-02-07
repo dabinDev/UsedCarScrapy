@@ -101,6 +101,25 @@ class DongchediPreciseCrawler:
         self.all_vehicles = []
         self.screenshot_dir = "screenshots"
         
+        # 品牌信息映射
+        self.brands = [
+            {"name": "奔驰", "brand_id": "3"},
+            {"name": "宝马", "brand_id": "4"},
+            {"name": "奥迪", "brand_id": "2"},
+            {"name": "大众", "brand_id": "1"},
+            {"name": "迈巴赫", "brand_id": "25"},
+            {"name": "丰田", "brand_id": "5"},
+            {"name": "本田", "brand_id": "6"},
+            {"name": "日产", "brand_id": "7"},
+            {"name": "别克", "brand_id": "8"},
+            {"name": "福特", "brand_id": "9"},
+            {"name": "雪佛兰", "brand_id": "10"},
+            {"name": "现代", "brand_id": "11"},
+            {"name": "起亚", "brand_id": "12"},
+            {"name": "马自达", "brand_id": "13"},
+            {"name": "比亚迪", "brand_id": "14"}
+        ]
+        
         # 创建目录
         os.makedirs(self.screenshot_dir, exist_ok=True)
         os.makedirs("data", exist_ok=True)
@@ -117,12 +136,18 @@ class DongchediPreciseCrawler:
         
         return None
     
-    async def crawl_page(self, page_num):
-        """爬取指定页面"""
-        # 修改URL以获取全部车型，而不是特定品牌
-        url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{page_num}-x-x-x-x-x"
-        
-        print(f"📄 正在爬取第 {page_num} 页...")
+    async def crawl_page(self, page_num, brand_id=None):
+        """爬取指定页面和品牌"""
+        if brand_id:
+            # 针对特定品牌的URL
+            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-330100-{page_num}-x-x-x-x-x"
+            brand_name = next((b["name"] for b in self.brands if b["brand_id"] == brand_id), f"品牌{brand_id}")
+            print(f"📄 正在爬取 {brand_name} 第 {page_num} 页...")
+        else:
+            # 全部车型的URL
+            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{page_num}-x-x-x-x-x"
+            print(f"📄 正在爬取全部车型第 {page_num} 页...")
+            
         print(f"🔗 URL: {url}")
         
         async with async_playwright() as p:
@@ -148,7 +173,8 @@ class DongchediPreciseCrawler:
                 vehicle_cards = await page.query_selector_all('a.usedcar-card_card__3vUrx')
                 
                 if not vehicle_cards:
-                    print(f"❌ 第 {page_num} 页未找到车辆卡片")
+                    brand_name = next((b["name"] for b in self.brands if b["brand_id"] == brand_id), f"品牌{brand_id}") if brand_id else "全部"
+                    print(f"❌ {brand_name} 第 {page_num} 页未找到车辆卡片")
                     await browser.close()
                     return []
                 
@@ -197,6 +223,8 @@ class DongchediPreciseCrawler:
                             "car_id": car_id,
                             "href": href,
                             "title": title,
+                            "brand_id": brand_id,
+                            "brand_name": brand_name if brand_id else "全部",
                             "screenshot_path": screenshot_path,
                             "page": page_num,
                             "index": i + 1,
@@ -213,7 +241,8 @@ class DongchediPreciseCrawler:
                 return vehicles_data
                 
             except Exception as e:
-                print(f"❌ 第 {page_num} 页爬取失败: {e}")
+                brand_name = next((b["name"] for b in self.brands if b["brand_id"] == brand_id), f"品牌{brand_id}") if brand_id else "全部"
+                print(f"❌ {brand_name} 第 {page_num} 页爬取失败: {e}")
                 await browser.close()
                 return []
     
@@ -367,8 +396,11 @@ class DongchediPreciseCrawler:
         
         return processed_vehicles
     
-    async def crawl_all_pages(self, max_pages=None):
-        """爬取所有页面"""
+    async def crawl_all_pages(self, max_pages=None, brands_to_crawl=None):
+        """爬取所有页面（支持多品牌）"""
+        if brands_to_crawl is None:
+            brands_to_crawl = self.brands  # 默认爬取所有品牌
+        
         if max_pages is None:
             print("🚀 开始爬取懂车帝二手车数据...")
             print("📝 提示：输入页数，0表示获取全部页面")
@@ -387,24 +419,34 @@ class DongchediPreciseCrawler:
             print(f"📊 检测到总页数: {total_pages}")
             max_pages = total_pages
         
-        # 1. 爬取页面和截图
-        for page in range(1, max_pages + 1):
-            print(f"\n{'='*60}")
-            vehicles_data = await self.crawl_page(page)
+        print(f"🎯 将爬取 {len(brands_to_crawl)} 个品牌: {', '.join([b['name'] for b in brands_to_crawl])}")
+        
+        # 1. 爬取每个品牌的页面和截图
+        for brand in brands_to_crawl:
+            brand_id = brand['brand_id']
+            brand_name = brand['name']
             
-            if vehicles_data:
-                all_vehicles_data.extend(vehicles_data)
-                print(f"✅ 第 {page} 页完成，获取 {len(vehicles_data)} 辆车")
-                print(f"📊 累计获取: {len(all_vehicles_data)} 辆车")
-            else:
-                print(f"❌ 第 {page} 页未获取到数据")
-                # 如果连续3页没有数据，可能已经到最后一页
-                if page > max_pages - 3:
-                    print(f"⚠️ 连续无数据页面，可能已到达最后一页")
-                    break
+            print(f"\n{'='*60}")
+            print(f"🏷️ 开始爬取品牌: {brand_name} (ID: {brand_id})")
+            
+            for page in range(1, max_pages + 1):
+                print(f"\n{'-'*40}")
+                vehicles_data = await self.crawl_page(page, brand_id)
+                
+                if vehicles_data:
+                    all_vehicles_data.extend(vehicles_data)
+                    print(f"✅ {brand_name} 第 {page} 页完成，获取 {len(vehicles_data)} 辆车")
+                    print(f"📊 {brand_name} 累计获取: {len([v for v in all_vehicles_data if v.get('brand_id') == brand_id])} 辆车")
+                    print(f"🎯 全部累计获取: {len(all_vehicles_data)} 辆车")
+                else:
+                    print(f"❌ {brand_name} 第 {page} 页未获取到数据")
+                    # 如果连续3页没有数据，可能已经到最后一页
+                    if page > max_pages - 3:
+                        print(f"⚠️ {brand_name} 连续无数据页面，可能已到达最后一页")
+                        break
             
             if page < max_pages:
-                print(f"⏱️ 等待2秒后继续下一页...")
+                print(f"⏱️ 品牌切换等待2秒...")
                 await asyncio.sleep(2)
         
         print(f"\n📊 页面爬取完成，共 {len(all_vehicles_data)} 辆车")
@@ -557,28 +599,67 @@ async def main():
     print("="*60)
     print("📋 功能说明:")
     print("• 支持爬取懂车帝全部二手车数据")
+    print("• 支持多品牌切换爬取")
     print("• 精准价格提取（二手车价格 + 新车指导价）")
     print("• 百度iOCR高精度识别")
     print("• 智能文件命名和批量处理")
     print("="*60)
     
+    crawler = DongchediPreciseCrawler()
+    
+    # 显示可选品牌
+    print("\n🏷️ 可选品牌:")
+    for i, brand in enumerate(crawler.brands, 1):
+        print(f"  {i:2d}. {brand['name']} (ID: {brand['brand_id']})")
+    print(f"  {len(crawler.brands)+1:2d}. 全部品牌")
+    
     # 获取用户输入
     while True:
         try:
-            user_input = input("\n📝 请输入要爬取的页数 (0=全部页面, 1-100=指定页数): ").strip()
+            # 品牌选择
+            brand_input = input("\n📝 请选择品牌 (输入数字，如: 1,2,3 或 'all' 表示全部): ").strip()
             
-            if not user_input:
+            brands_to_crawl = None
+            if brand_input.lower() == 'all':
+                brands_to_crawl = crawler.brands
+                print(f"🎯 已选择全部品牌")
+            else:
+                try:
+                    brand_indices = [int(x.strip()) for x in brand_input.split(',')]
+                    brands_to_crawl = []
+                    for idx in brand_indices:
+                        if 1 <= idx <= len(crawler.brands):
+                            brands_to_crawl.append(crawler.brands[idx-1])
+                        else:
+                            print(f"❌ 品牌编号 {idx} 无效")
+                            raise ValueError
+                    
+                    if not brands_to_crawl:
+                        print("❌ 未选择有效品牌")
+                        continue
+                        
+                    brand_names = [b['name'] for b in brands_to_crawl]
+                    print(f"🎯 已选择品牌: {', '.join(brand_names)}")
+                    
+                except ValueError:
+                    print("❌ 请输入有效数字或 'all'")
+                    continue
+            
+            # 页数选择
+            page_input = input("\n📝 请输入要爬取的页数 (0=全部页面, 1-50=指定页数): ").strip()
+            
+            if not page_input:
                 print("❌ 请输入有效数字")
                 continue
             
-            page_num = int(user_input)
+            page_num = int(page_input)
             
             if page_num < 0:
                 print("❌ 页数不能为负数")
                 continue
-            elif page_num > 100:
-                print("⚠️ 页数过多，限制为100页")
-                page_num = 100
+            elif page_num > 50:
+                print("⚠️ 页数过多，限制为50页")
+                page_num = 50
             
             break
             
@@ -592,10 +673,8 @@ async def main():
     print(f"\n🎯 开始爬取: {'全部页面' if page_num == 0 else f'{page_num}页'}")
     print("="*60)
     
-    crawler = DongchediPreciseCrawler()
-    
     # 爬取数据
-    vehicles_data = await crawler.crawl_all_pages(max_pages=page_num)
+    vehicles_data = await crawler.crawl_all_pages(max_pages=page_num, brands_to_crawl=brands_to_crawl)
     
     if vehicles_data:
         crawler.print_statistics(vehicles_data)
