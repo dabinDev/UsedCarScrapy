@@ -114,7 +114,7 @@ class DongchediPreciseCrawler:
         brands = []
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=False, slow_mo=1000)
+            browser = await p.chromium.launch(headless=True)
             page = await browser.new_page()
             
             try:
@@ -122,8 +122,8 @@ class DongchediPreciseCrawler:
                 await page.goto("https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x", wait_until="domcontentloaded")
                 await page.wait_for_timeout(5000)
                 
-                # 获取所有字母按钮（A-Z）- 先测试几个字母
-                letters = ['热门', 'A', 'B', 'C', 'D']  # 测试前几个字母
+                # 获取所有字母按钮（A-Z）- 完整获取所有品牌
+                letters = ['热门'] + [chr(i) for i in range(ord('A'), ord('Z') + 1)]  # 获取所有字母
                 
                 for letter in letters:
                     print(f"  📋 获取 {letter} 字母下的品牌...")
@@ -146,12 +146,13 @@ class DongchediPreciseCrawler:
                         # 等待品牌列表加载
                         await page.wait_for_timeout(1500)
                         
-                        # 获取当前显示的品牌列表 - 使用更准确的选择器
-                        brand_items = await page.query_selector_all('div[ref*="17"] a[href*="-330100-1-"]')
+                        # 获取当前显示的品牌列表 - 使用更精确的选择器
+                        # 品牌链接通常在特定的容器中
+                        brand_items = await page.query_selector_all('div[ref*="155"] a[href*="x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-"]')
                         
                         # 如果没有找到，尝试其他选择器
                         if not brand_items:
-                            brand_items = await page.query_selector_all('a[href*="-330100-1-"]')
+                            brand_items = await page.query_selector_all('div[ref*="17"] a[href*="x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-"]')
                         
                         # 如果还是没有找到，尝试更通用的选择器
                         if not brand_items:
@@ -164,21 +165,28 @@ class DongchediPreciseCrawler:
                                 href = await item.get_attribute('href')
                                 text = await item.text_content()
                                 
-                                if href and text and '-330100-1-' in href:
-                                    # 提取品牌ID
-                                    match = re.search(r'-(\d+)-x-330100-1-x-x-x-x-x$', href)
+                                if href and text:
+                                    # 提取品牌ID - 支持多种URL格式
+                                    # 格式1: x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-110000-1-x-x-x-x-x
+                                    match = re.search(r'-(\d+)-x-110000-1-x-x-x-x-x$', href)
+                                    
                                     if match:
                                         brand_id = match.group(1)
                                         brand_name = text.strip()
                                         
-                                        # 避免重复
-                                        if not any(b['brand_id'] == brand_id for b in brands):
-                                            brands.append({
-                                                'name': brand_name,
-                                                'brand_id': brand_id,
-                                                'letter': letter
-                                            })
-                                            print(f"      ✅ 找到品牌: {brand_name} (ID: {brand_id})")
+                                        # 过滤掉非品牌链接（如价格、车型等）
+                                        if brand_name not in ['不限', '全部', '轿车', 'SUV', 'MPV', '跑车', '微型车', '3万以下', '3-5万', '5-10万', '10-15万', '15-20万', '20万以上'] and not brand_name.replace(',', '').replace('.', '').replace('-', '').replace('!', '').isdigit():
+                                            # 避免重复
+                                            if not any(b['brand_id'] == brand_id for b in brands):
+                                                brands.append({
+                                                    'name': brand_name,
+                                                    'brand_id': brand_id,
+                                                    'letter': letter
+                                                })
+                                                print(f"      ✅ 找到品牌: {brand_name} (ID: {brand_id})")
+                                    else:
+                                        # 调试信息：显示不匹配的链接（关闭以提高效率）
+                                        pass
                             except Exception as e:
                                 continue
                         
@@ -219,16 +227,17 @@ class DongchediPreciseCrawler:
         return None
     
     async def crawl_page(self, page_num, brand_id=None):
-        """爬取指定页面和品牌"""
+        """爬取指定页面和品牌 - 所有筛选条件不限，地区全国"""
         if brand_id:
-            # 针对特定品牌的URL
-            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-330100-{page_num}-x-x-x-x-x"
+            # 针对特定品牌的URL - 所有条件不限，地区全国(110000)
+            # URL格式: /usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-110000-{page}-x-x-x-x-x
+            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-110000-{page_num}-x-x-x-x-x"
             brand_name = next((b["name"] for b in self.brands if b["brand_id"] == brand_id), f"品牌{brand_id}")
-            print(f"📄 正在爬取 {brand_name} 第 {page_num} 页...")
+            print(f"📄 正在爬取 {brand_name} 第 {page_num} 页 (全国，不限条件)...")
         else:
-            # 全部车型的URL
-            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{page_num}-x-x-x-x-x"
-            print(f"📄 正在爬取全部车型第 {page_num} 页...")
+            # 全部车型的URL - 所有条件不限，地区全国
+            url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-110000-{page_num}-x-x-x-x-x"
+            print(f"📄 正在爬取全部车型第 {page_num} 页 (全国，不限条件)...")
             
         print(f"🔗 URL: {url}")
         
