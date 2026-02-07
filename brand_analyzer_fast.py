@@ -302,7 +302,7 @@ class ThreadSafeBrandAnalyzer:
 async def main():
     """主函数"""
     # 可以调整线程数量，建议3-8个
-    analyzer = ThreadSafeBrandAnalyzer(max_workers=5)
+    analyzer = ThreadSafeBrandAnalyzer(max_workers=10)
     await analyzer.analyze_all_brands_threaded()
 
 if __name__ == "__main__":
