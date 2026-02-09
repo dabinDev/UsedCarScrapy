@@ -1,13 +1,1117 @@
 {
   "metadata": {
-    "created_at": "2026-02-09T14:52:05.483601",
+    "created_at": "2026-02-09T18:15:26.929698",
     "total_available": 637,
-    "total_selected": 1
+    "total_selected": 185
   },
   "data": [
     {
-      "brand_id": 59,
-      "brand_name": "红旗",
+      "brand_id": 28,
+      "brand_name": "中华",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 51,
+      "brand_name": "阿尔法·罗密欧",
+      "brand_logo": "",
+      "pinyin": "A"
+    },
+    {
+      "brand_id": 56,
+      "brand_name": "菲亚特",
+      "brand_logo": "",
+      "pinyin": "F"
+    },
+    {
+      "brand_id": 55,
+      "brand_name": "DS",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 84,
+      "brand_name": "克莱斯勒",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 85,
+      "brand_name": "莲花跑车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 76,
+      "brand_name": "猎豹汽车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 87,
+      "brand_name": "纳智捷",
+      "brand_logo": "",
+      "pinyin": "N"
+    },
+    {
+      "brand_id": 90,
+      "brand_name": "依维柯",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 102,
+      "brand_name": "陆风",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 139,
+      "brand_name": "开瑞",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 167,
+      "brand_name": "驭胜",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 193,
+      "brand_name": "鑫源汽车",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 198,
+      "brand_name": "瑞驰",
+      "brand_logo": "",
+      "pinyin": "R"
+    },
+    {
+      "brand_id": 235,
+      "brand_name": "思皓",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 512,
+      "brand_name": "江淮瑞风",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 880,
+      "brand_name": "广汽昊铂",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 891,
+      "brand_name": "东风奕派",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 10012,
+      "brand_name": "212",
+      "brand_logo": "",
+      "pinyin": "E"
+    },
+    {
+      "brand_id": 10425,
+      "brand_name": "捷途山海",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 105,
+      "brand_name": "思铭",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 401,
+      "brand_name": "飞凡汽车",
+      "brand_logo": "",
+      "pinyin": "F"
+    },
+    {
+      "brand_id": 93,
+      "brand_name": "北汽新能源",
+      "brand_logo": "",
+      "pinyin": "B"
+    },
+    {
+      "brand_id": 417,
+      "brand_name": "东风纳米",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 142,
+      "brand_name": "凯翼",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 67,
+      "brand_name": "一汽",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 96,
+      "brand_name": "GMC",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 157,
+      "brand_name": "SWM斯威汽车",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 210,
+      "brand_name": "长安跨越",
+      "brand_logo": "",
+      "pinyin": "C"
+    },
+    {
+      "brand_id": 58,
+      "brand_name": "观致",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 185,
+      "brand_name": "威马汽车",
+      "brand_logo": "",
+      "pinyin": "W"
+    },
+    {
+      "brand_id": 60,
+      "brand_name": "北汽昌河",
+      "brand_logo": "",
+      "pinyin": "B"
+    },
+    {
+      "brand_id": 69,
+      "brand_name": "北汽威旺",
+      "brand_logo": "",
+      "pinyin": "B"
+    },
+    {
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂",
+      "brand_logo": "",
+      "pinyin": "B"
+    },
+    {
+      "brand_id": 101,
+      "brand_name": "力帆汽车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 79,
+      "brand_name": "东风小康",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 116,
+      "brand_name": "宝沃",
+      "brand_logo": "",
+      "pinyin": "B"
+    },
+    {
+      "brand_id": 453,
+      "brand_name": "RAM",
+      "brand_logo": "",
+      "pinyin": "R"
+    },
+    {
+      "brand_id": 49,
+      "brand_name": "悍马",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 303,
+      "brand_name": "合创汽车",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 163,
+      "brand_name": "双龙",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源",
+      "brand_logo": "",
+      "pinyin": "Q"
+    },
+    {
+      "brand_id": 111,
+      "brand_name": "理念",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 140,
+      "brand_name": "金龙",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 196,
+      "brand_name": "Polestar极星",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 107,
+      "brand_name": "野马汽车",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 546,
+      "brand_name": "仰望",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 489,
+      "brand_name": "极越",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 527,
+      "brand_name": "猛士",
+      "brand_logo": "",
+      "pinyin": "M"
+    },
+    {
+      "brand_id": 868,
+      "brand_name": "蓝电",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 10293,
+      "brand_name": "尊界",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 136,
+      "brand_name": "江铃集团新能源",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 145,
+      "brand_name": "Lorinser",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 384,
+      "brand_name": "凌宝汽车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 10363,
+      "brand_name": "firefly萤火虫",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 381,
+      "brand_name": "睿蓝汽车",
+      "brand_logo": "",
+      "pinyin": "R"
+    },
+    {
+      "brand_id": 118,
+      "brand_name": "博速",
+      "brand_logo": "",
+      "pinyin": "B"
+    },
+    {
+      "brand_id": 237,
+      "brand_name": "广汽集团",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 133,
+      "brand_name": "金旅",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 89,
+      "brand_name": "西雅特",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 126,
+      "brand_name": "汉腾汽车",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 10419,
+      "brand_name": "尚界",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 117,
+      "brand_name": "比速汽车",
+      "brand_logo": "",
+      "pinyin": "B"
+    },
+    {
+      "brand_id": 231,
+      "brand_name": "SERES赛力斯",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 901,
+      "brand_name": "灵悉",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 405,
+      "brand_name": "克蒂汽车",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 25,
+      "brand_name": "迈巴赫",
+      "brand_logo": "",
+      "pinyin": "M"
+    },
+    {
+      "brand_id": 169,
+      "brand_name": "中兴",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 75,
+      "brand_name": "欧宝",
+      "brand_logo": "",
+      "pinyin": "O"
+    },
+    {
+      "brand_id": 258,
+      "brand_name": "钧天汽车",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 273,
+      "brand_name": "捷尼赛思",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 477,
+      "brand_name": "新吉奥汽车",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 72,
+      "brand_name": "华泰",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 103,
+      "brand_name": "萨博",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 123,
+      "brand_name": "新龙马汽车",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 282,
+      "brand_name": "雷丁",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 372,
+      "brand_name": "大运",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 10439,
+      "brand_name": "沃森威尔",
+      "brand_logo": "",
+      "pinyin": "W"
+    },
+    {
+      "brand_id": 92,
+      "brand_name": "东风风度",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 250,
+      "brand_name": "天际汽车",
+      "brand_logo": "",
+      "pinyin": "T"
+    },
+    {
+      "brand_id": 538,
+      "brand_name": "Abarth",
+      "brand_logo": "",
+      "pinyin": "A"
+    },
+    {
+      "brand_id": 131,
+      "brand_name": "华颂",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 162,
+      "brand_name": "中国重汽VGV",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 190,
+      "brand_name": "君马汽车",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 368,
+      "brand_name": "创维汽车",
+      "brand_logo": "",
+      "pinyin": "C"
+    },
+    {
+      "brand_id": 394,
+      "brand_name": "英致汽车",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 10429,
+      "brand_name": "捷途纵横",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 132,
+      "brand_name": "黄海",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 134,
+      "brand_name": "九龙",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 168,
+      "brand_name": "知豆",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 510,
+      "brand_name": "智锐汽车 ",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 104,
+      "brand_name": "骐铃汽车",
+      "brand_logo": "",
+      "pinyin": "Q"
+    },
+    {
+      "brand_id": 114,
+      "brand_name": "ALPINA",
+      "brand_logo": "",
+      "pinyin": "A"
+    },
+    {
+      "brand_id": 122,
+      "brand_name": "福迪",
+      "brand_logo": "",
+      "pinyin": "F"
+    },
+    {
+      "brand_id": 137,
+      "brand_name": "卡升",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 246,
+      "brand_name": "大乘汽车",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 336,
+      "brand_name": "AUXUN傲旋",
+      "brand_logo": "",
+      "pinyin": "A"
+    },
+    {
+      "brand_id": 383,
+      "brand_name": "金冠汽车",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 413,
+      "brand_name": "华晨新日",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 420,
+      "brand_name": "朋克汽车",
+      "brand_logo": "",
+      "pinyin": "P"
+    },
+    {
+      "brand_id": 482,
+      "brand_name": "克慕勒",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 10305,
+      "brand_name": "中房房车",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 10410,
+      "brand_name": "示界",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 147,
+      "brand_name": "摩根",
+      "brand_logo": "",
+      "pinyin": "M"
+    },
+    {
+      "brand_id": 335,
+      "brand_name": "广通客车",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 408,
+      "brand_name": "松散机车",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 467,
+      "brand_name": "莱茵汽车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 516,
+      "brand_name": "金杯新能源",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 871,
+      "brand_name": "江淮钇为",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 882,
+      "brand_name": "江淮汽车",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 905,
+      "brand_name": "江铃晶马汽车",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 10362,
+      "brand_name": "奥迪AUDI",
+      "brand_logo": "",
+      "pinyin": "A"
+    },
+    {
+      "brand_id": 10433,
+      "brand_name": "埃尚",
+      "brand_logo": "",
+      "pinyin": "A"
+    },
+    {
+      "brand_id": 97,
+      "brand_name": "广汽吉奥",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 125,
+      "brand_name": "海格",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 172,
+      "brand_name": "宇通",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 188,
+      "brand_name": "云度",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 191,
+      "brand_name": "国金汽车",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 192,
+      "brand_name": "拉达",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 232,
+      "brand_name": "爱驰",
+      "brand_logo": "",
+      "pinyin": "A"
+    },
+    {
+      "brand_id": 236,
+      "brand_name": "乔治·巴顿",
+      "brand_logo": "",
+      "pinyin": "Q"
+    },
+    {
+      "brand_id": 272,
+      "brand_name": "迈莎锐",
+      "brand_logo": "",
+      "pinyin": "M"
+    },
+    {
+      "brand_id": 306,
+      "brand_name": "谢尔比",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 324,
+      "brand_name": "LEVC翼真汽车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 393,
+      "brand_name": "英力士",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 412,
+      "brand_name": "LUMMA",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 444,
+      "brand_name": "北汽瑞翔",
+      "brand_logo": "",
+      "pinyin": "B"
+    },
+    {
+      "brand_id": 878,
+      "brand_name": "ROX极石",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 43,
+      "brand_name": "莲花汽车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 110,
+      "brand_name": "欧朗",
+      "brand_logo": "",
+      "pinyin": "O"
+    },
+    {
+      "brand_id": 170,
+      "brand_name": "之诺",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 205,
+      "brand_name": "Fisker",
+      "brand_logo": "",
+      "pinyin": "F"
+    },
+    {
+      "brand_id": 266,
+      "brand_name": "国机智骏",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 344,
+      "brand_name": "星驰",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 399,
+      "brand_name": "恒驰",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 424,
+      "brand_name": "Novitec",
+      "brand_logo": "",
+      "pinyin": "N"
+    },
+    {
+      "brand_id": 429,
+      "brand_name": "小虎",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 439,
+      "brand_name": "雅升汽车",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 451,
+      "brand_name": "电动屋",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 513,
+      "brand_name": "焜驰",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 162,
+      "brand_name": "中国重汽VGV",
+      "brand_logo": "",
+      "pinyin": "Z"
+    },
+    {
+      "brand_id": 10297,
+      "brand_name": "瑞弗",
+      "brand_logo": "",
+      "pinyin": "R"
+    },
+    {
+      "brand_id": 10301,
+      "brand_name": "隆翠房车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 10315,
+      "brand_name": "骐蔚汽车",
+      "brand_logo": "",
+      "pinyin": "Q"
+    },
+    {
+      "brand_id": 83,
+      "brand_name": "科尼赛克",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 98,
+      "brand_name": "哈飞",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 124,
+      "brand_name": "光冈",
+      "brand_logo": "",
+      "pinyin": "G"
+    },
+    {
+      "brand_id": 127,
+      "brand_name": "恒天",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 141,
+      "brand_name": "KTM",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 143,
+      "brand_name": "全球鹰",
+      "brand_logo": "",
+      "pinyin": "Q"
+    },
+    {
+      "brand_id": 149,
+      "brand_name": "前途",
+      "brand_logo": "",
+      "pinyin": "Q"
+    },
+    {
+      "brand_id": 150,
+      "brand_name": "如虎",
+      "brand_logo": "",
+      "pinyin": "R"
+    },
+    {
+      "brand_id": 156,
+      "brand_name": "斯达泰克",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 155,
+      "brand_name": "双环",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 160,
+      "brand_name": "威麟",
+      "brand_logo": "",
+      "pinyin": "W"
+    },
+    {
+      "brand_id": 158,
+      "brand_name": "泰卡特",
+      "brand_logo": "",
+      "pinyin": "T"
+    },
+    {
+      "brand_id": 164,
+      "brand_name": "新凯",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 184,
+      "brand_name": "华骐",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 230,
+      "brand_name": "东风·瑞泰特",
+      "brand_logo": "",
+      "pinyin": "D"
+    },
+    {
+      "brand_id": 234,
+      "brand_name": "新特汽车",
+      "brand_logo": "",
+      "pinyin": "X"
+    },
+    {
+      "brand_id": 241,
+      "brand_name": "红星汽车",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 307,
+      "brand_name": "英飒",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 352,
+      "brand_name": "罗孚",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 365,
+      "brand_name": "上喆",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 404,
+      "brand_name": "飞碟汽车",
+      "brand_logo": "",
+      "pinyin": "F"
+    },
+    {
+      "brand_id": 416,
+      "brand_name": "WALD",
+      "brand_logo": "",
+      "pinyin": "W"
+    },
+    {
+      "brand_id": 421,
+      "brand_name": "橙仕",
+      "brand_logo": "",
+      "pinyin": "C"
+    },
+    {
+      "brand_id": 441,
+      "brand_name": "恒润汽车",
+      "brand_logo": "",
+      "pinyin": "H"
+    },
+    {
+      "brand_id": 454,
+      "brand_name": "申龙客车",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 463,
+      "brand_name": "上汽集团",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 470,
+      "brand_name": "凯马汽车",
+      "brand_logo": "",
+      "pinyin": "K"
+    },
+    {
+      "brand_id": 508,
+      "brand_name": "LIMGENE凌际",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 518,
+      "brand_name": "拓锐斯特",
+      "brand_logo": "",
+      "pinyin": "T"
+    },
+    {
+      "brand_id": 536,
+      "brand_name": "越界",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 553,
+      "brand_name": "金琥新能源",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 877,
+      "brand_name": "菱势汽车",
+      "brand_logo": "",
+      "pinyin": "L"
+    },
+    {
+      "brand_id": 922,
+      "brand_name": "世极",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 10303,
+      "brand_name": "齐星房车",
+      "brand_logo": "",
+      "pinyin": "Q"
+    },
+    {
+      "brand_id": 10302,
+      "brand_name": "江铃旅居房车",
+      "brand_logo": "",
+      "pinyin": "J"
+    },
+    {
+      "brand_id": 10308,
+      "brand_name": "赛德房车",
+      "brand_logo": "",
+      "pinyin": "S"
+    },
+    {
+      "brand_id": 10343,
+      "brand_name": "亚特房车",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 10344,
+      "brand_name": "爱旅房车",
+      "brand_logo": "",
+      "pinyin": "A"
+    },
+    {
+      "brand_id": 10402,
+      "brand_name": "予风汽车",
+      "brand_logo": "",
+      "pinyin": "Y"
+    },
+    {
+      "brand_id": 10430,
+      "brand_name": "普曼·巅峰",
+      "brand_logo": "",
+      "pinyin": "P"
+    },
+    {
+      "brand_id": 10428,
+      "brand_name": "货拉拉多拉",
       "brand_logo": "",
       "pinyin": "H"
     }

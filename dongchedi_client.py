@@ -358,46 +358,37 @@ async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
 
     total = len(overviews)
     done_count = total - len(remaining)
-    print(f"\n[阶段4] 采集详情... (已完成 {done_count}/{total})")
+    print(f"\n[阶段4] 采集详情... (已完成 {done_count}/{total}，剩余 {len(remaining)})")
+    print(f"   并发数: {max_workers}，每 {max_workers} 条保存一次进度")
     _mark_stage(progress, "details", "running")
     _save_progress(output_dir, progress)
 
-    BATCH_SIZE = max_workers * 2
     from playwright.async_api import async_playwright
 
-    for batch_start in range(0, len(remaining), BATCH_SIZE):
-        batch = remaining[batch_start:batch_start + BATCH_SIZE]
-        print(f"   批次 {batch_start // BATCH_SIZE + 1}: {len(batch)} 条")
+    # 用 asyncio.Queue 做任务分发，每个 worker 独占一个 page
+    queue: asyncio.Queue = asyncio.Queue()
+    for car in remaining:
+        await queue.put(car)
 
-        semaphore = asyncio.Semaphore(max_workers)
-        batch_results: List[Optional[Dict]] = [None] * len(batch)
+    # 收集结果用锁保护
+    lock = asyncio.Lock()
+    batch_buffer: List[Dict] = []
+    SAVE_EVERY = max_workers  # 每完成 N 条保存一次
 
-        async def _task(idx, sku_id, page):
-            async with semaphore:
-                batch_results[idx] = await api.fetch_car_detail(page, sku_id)
+    async def _save_batch():
+        """将缓冲区数据保存到JSON和数据库"""
+        nonlocal batch_buffer
+        if not batch_buffer:
+            return
+        to_save = batch_buffer[:]
+        batch_buffer = []
 
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
-            pages = [await browser.new_page() for _ in range(min(max_workers, len(batch)))]
-            try:
-                tasks = []
-                for idx, car in enumerate(batch):
-                    pg = pages[idx % len(pages)]
-                    tasks.append(_task(idx, car["sku_id"], pg))
-                await asyncio.gather(*tasks)
-            finally:
-                for pg in pages:
-                    await pg.close()
-                await browser.close()
-
-        # 拆分并增量保存
-        batch_details_for_db: List[Dict] = []
-        for idx, d in enumerate(batch_results):
-            if not d or not d.get("sku_id"):
-                continue
+        detail_rows = []
+        image_rows = []
+        config_rows = []
+        for d in to_save:
             sku_id = d["sku_id"]
-
-            detail_row = {k: d.get(k) for k in [
+            detail_rows.append({k: d.get(k) for k in [
                 "sku_id", "spu_id", "title", "important_text",
                 "sh_price", "official_price", "include_tax_price",
                 "source_sh_price", "source_offical_price",
@@ -406,25 +397,66 @@ async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
                 "params", "shop", "report", "financial",
                 "tags", "highlights", "description",
                 "detail_url", "detail_params_url", "collected_at",
-            ]}
-            image_row = {"sku_id": sku_id, "images": d.get("images", [])}
-            config_row = {"sku_id": sku_id, "config": d.get("config"),
-                          "detail_params": d.get("detail_params"),
-                          "detail_params_raw": d.get("detail_params_raw")}
+            ]})
+            image_rows.append({"sku_id": sku_id, "images": d.get("images", [])})
+            config_rows.append({"sku_id": sku_id, "config": d.get("config"),
+                                "detail_params": d.get("detail_params")})
 
-            _append_to_json_array(details_path, [detail_row])
-            _append_to_json_array(images_path, [image_row])
-            _append_to_json_array(configs_path, [config_row])
+        # 一次性批量写入（每个文件只读写一次）
+        _append_to_json_array(details_path, detail_rows)
+        _append_to_json_array(images_path, image_rows)
+        _append_to_json_array(configs_path, config_rows)
 
-            batch_details_for_db.append(d)
-            completed_ids.add(sku_id)
-
-        if db and batch_details_for_db:
-            await db.upsert_details(batch_details_for_db)
+        if db:
+            await db.upsert_details(to_save)
 
         progress["completed_details"] = list(completed_ids)
         _save_progress(output_dir, progress)
-        print(f"   ✅ 批次完成，累计 {len(completed_ids)}/{total}")
+        print(f"   ✅ 进度: {len(completed_ids)}/{total}")
+
+    async def _worker(worker_id: int, page):
+        """单个 worker：从队列取任务，用自己独占的 page 采集"""
+        while True:
+            try:
+                car = queue.get_nowait()
+            except asyncio.QueueEmpty:
+                break
+
+            sku_id = car["sku_id"]
+            try:
+                detail = await api.fetch_car_detail(page, sku_id)
+            except Exception as e:
+                print(f"   ⚠️ worker-{worker_id} sku={sku_id} 异常: {e}")
+                detail = None
+
+            if detail and detail.get("sku_id"):
+                async with lock:
+                    completed_ids.add(detail["sku_id"])
+                    batch_buffer.append(detail)
+                    if len(batch_buffer) >= SAVE_EVERY:
+                        await _save_batch()
+
+            queue.task_done()
+
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        try:
+            # 每个 worker 创建独立的 page
+            num_workers = min(max_workers, len(remaining))
+            pages = [await browser.new_page() for _ in range(num_workers)]
+            workers = [asyncio.create_task(_worker(i, pages[i])) for i in range(num_workers)]
+            await asyncio.gather(*workers)
+
+            # 保存剩余缓冲
+            async with lock:
+                await _save_batch()
+        finally:
+            for pg in pages:
+                try:
+                    await pg.close()
+                except Exception:
+                    pass
+            await browser.close()
 
     _mark_stage(progress, "details", "done")
     _save_progress(output_dir, progress)
@@ -527,7 +559,8 @@ async def main():
         print(f"   详情: {det_count}")
         print(f"   输出: {os.path.abspath(output_dir)}")
         if db:
-            print(f"   数据库: {db._pool.db}")
+            from db_config import DB_CONFIG
+            print(f"   数据库: {DB_CONFIG['host']}:{DB_CONFIG['port']}/{DB_CONFIG['database']}")
         print("=" * 60)
     finally:
         if db:

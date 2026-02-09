@@ -324,8 +324,11 @@ class DongchediAPI:
         获取单辆车的详情数据（参数+图片+真实价格）
         """
         url = self._build_detail_url(sku_id)
-        await page.goto(url, wait_until="domcontentloaded")
-        await page.wait_for_timeout(4000)
+        try:
+            await page.goto(url, wait_until="domcontentloaded", timeout=15000)
+        except Exception:
+            pass
+        await page.wait_for_timeout(1500)
 
         data = await self._extract_next_data(page)
         if not data:
@@ -349,7 +352,7 @@ class DongchediAPI:
         """获取详情页的详细参数（/auto/params-carIds-{car_id}）"""
         url = self._build_params_url(car_id)
         try:
-            resp = await page.request.get(url)
+            resp = await page.request.get(url, timeout=10000)
             if not resp or not resp.ok:
                 print(f"      ⚠️ 参数页请求失败: {car_id} status={getattr(resp, 'status', '?')}")
                 return None
@@ -370,7 +373,9 @@ class DongchediAPI:
                 "param_groups": parsed,
             }
         except Exception as e:
-            print(f"      ⚠️ 参数页异常: {car_id} - {e}")
+            # 只打印第一行，避免 Playwright call log 刷屏
+            msg = str(e).split("\n")[0][:100]
+            print(f"      ⚠️ 参数页异常: {car_id} - {msg}")
             return None
 
     def _normalize_car_detail(self, sku, sku_id, params_payload=None):

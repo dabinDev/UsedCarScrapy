@@ -1,184 +1,3537 @@
 {
   "metadata": {
-    "total": 25,
-    "created_at": "2026-02-09T14:52:13.628359",
-    "updated_at": "2026-02-09T14:52:13.628367"
+    "total": 504,
+    "created_at": "2026-02-09T18:15:35.347204",
+    "updated_at": "2026-02-09T18:35:42.202116"
   },
   "data": [
     {
-      "series_id": 10154,
-      "series_name": "红旗天工05",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/b13d78fbe4f9477795996e2021c38aa8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1523,
+      "series_name": "中华V3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b804e48e0341f5dc0c255c0b58902ce5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 6132,
-      "series_name": "红旗H5",
-      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/4e5a38bacf99a7c63567e63f3bde1216~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1812,
+      "series_name": "中华V6",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/56a537db086e0cb327a3a99867cfccf4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 3801,
-      "series_name": "红旗H5 PHEV",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/f24bd38b015840f588c5179d9dee6a0c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 2809,
+      "series_name": "中华V7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/372a9ac661d9689d36a145228ef4bce7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 10162,
-      "series_name": "红旗天工06",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/b5bd7a7f1e484d4095f4020c70e90c89~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1511,
+      "series_name": "中华H220",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/da1b48a60f79522a5e1acd93548018ec~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 5417,
-      "series_name": "红旗H6",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9e73ae112bfb43a595a78e593002ac8f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1512,
+      "series_name": "中华H230",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/62fb7ac03ef617eede02e0bc5b6841d6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 5092,
-      "series_name": "红旗E-QM5",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/b037b30e070943928eff5eb972564e56~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1518,
+      "series_name": "中华骏捷FRV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/cc2618cc88b7883a279959479654957f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 8947,
-      "series_name": "红旗EH7",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/f8c654abc2ba49948ec26d1ea30defef~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1517,
+      "series_name": "中华H3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d72c58a86a2d8ac58707340882d39a65~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 4355,
-      "series_name": "红旗H9",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/2fab95bdc40a42daa3519f17382af761~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1520,
+      "series_name": "中华骏捷Cross",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c3816f7020a61accc8fa486e68ff5333~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 10122,
-      "series_name": "红旗金葵花国雅",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/82a7048d558c42349828a5d5f4b70a89~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1515,
+      "series_name": "中华H330",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/9662324deca912a7b8862ad37a076756~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 6359,
-      "series_name": "红旗HS3",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/911d71f82dc04e3eb2708969989e687a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1516,
+      "series_name": "中华H530",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/21e9ab41ead59d0f7f434cf337edea7c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 10120,
-      "series_name": "红旗HS3 PHEV",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/a819a1fda2d148b6a6e49c7110c38be4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1521,
+      "series_name": "中华尊驰",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e9b8a18e4cdda5916942dc95a42b8fd1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 3159,
-      "series_name": "红旗HS5",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/ab8b7403cc8b4fb9a988e66dc53d5163~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1524,
+      "series_name": "中华V5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/17472056467f6df9d031b47f0c6d56ec~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 25598,
-      "series_name": "红旗HS6 PHEV",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/47e95923cec94166b410a8f9be7e3b57~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1525,
+      "series_name": "中华酷宝",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5194eab3b76e081fa5745805071e72cb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 28,
+      "brand_name": "中华"
     },
     {
-      "series_id": 2151,
-      "series_name": "红旗HS7",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/a2923428f5184443b04d251e0b636559~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 56,
+      "series_name": "Giulia朱丽叶",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/5b74e63d459b465d99ff270e845f3572~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 51,
+      "brand_name": "阿尔法·罗密欧"
     },
     {
-      "series_id": 9825,
-      "series_name": "红旗HS7 PHEV",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/17d4a93987364e6d86b916aba5d8ab99~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 3807,
+      "series_name": "Tonale托纳利",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/66ee948b99ac45649b9e22a7b91cd9ec~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 51,
+      "brand_name": "阿尔法·罗密欧"
     },
     {
-      "series_id": 8835,
-      "series_name": "红旗天工08",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/8f051743f0de47e0832d4b7ed0eb4d7d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 59,
+      "series_name": "Stelvio斯坦维",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/656d074f1a3d4def95cc821be3a67c65~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 51,
+      "brand_name": "阿尔法·罗密欧"
     },
     {
-      "series_id": 4146,
-      "series_name": "红旗E-HS9",
-      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/fb5c6d20cd6044b28f6eec55dcd6c61c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 510,
+      "series_name": "菲翔",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/2a009620fdf959d607ad12091a33ccf9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 56,
+      "brand_name": "菲亚特"
     },
     {
-      "series_id": 5418,
-      "series_name": "红旗金葵花国耀",
-      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0b094b3ada0704b3ef49fa69acb10d59~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 509,
+      "series_name": "致悦",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e81101ad5acc79e0cdde09871b59e532~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 56,
+      "brand_name": "菲亚特"
     },
     {
-      "series_id": 5905,
-      "series_name": "红旗HQ9",
-      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b690e5fd5c48d8da3726a893a2d296cf~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 506,
+      "series_name": "博悦",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/642650b0981cf903752d9b4ff61a342f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 56,
+      "brand_name": "菲亚特"
     },
     {
-      "series_id": 8948,
-      "series_name": "红旗HQ9 PHEV",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/e6cfd90ea6404a79a9ede056d4cbfee1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 508,
+      "series_name": "菲跃",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7d0b9aa23962efbca8a705bea5051e20~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 56,
+      "brand_name": "菲亚特"
     },
     {
-      "series_id": 8804,
-      "series_name": "红旗金葵花国悦",
-      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/69e5605fa7dd4f20933077601eb518dc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 504,
+      "series_name": "菲亚特500",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9431a26e6dd5406ca9a86fca8026f39f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 56,
+      "brand_name": "菲亚特"
     },
     {
-      "series_id": 1701,
-      "series_name": "红旗H5经典",
-      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/29e57294483a5f98bc133b090b194087~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 3724,
+      "series_name": "DS 9",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/fc67d704cb45ca837dc5130b5cc62498~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
     },
     {
-      "series_id": 690,
-      "series_name": "红旗H7",
-      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/78023a6567ddb717ea22b1f44fd9d4d3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1805,
+      "series_name": "DS 7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/ed26b29c1b4cc3f3c703070d4997ce5e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
     },
     {
-      "series_id": 2861,
-      "series_name": "红旗E-HS3",
-      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/aeb1737f0f84e056a8e71d440b1a3b24~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 4,
+      "series_name": "DS 3经典",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/013d114cc32c6ebb131100c4358bf869~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
     },
     {
-      "series_id": 689,
-      "series_name": "红旗盛世",
-      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b635a0a45490b66b3443f8c6ab9797a7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1380,
+      "series_name": "DS 4",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/4e6d6cdd6177489088fd8026e7adf938~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
+    },
+    {
+      "series_id": 6,
+      "series_name": "DS 5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7001b6ad12d179bcb4f60c62ce50e377~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
+    },
+    {
+      "series_id": 1386,
+      "series_name": "DS 5LS",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/37e9e82f08ad6bfa1265771e2425f301~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
+    },
+    {
+      "series_id": 4157,
+      "series_name": "DS 9 PHEV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6505fe35f2a3a3ffa5a1ffbb7bd5a617~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
+    },
+    {
+      "series_id": 3383,
+      "series_name": "DS 3 EV",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/3094ad5a05684aff8f4ecb0d07876bcb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
+    },
+    {
+      "series_id": 7,
+      "series_name": "DS 6",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/3c18db6aa8a71c0c323197956ca8b81e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 55,
+      "brand_name": "DS"
+    },
+    {
+      "series_id": 875,
+      "series_name": "克莱斯勒300C(进口)",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7df4eabef7ca71248336dcc6fa0c7eef~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 84,
+      "brand_name": "克莱斯勒"
+    },
+    {
+      "series_id": 876,
+      "series_name": "大捷龙(进口)",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/e0999ac1cd7c47bcb06dd5d62a8e98bb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 84,
+      "brand_name": "克莱斯勒"
+    },
+    {
+      "series_id": 1799,
+      "series_name": "大捷龙PHEV(进口)",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/29c8848180db425db8d480319086633a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 84,
+      "brand_name": "克莱斯勒"
+    },
+    {
+      "series_id": 874,
+      "series_name": "PT 漫步者",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e45e6960df998938232c27ac1d5f220f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 84,
+      "brand_name": "克莱斯勒"
+    },
+    {
+      "series_id": 873,
+      "series_name": "克莱斯勒300C",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/4eea2cab1ac3833e49f50b1f9a467a39~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 84,
+      "brand_name": "克莱斯勒"
+    },
+    {
+      "series_id": 487,
+      "series_name": "大捷龙",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e111e54913a76ea15c3a56cc121d8b98~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 84,
+      "brand_name": "克莱斯勒"
+    },
+    {
+      "series_id": 9275,
+      "series_name": "Emeya",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/966b69cb8db04cf194abcdbaf198be9f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 85,
+      "brand_name": "莲花跑车"
+    },
+    {
+      "series_id": 5825,
+      "series_name": "Eletre",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/dd94ddb1a87e4945a8a83d4eb6337b02~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 85,
+      "brand_name": "莲花跑车"
+    },
+    {
+      "series_id": 4902,
+      "series_name": "Emira",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/1bd8ea4c625941ef9843ec480dc30994~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 85,
+      "brand_name": "莲花跑车"
+    },
+    {
+      "series_id": 996,
+      "series_name": "Evora",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0172fa39659c372ebdf9979e62bf4aa4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 85,
+      "brand_name": "莲花跑车"
+    },
+    {
+      "series_id": 1876,
+      "series_name": "Esprit",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/544296a0052874c23a8d310fe726fac3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 85,
+      "brand_name": "莲花跑车"
+    },
+    {
+      "series_id": 938,
+      "series_name": "猎豹CS9",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0cc57b3c9d33004c351dd3c33c0dfa56~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 1913,
+      "series_name": "猎豹CS9 EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/fb34b3e6d0602abac36862b7168cc795~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 941,
+      "series_name": "猎豹CS10",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d7ee9929fe6716c862556140779f32b9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 2829,
+      "series_name": "Mattu",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/59692effcc5930043aada9b329cecedc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 944,
+      "series_name": "猎豹Q6",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e6e01efd90455b56e500997bbf810d00~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 937,
+      "series_name": "飞腾",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/484472dc31695c30b963287969fef690~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 945,
+      "series_name": "猎豹6481",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/cae0b84c17d83c88a662b96d29641f46~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 943,
+      "series_name": "黑金刚",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/07d84eef12d5ba90a9f157eb64bc9a2d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 942,
+      "series_name": "猎豹CS6",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/33adad7a17dc28fd28cf659c7b28a324~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 9583,
+      "series_name": "猎豹CS01",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/05df1f10102a4a29bc0e40e84fa3b1e0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 76,
+      "brand_name": "猎豹汽车"
+    },
+    {
+      "series_id": 1652,
+      "series_name": "U5 SUV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/ea83b53ddfa6786d1379234e5a546450~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 87,
+      "brand_name": "纳智捷"
+    },
+    {
+      "series_id": 1043,
+      "series_name": "优6 SUV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f79e821a780eca2a8e4f3a4563d54b2a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 87,
+      "brand_name": "纳智捷"
+    },
+    {
+      "series_id": 3345,
+      "series_name": "纳智捷URX",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/fb7352022bbe5a624f6d401fa58371c5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 87,
+      "brand_name": "纳智捷"
+    },
+    {
+      "series_id": 1041,
+      "series_name": "锐3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/cc02145e423013d73bb0a23223bb888a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 87,
+      "brand_name": "纳智捷"
+    },
+    {
+      "series_id": 1042,
+      "series_name": "纳5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e9b44a7e09f1f64f7ddd235b45d0e537~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 87,
+      "brand_name": "纳智捷"
+    },
+    {
+      "series_id": 1044,
+      "series_name": "大7 SUV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7069c4a7464ed3b981cb84d56fd29bb8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 87,
+      "brand_name": "纳智捷"
+    },
+    {
+      "series_id": 1045,
+      "series_name": "MASTER CEO",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/9b1157791aedeadffebd8ab8bb87e385~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 87,
+      "brand_name": "纳智捷"
+    },
+    {
+      "series_id": 1046,
+      "series_name": "大7 MPV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0b23198129a028db0d6c9c207c454da2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 87,
+      "brand_name": "纳智捷"
+    },
+    {
+      "series_id": 1418,
+      "series_name": "依维柯得意",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/25d7dd0b2bb09dcb4cc99df8f4053a30~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 90,
+      "brand_name": "依维柯"
+    },
+    {
+      "series_id": 6278,
+      "series_name": "依维柯聚星",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/8a9b7733f9ec4dd48a28df1edb78e968~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 90,
+      "brand_name": "依维柯"
+    },
+    {
+      "series_id": 1777,
+      "series_name": "依维柯欧胜",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/28ab599386e0088be05b2a03f1a28b2c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 90,
+      "brand_name": "依维柯"
+    },
+    {
+      "series_id": 1868,
+      "series_name": "都灵",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c9d51053e7e1d7306e0822562352bbe3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 90,
+      "brand_name": "依维柯"
+    },
+    {
+      "series_id": 1419,
+      "series_name": "依维柯褒迪",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/879782939de8147197f96bdeab21094d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 90,
+      "brand_name": "依维柯"
+    },
+    {
+      "series_id": 3127,
+      "series_name": "依维柯褒迪EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/67e7ad5e878a65c445f6a85933bcf1bb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 90,
+      "brand_name": "依维柯"
+    },
+    {
+      "series_id": 4198,
+      "series_name": "Daily",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/a66d287eb6584b7954547d73b4322f01~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 90,
+      "brand_name": "依维柯"
+    },
+    {
+      "series_id": 983,
+      "series_name": "陆风X2",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/81fd8971ba9e5d63464e3bf1bc31402c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 102,
+      "brand_name": "陆风"
+    },
+    {
+      "series_id": 1791,
+      "series_name": "陆风逍遥",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/9d60ff3eaef58eb4caa2cc086f7b030a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 102,
+      "brand_name": "陆风"
+    },
+    {
+      "series_id": 977,
+      "series_name": "陆风X5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/a435292cb3cb597fc8957bcaa49e6fa6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 102,
+      "brand_name": "陆风"
+    },
+    {
+      "series_id": 979,
+      "series_name": "陆风X7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/d3e6a899f56d05e6f2d8bb5f0ce95fad~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 102,
+      "brand_name": "陆风"
+    },
+    {
+      "series_id": 981,
+      "series_name": "陆风X8",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/fdff1395ea42d6517e1934cea1f5fd78~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 102,
+      "brand_name": "陆风"
+    },
+    {
+      "series_id": 5855,
+      "series_name": "江豚",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/67d72edf302280a0e19b953021cac3cc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 139,
+      "brand_name": "开瑞"
+    },
+    {
+      "series_id": 4154,
+      "series_name": "海豚EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0c1239dd3c751242b71841094e65683f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 139,
+      "brand_name": "开瑞"
+    },
+    {
+      "series_id": 20019,
+      "series_name": "江豚E5",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/b1eb32bf9c3d4c3981693018aa62f7d2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 139,
+      "brand_name": "开瑞"
+    },
+    {
+      "series_id": 24942,
+      "series_name": "江豚E7",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/91c8e2b3c38a40a2b8eec327d549b86d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 139,
+      "brand_name": "开瑞"
+    },
+    {
+      "series_id": 844,
+      "series_name": "开瑞K60",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/3b5f6a275041c8e32884a13dc812418e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 139,
+      "brand_name": "开瑞"
+    },
+    {
+      "series_id": 2257,
+      "series_name": "优优EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d931cb31eb351d80820cbeea337d6214~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 139,
+      "brand_name": "开瑞"
+    },
+    {
+      "series_id": 2979,
+      "series_name": "开瑞K60 EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/8f2a833e07ca28bff5221ee7ce9eca8c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 139,
+      "brand_name": "开瑞"
+    },
+    {
+      "series_id": 845,
+      "series_name": "开瑞K50",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/2d93822a32effa56c59d1c9cab8d9bf8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 139,
+      "brand_name": "开瑞"
+    },
+    {
+      "series_id": 1444,
+      "series_name": "驭胜S350",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/3a04b2948e1f0276c0647026dc937474~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 167,
+      "brand_name": "驭胜"
+    },
+    {
+      "series_id": 1443,
+      "series_name": "驭胜S330",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c5fbb4a2b77ee1d0f2f7d9e6dd5463d0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 167,
+      "brand_name": "驭胜"
+    },
+    {
+      "series_id": 2810,
+      "series_name": "新海狮X30L",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/e704804dc82d4342bd9e15d5fdaf1d56~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 5059,
+      "series_name": "金海狮",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/420edba187de7d68b797455324ccd5af~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 5931,
+      "series_name": "金海狮M",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/8ed33c7db8309b7f662944970513fe30~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 6343,
+      "series_name": "好运",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/97b9e3a5a7024624b526b5da66f18040~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 9289,
+      "series_name": "豪运",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/49f252a7d54048ea9bd35e682e2b0f41~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 9803,
+      "series_name": "鑫源E3",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/64105de293c34bee9474869751422cb9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 9804,
+      "series_name": "鑫源E3L",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/03c3bb2e0b2d43f7862f4bd8fea0ea27~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 4293,
+      "series_name": "小海狮 EV",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/7df239b6a9abc510dcb8cd2fdcc30692~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 4292,
+      "series_name": "好运2号",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/915bfdb1add231473a4b2833b315036d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 1771,
+      "series_name": "好运1号",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/bce97a58ad16bba1c6ac30c24643c9ab~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 1772,
+      "series_name": "海狮 EV",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/0a74400a76f63118d3640c7b6367eeb0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 193,
+      "brand_name": "鑫源汽车"
+    },
+    {
+      "series_id": 25479,
+      "series_name": "瑞驰R5",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/97c0029997884c98a73e56baf4c7d4a1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 198,
+      "brand_name": "瑞驰"
+    },
+    {
+      "series_id": 1910,
+      "series_name": "瑞驰EC35",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6b911d7d4df3fc67e1b572f2eda5389e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 198,
+      "brand_name": "瑞驰"
+    },
+    {
+      "series_id": 9255,
+      "series_name": "瑞驰EC75",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/ef7b5597a77c48f4948d0ec2d36733df~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 198,
+      "brand_name": "瑞驰"
+    },
+    {
+      "series_id": 5863,
+      "series_name": "瑞驰EC55",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/8fe32e6e097a47598d3b03107a23dccf~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 198,
+      "brand_name": "瑞驰"
+    },
+    {
+      "series_id": 8827,
+      "series_name": "瑞驰ED75",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/cc44af6b787449229eeeac8385cc2deb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 198,
+      "brand_name": "瑞驰"
+    },
+    {
+      "series_id": 4819,
+      "series_name": "思皓花仙子",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/7a7c73fd87fe459f9f75a1ebdcf7c74a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 4755,
+      "series_name": "思皓A5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/3c999eea8af07ac6c8c15c88371c666f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 4649,
+      "series_name": "思皓E50A",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/f5084aff3a76644c68e8bbabdd27976e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 6120,
+      "series_name": "思皓X8 PLUS",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/db8e7f2ecfe07c9dc3ee5b0fb36acc30~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 5831,
+      "series_name": "思皓X6",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/eac5caef570d6b23d1b27da34aa0ecb2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 4859,
+      "series_name": "思皓QX",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/6d7d40e80e8ae4b5ca752a6e23288130~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 2866,
+      "series_name": "思皓E20X",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/5436aa5e924692ba00ca5ce4858f5070~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 4650,
+      "series_name": "思皓E40X",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/f2d48c789b8f43889b689066027fc781~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 4743,
+      "series_name": "思皓X8",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/a725c09d2d0c94f793cdcb18eb6027bd~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 4827,
+      "series_name": "思皓X7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/10f2c687ee036de938365ffd9159212a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 235,
+      "brand_name": "思皓"
+    },
+    {
+      "series_id": 768,
+      "series_name": "瑞风M3",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/75413675bb584b12b0c69d89817e5619~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 512,
+      "brand_name": "江淮瑞风"
+    },
+    {
+      "series_id": 769,
+      "series_name": "瑞风M4",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9db9ab7512ea4012be81fc7d95a4b120~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 512,
+      "brand_name": "江淮瑞风"
+    },
+    {
+      "series_id": 5316,
+      "series_name": "瑞风L5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/69b38bc08147acf486f3fcbc98038b50~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 512,
+      "brand_name": "江淮瑞风"
+    },
+    {
+      "series_id": 9243,
+      "series_name": "瑞风RF8 PHEV",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/809daf18f7fc4be1b137dd84e32a34ab~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 512,
+      "brand_name": "江淮瑞风"
+    },
+    {
+      "series_id": 6311,
+      "series_name": "昊铂GT",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/444ef2292fd640339364576f4d57aa17~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 880,
+      "brand_name": "广汽昊铂"
+    },
+    {
+      "series_id": 9345,
+      "series_name": "昊铂HT",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/b63ab8d60d9144f89285ccb2acb2bcc3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 880,
+      "brand_name": "广汽昊铂"
+    },
+    {
+      "series_id": 25072,
+      "series_name": "昊铂HL",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/eb509904268d485cb759d1e61c3a5cae~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 880,
+      "brand_name": "广汽昊铂"
+    },
+    {
+      "series_id": 9261,
+      "series_name": "纳米01",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/fa491ccc0e4747f18a782b441836de1d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 891,
+      "brand_name": "东风奕派"
+    },
+    {
+      "series_id": 9349,
+      "series_name": "eπ007",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/5c8bba8dfcbf42aa8bc0803416b2af28~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 891,
+      "brand_name": "东风奕派"
+    },
+    {
+      "series_id": 25232,
+      "series_name": "纳米06",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/a300dd64d6084f128da6cbab290b698e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 891,
+      "brand_name": "东风奕派"
+    },
+    {
+      "series_id": 9828,
+      "series_name": "eπ008",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/169f01392f75456d8d4a238f16bbb50c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 891,
+      "brand_name": "东风奕派"
+    },
+    {
+      "series_id": 20090,
+      "series_name": "狙击手",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/81cfc1aa34c342b3b74ed61c2c822eb9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10012,
+      "brand_name": "212"
+    },
+    {
+      "series_id": 20089,
+      "series_name": "212 T01",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/03642400457f455ba7465c7f204f3ea7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10012,
+      "brand_name": "212"
+    },
+    {
+      "series_id": 9641,
+      "series_name": "捷途山海T1",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/5a4445ffc043421f86a8d1ade9364d2e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10425,
+      "brand_name": "捷途山海"
+    },
+    {
+      "series_id": 8943,
+      "series_name": "捷途旅行者C-DM",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/a9c000b1bb6346c68b89ee2ca7f07c8c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10425,
+      "brand_name": "捷途山海"
+    },
+    {
+      "series_id": 8976,
+      "series_name": "捷途山海L6",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/efd6705a1f264d9b882cdf3da41985e1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10425,
+      "brand_name": "捷途山海"
+    },
+    {
+      "series_id": 10147,
+      "series_name": "捷途山海L7",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/4c3be5c0d34042c58ff44121eef74520~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10425,
+      "brand_name": "捷途山海"
+    },
+    {
+      "series_id": 25436,
+      "series_name": "捷途山海L7 PLUS",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/826721d8597840aebaee8dd053b8c655~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10425,
+      "brand_name": "捷途山海"
+    },
+    {
+      "series_id": 9346,
+      "series_name": "捷途山海L9",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/89517be1299f435a8be6fdadb179abcb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10425,
+      "brand_name": "捷途山海"
+    },
+    {
+      "series_id": 3480,
+      "series_name": "东风本田X-NV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/9ba4bdf407568878269fa3d35f3468be~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 105,
+      "brand_name": "思铭"
+    },
+    {
+      "series_id": 4585,
+      "series_name": "东风本田M-NV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b20ad2749ca184a995d7d9b88d20b147~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 105,
+      "brand_name": "思铭"
+    },
+    {
+      "series_id": 1227,
+      "series_name": "思铭",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/abc305505be900c0e08b512874b3500d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 105,
+      "brand_name": "思铭"
+    },
+    {
+      "series_id": 6137,
+      "series_name": "飞凡F7",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/d3c1128436c342588263a40466dbaad0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 401,
+      "brand_name": "飞凡汽车"
+    },
+    {
+      "series_id": 4980,
+      "series_name": "飞凡R7",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/f23944d550054a60a7f29e528d8eea4e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 401,
+      "brand_name": "飞凡汽车"
+    },
+    {
+      "series_id": 4304,
+      "series_name": "飞凡ER6",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/05d3f61eeb3bfd0d18c21b7aeeb74a23~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 401,
+      "brand_name": "飞凡汽车"
+    },
+    {
+      "series_id": 4529,
+      "series_name": "飞凡MARVEL R",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f32e8ee251a87005a4d0b6242cc5b278~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 401,
+      "brand_name": "飞凡汽车"
+    },
+    {
+      "series_id": 194,
+      "series_name": "北汽新能源EC",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/8ff4ec5f1715aa8b1474bd0facc872d4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 93,
+      "brand_name": "北汽新能源"
+    },
+    {
+      "series_id": 201,
+      "series_name": "北汽新能源EX",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/ae99dee751a94357af26443af5977dce~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 93,
+      "brand_name": "北汽新能源"
+    },
+    {
+      "series_id": 3348,
+      "series_name": "北汽新能源EC5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/98616e7cb6f26f3b0b5820aa8a4fc7b7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 93,
+      "brand_name": "北汽新能源"
+    },
+    {
+      "series_id": 196,
+      "series_name": "北汽新能源EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/745ab1baab5f535529505b15e6979cc4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 93,
+      "brand_name": "北汽新能源"
+    },
+    {
+      "series_id": 197,
+      "series_name": "北汽新能源EU",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9422f7701ebc46248a9f432f497f745a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 93,
+      "brand_name": "北汽新能源"
+    },
+    {
+      "series_id": 5968,
+      "series_name": "纳米BOX",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/49485a6aaae1402388ea2f897d97f5a7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 417,
+      "brand_name": "东风纳米"
+    },
+    {
+      "series_id": 4125,
+      "series_name": "东风纳米EX1",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/2883c126ecf049aab9a839baff65636b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 417,
+      "brand_name": "东风纳米"
+    },
+    {
+      "series_id": 6060,
+      "series_name": "拾月",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/2dd89dc8c3d84bca9e205d857171e95f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 4311,
+      "series_name": "炫界",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/707e10337c2c41e89187efb0c2931b31~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 6056,
+      "series_name": "昆仑",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/2e9b4807525e49c98142a0af0b91b878~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 5367,
+      "series_name": "炫界Pro EV",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/297b50a8f659602e2fd62223e67c0c2a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 6305,
+      "series_name": "昆仑iHD",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/b6d39496b70a4122a91bba45677ed798~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 25490,
+      "series_name": "江豚E7",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/d42961dff3b24977a47d56bbf06895f9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 863,
+      "series_name": "凯翼C3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/4b677127cd24a06a0229d61751180f66~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 862,
+      "series_name": "凯翼C3R",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/9dbe92aabf8f74ded164a0fe3e8ebb53~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 1787,
+      "series_name": "凯翼E3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/c6498240c0b51e0562c7861ebea7516d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 864,
+      "series_name": "凯翼X3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/28d8e337af5968f12797ac87d01acde5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 1663,
+      "series_name": "凯翼X5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/dbc58bc3b039ec17bcfa6dba247043d3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 6059,
+      "series_name": "轩度EV",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/039730f1c6594e7fa2e49575384000d1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 142,
+      "brand_name": "凯翼"
+    },
+    {
+      "series_id": 1406,
+      "series_name": "森雅R7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/aecc527761d81e6b35253fef9d34ec02~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 2793,
+      "series_name": "森雅R9",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/61e7759843ce00eb303bd54fc2ebfff2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 2181,
+      "series_name": "骏派CX65",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/8c97e98770c41e916d85cb268ef8f6c3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 1766,
+      "series_name": "骏派A50",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/a2c6b3c096e08cbd43aa208f2f6a1ceb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 1398,
+      "series_name": "威姿",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/cd828e6a9174bb17f811e7afb8748f4f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 1401,
+      "series_name": "威志V2",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6409e0ef818bc40ef49c09e490250538~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 1396,
+      "series_name": "威志V5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/73ac14223f400ff2ee373655dbeba805~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 1397,
+      "series_name": "夏利N7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/30e749202dfb8725dca90d75db4ac967~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 1399,
+      "series_name": "威乐",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e1856adb671d0511a924344a96e8fa45~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 1405,
+      "series_name": "森雅S80",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/9fcc55947416139011ed0f8b8c421911~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 1403,
+      "series_name": "骏派D60",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c65c3253af92b4d5df9834db32ce2cd8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 67,
+      "brand_name": "一汽"
+    },
+    {
+      "series_id": 9,
+      "series_name": "YUKON育空",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/079029e0dd8d4ec9b315d887ced4944f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 96,
+      "brand_name": "GMC"
+    },
+    {
+      "series_id": 10,
+      "series_name": "SAVANA",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f6fee64aaad919d623e6ba7d84fa9375~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 96,
+      "brand_name": "GMC"
+    },
+    {
+      "series_id": 6314,
+      "series_name": "斯威大虎EDi",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/c523ad88ed344bc7b475d581f6a628ea~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 157,
+      "brand_name": "SWM斯威汽车"
+    },
+    {
+      "series_id": 3721,
+      "series_name": "斯威G05",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/81bb497225c24e9c92d2e631df27b9ca~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 157,
+      "brand_name": "SWM斯威汽车"
+    },
+    {
+      "series_id": 54,
+      "series_name": "斯威X3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e378ebdc44c1db74a9ce8171e550701c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 157,
+      "brand_name": "SWM斯威汽车"
+    },
+    {
+      "series_id": 2779,
+      "series_name": "斯威G01",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/ebaf0a6393b02410b033ae200675abdc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 157,
+      "brand_name": "SWM斯威汽车"
+    },
+    {
+      "series_id": 53,
+      "series_name": "斯威X7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/11fbe3c6e9192008adca4108d69b5413~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 157,
+      "brand_name": "SWM斯威汽车"
+    },
+    {
+      "series_id": 5296,
+      "series_name": "跨越王F3",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/1624e208cc4348ec8487d9e5a818650b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 210,
+      "brand_name": "长安跨越"
+    },
+    {
+      "series_id": 5456,
+      "series_name": "跨越星V3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/62d049856eaf5ae9f5882b19d853ea5b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 210,
+      "brand_name": "长安跨越"
+    },
+    {
+      "series_id": 4995,
+      "series_name": "跨越星V5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/432730cdad07cc2fea94159b05f2f19f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 210,
+      "brand_name": "长安跨越"
+    },
+    {
+      "series_id": 6090,
+      "series_name": "跨越星V7 EV",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/2acf1e62a7354937a5340372bfed77d0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 210,
+      "brand_name": "长安跨越"
+    },
+    {
+      "series_id": 5299,
+      "series_name": "跨越星V5 EV",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/36beddfb39ff40b4a75ecb14f92088d6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 210,
+      "brand_name": "长安跨越"
+    },
+    {
+      "series_id": 1469,
+      "series_name": "长安V3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/625417990aba11b02bf3a6ccec82c9fd~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 210,
+      "brand_name": "长安跨越"
+    },
+    {
+      "series_id": 602,
+      "series_name": "观致3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/547b5a367d9a6c75a6a8186719fb7406~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 58,
+      "brand_name": "观致"
+    },
+    {
+      "series_id": 603,
+      "series_name": "观致5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/55e86a5fa6612408279e36397d17e508~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 58,
+      "brand_name": "观致"
+    },
+    {
+      "series_id": 4507,
+      "series_name": "观致7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/b49af0b1d995756a790d6512ccbb7c3c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 58,
+      "brand_name": "观致"
+    },
+    {
+      "series_id": 5152,
+      "series_name": "威马E.5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/561fc274c90a455fb0c9c2d914345c47~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 185,
+      "brand_name": "威马汽车"
+    },
+    {
+      "series_id": 1915,
+      "series_name": "威马EX5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/674ada0515737833a6fa6ad2d2b8f748~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 185,
+      "brand_name": "威马汽车"
+    },
+    {
+      "series_id": 3398,
+      "series_name": "威马W6",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/e4399ede36e1a5443d96e2dd7188cab8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 185,
+      "brand_name": "威马汽车"
+    },
+    {
+      "series_id": 4175,
+      "series_name": "北汽EV2",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6973be3ae33285e912f8e5ec89de3193~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 2582,
+      "series_name": "昌河北斗星",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/2a6fa303c25bf5136ae73cc493275797~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 2039,
+      "series_name": "北汽EC100",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/76e9586ddd0aef031be9fcab5635503a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 3269,
+      "series_name": "北斗星X5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/284863fa788b2183292c93861cde5263~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 1754,
+      "series_name": "北汽昌河A6",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b6fb60e07fdb900867f435c59006496e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 361,
+      "series_name": "北汽昌河Q25",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0b1fcd1ad535d71ac26a86d44e6e1634~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 362,
+      "series_name": "北汽昌河Q35",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/532ed5fd4e3f243da91ffa856294649c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 1807,
+      "series_name": "北汽昌河Q7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c16820aed6c4cc181b2414d994c60996~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 363,
+      "series_name": "北汽昌河M70",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0baaa5aacdf6b5f775fe8797e015da1d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 368,
+      "series_name": "北汽昌河M50S",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7d7c6374f050cb883b535d0df22575c0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 1591,
+      "series_name": "北斗星X5E",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/8b706851ed1472966c07aebaad3cb21a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 2858,
+      "series_name": "北汽EV5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f49e241532567e75a0dca881994522a9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 60,
+      "brand_name": "北汽昌河"
+    },
+    {
+      "series_id": 186,
+      "series_name": "北汽威旺S50",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/93e751b578149e04c08e9bb220e3301e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 69,
+      "brand_name": "北汽威旺"
+    },
+    {
+      "series_id": 187,
+      "series_name": "北汽威旺M50F",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5904651f2bb7c6b32ede05540421839b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 69,
+      "brand_name": "北汽威旺"
+    },
+    {
+      "series_id": 190,
+      "series_name": "北汽威旺M20",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/628f28f068e97232ff32eb7422f98b31~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 69,
+      "brand_name": "北汽威旺"
+    },
+    {
+      "series_id": 192,
+      "series_name": "北汽威旺M30",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7d8b4dd17e7d80e80cae68981bb52fb6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 69,
+      "brand_name": "北汽威旺"
+    },
+    {
+      "series_id": 193,
+      "series_name": "北汽威旺M35",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/115ced304ff44a26805815320fbf340b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 69,
+      "brand_name": "北汽威旺"
+    },
+    {
+      "series_id": 189,
+      "series_name": "北汽威旺306",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/af31b3bc0c4091f2e0d3c4fc369657b8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 69,
+      "brand_name": "北汽威旺"
+    },
+    {
+      "series_id": 191,
+      "series_name": "北汽威旺307",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6f5972ffd2ee1844f1b2a1ef347ad431~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 69,
+      "brand_name": "北汽威旺"
+    },
+    {
+      "series_id": 5788,
+      "series_name": "元宝",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/99bb51329fafa5120ad763c8e97a3c22~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 5787,
+      "series_name": "家宝",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/256820b920584246bf5b90be9d840797~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 205,
+      "series_name": "勇士",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/dcf664514941d152d7c6466649b34f29~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 5886,
+      "series_name": "锐胜王牌M7",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9ab40d5c662d43be9e3e28282ab17ad7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 5887,
+      "series_name": "锐胜王牌EM7",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/37620bc5aa0549279ee9d3e0ee8e3ff6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 10271,
+      "series_name": "勇士皮卡",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/d45ccb89358044daa066dfb9bbd0810a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 4723,
+      "series_name": "北汽小河马",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/4c379786112490c7a01a77d92e234f85~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 203,
+      "series_name": "战旗",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/a627710a757c0208d4170686ab8914ba~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 202,
+      "series_name": "212经典",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/4a78ae8f3569443c8add336839c18f91~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 208,
+      "series_name": "陆霸",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/29140aaacb7eea353fd7636b71fae1cc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 78,
+      "brand_name": "北京汽车制造厂"
+    },
+    {
+      "series_id": 926,
+      "series_name": "轩朗",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f53a5e5de87cb159b5d1f34203210d7f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 912,
+      "series_name": "力帆320",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0b2171c929ba2490bdcb474d40fd394e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 914,
+      "series_name": "力帆330",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6de5cf25a57695e8e40d96a5a052a075~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 916,
+      "series_name": "力帆530",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/804db69c99a3dbca32f8c1153fbbe354~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 918,
+      "series_name": "力帆620",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6524f3c25b21e62f8c2b37793309055f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 2821,
+      "series_name": "力帆650 EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/efff1c37b095aef1dee7790ef48d4096~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 921,
+      "series_name": "力帆820",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c3c826011c67059ecb23cd52dd01262b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 923,
+      "series_name": "力帆X50",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7c60fae43c4dc42e61cad16dfa2152ef~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 922,
+      "series_name": "力帆X60",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5d5ed037ea6c196393a7ca02d1cd0371~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 924,
+      "series_name": "迈威",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/74de938f1d1ba28f6d461f24b0b42a0e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 932,
+      "series_name": "乐途",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/73bd6385316507b408efa5301b3b370e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 101,
+      "brand_name": "力帆汽车"
+    },
+    {
+      "series_id": 474,
+      "series_name": "东风小康K05S",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/20a0e34ab67192112b5b002133989494~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 79,
+      "brand_name": "东风小康"
+    },
+    {
+      "series_id": 473,
+      "series_name": "东风小康K07S",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/818fd6fcd76b192203d3688591116413~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 79,
+      "brand_name": "东风小康"
+    },
+    {
+      "series_id": 471,
+      "series_name": "东风小康C35",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/a8dab2e6cec5453d89f44daa073baa9c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 79,
+      "brand_name": "东风小康"
+    },
+    {
+      "series_id": 475,
+      "series_name": "东风小康EC36",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/822a1a609747067a12188eca055fa04f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 79,
+      "brand_name": "东风小康"
+    },
+    {
+      "series_id": 470,
+      "series_name": "东风小康C37",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5fa3461302efb4122e7c48d96312a03f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 79,
+      "brand_name": "东风小康"
+    },
+    {
+      "series_id": 472,
+      "series_name": "东风小康C36",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/cbcf7ea3df6b478db5945eb9d8574ab7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 79,
+      "brand_name": "东风小康"
+    },
+    {
+      "series_id": 468,
+      "series_name": "东风小康K07II",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/439014633e744509a2550513dc7dd7f5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 79,
+      "brand_name": "东风小康"
+    },
+    {
+      "series_id": 150,
+      "series_name": "宝沃BX5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5941cdbe8ca204259ceaf4214065f311~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 116,
+      "brand_name": "宝沃"
+    },
+    {
+      "series_id": 151,
+      "series_name": "宝沃BX7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/2d0cc79ea1f0a216ab9d1a85926732ba~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 116,
+      "brand_name": "宝沃"
+    },
+    {
+      "series_id": 421,
+      "series_name": "RAM Trucks",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/01a871638b244ee78c67f80ae31e8fca~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 453,
+      "brand_name": "RAM"
+    },
+    {
+      "series_id": 5834,
+      "series_name": "RAM 1500 Rev",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/4be2fc2d3fcb40819f97ba1969dd9533~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 453,
+      "brand_name": "RAM"
+    },
+    {
+      "series_id": 3258,
+      "series_name": "悍马H1",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/11323288e7997eb62e7ab86d37a62c95~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 49,
+      "brand_name": "悍马"
+    },
+    {
+      "series_id": 684,
+      "series_name": "悍马H3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/bce88005eae639954edd723585380057~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 49,
+      "brand_name": "悍马"
+    },
+    {
+      "series_id": 683,
+      "series_name": "悍马H2",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/96b2da6afa6abadceaf86c973a280f81~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 49,
+      "brand_name": "悍马"
+    },
+    {
+      "series_id": 3797,
+      "series_name": "悍马HX",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/9d9a31005adfee53edde03ccf333d1b4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 49,
+      "brand_name": "悍马"
+    },
+    {
+      "series_id": 6069,
+      "series_name": "合创A06",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/6ed97fb37fb446c2bfc1ed3f142f8015~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 303,
+      "brand_name": "合创汽车"
+    },
+    {
+      "series_id": 5089,
+      "series_name": "合创Z03",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/966f8986005d4b1e9b62bd3bc3231f39~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 303,
+      "brand_name": "合创汽车"
+    },
+    {
+      "series_id": 3723,
+      "series_name": "合创007",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/08a44355529f774514bb9aa8957929a2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 303,
+      "brand_name": "合创汽车"
+    },
+    {
+      "series_id": 5472,
+      "series_name": "合创V09",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/7326212aa38e48f4983959b242a74c05~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 303,
+      "brand_name": "合创汽车"
+    },
+    {
+      "series_id": 1222,
+      "series_name": "爱腾",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e6147ccc17af19c1d6a99fa2b5cbd2c2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 163,
+      "brand_name": "双龙"
+    },
+    {
+      "series_id": 1220,
+      "series_name": "柯兰多",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5d60b067a77cb1593ad8aae8e0cbc384~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 163,
+      "brand_name": "双龙"
+    },
+    {
+      "series_id": 1225,
+      "series_name": "雷斯特",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b4f1a266def42e051b5035eb888147f9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 163,
+      "brand_name": "双龙"
+    },
+    {
+      "series_id": 1223,
+      "series_name": "享御",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/38b74bb5da45f03610b39b6da345e68f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 163,
+      "brand_name": "双龙"
+    },
+    {
+      "series_id": 1224,
+      "series_name": "雷斯特W",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/49a4e11833419538acce91e8dacda7a2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 163,
+      "brand_name": "双龙"
+    },
+    {
+      "series_id": 1219,
+      "series_name": "蒂维拉",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/ac2eee6b1b45b6e58e128048e7e22db5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 163,
+      "brand_name": "双龙"
+    },
+    {
+      "series_id": 5888,
+      "series_name": "无界Pro",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/43d183c57f8343339359a58dd2d7c8d8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源"
+    },
+    {
+      "series_id": 4086,
+      "series_name": "艾瑞泽e",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/801fac00fa4a0818fc25e1fc20372dda~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源"
+    },
+    {
+      "series_id": 6317,
+      "series_name": "奇瑞舒享家",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9e94af226f174a42a3a828b039df0bc8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源"
+    },
+    {
+      "series_id": 1818,
+      "series_name": "瑞虎3xe",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/afcd49305b29d2757b5a158b6415d2de~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源"
+    },
+    {
+      "series_id": 4384,
+      "series_name": "大蚂蚁",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/db1039beb5b509e00edf8d706623e04d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源"
+    },
+    {
+      "series_id": 3387,
+      "series_name": "瑞虎e",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/47395e6141c3888a30ff8334b3a430d1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源"
+    },
+    {
+      "series_id": 1099,
+      "series_name": "奇瑞eQ",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/16825f2ae9cc85c968440283581e144d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源"
+    },
+    {
+      "series_id": 1083,
+      "series_name": "艾瑞泽7e",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7d2800b576d3e1d0b81b083cc7b56ccd~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 461,
+      "brand_name": "奇瑞新能源"
+    },
+    {
+      "series_id": 3096,
+      "series_name": "广汽本田VE-1",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6b45b76df3eac473edc4da19a10ce8d7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 111,
+      "brand_name": "理念"
+    },
+    {
+      "series_id": 911,
+      "series_name": "理念S1",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/8daf0d24fde0479c5c41e709a3399464~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 111,
+      "brand_name": "理念"
+    },
+    {
+      "series_id": 5790,
+      "series_name": "龙耀6",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/14ee3d78d3ba94e6432d9be829eceb14~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 140,
+      "brand_name": "金龙"
+    },
+    {
+      "series_id": 826,
+      "series_name": "金威",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/8a4630c5a1fbb24118fc80fd2bd6ee66~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 140,
+      "brand_name": "金龙"
+    },
+    {
+      "series_id": 2921,
+      "series_name": "凯锐浩克",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/1b3df9036176671853d74e6bf1d9250b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 140,
+      "brand_name": "金龙"
+    },
+    {
+      "series_id": 825,
+      "series_name": "凯歌",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/ea4caf123c8b680692febd9c602c6991~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 140,
+      "brand_name": "金龙"
+    },
+    {
+      "series_id": 4562,
+      "series_name": "龙耀8",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/573090d5ab4d8bf95e95a39ddba94321~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 140,
+      "brand_name": "金龙"
+    },
+    {
+      "series_id": 1831,
+      "series_name": "凯歌EV",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/c2e214bd5447b151859d1117f7cd09dc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 140,
+      "brand_name": "金龙"
+    },
+    {
+      "series_id": 3166,
+      "series_name": "Polestar 2",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/30377eee16ca4c25bacdb5e14ca94a5f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 196,
+      "brand_name": "Polestar极星"
+    },
+    {
+      "series_id": 5832,
+      "series_name": "Polestar 4",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/f988314f0c76400d90413050f101de37~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 196,
+      "brand_name": "Polestar极星"
+    },
+    {
+      "series_id": 2258,
+      "series_name": "博骏",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f17ea83b6e507cee19b125beda38af1a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 107,
+      "brand_name": "野马汽车"
+    },
+    {
+      "series_id": 1705,
+      "series_name": "斯派卡",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/333dff6043577d8267712d8dd6d804a4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 107,
+      "brand_name": "野马汽车"
+    },
+    {
+      "series_id": 1391,
+      "series_name": "野马T70",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6f39f3cd1cc33ac0c1994351d706808f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 107,
+      "brand_name": "野马汽车"
+    },
+    {
+      "series_id": 1392,
+      "series_name": "野马EC70",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7296d070a397661c1bc8ae976ff87da3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 107,
+      "brand_name": "野马汽车"
+    },
+    {
+      "series_id": 1393,
+      "series_name": "野马T80",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c9665ff5bcff739b8988d8dcbe8cb832~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 107,
+      "brand_name": "野马汽车"
+    },
+    {
+      "series_id": 9324,
+      "series_name": "仰望U7 EV",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/fcbf4c2c6b6d4c8781f90e2b8249e32c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 546,
+      "brand_name": "仰望"
+    },
+    {
+      "series_id": 6235,
+      "series_name": "仰望U8",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/bd29a01a09f64aa299a3153cbe333949~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 546,
+      "brand_name": "仰望"
+    },
+    {
+      "series_id": 5967,
+      "series_name": "极越01",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/f73c60325bef4f98b00f280bfc238a4f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 489,
+      "brand_name": "极越"
+    },
+    {
+      "series_id": 6331,
+      "series_name": "极越07",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/5fb18bee9b7143e28ae2e82f13d12e75~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 489,
+      "brand_name": "极越"
+    },
+    {
+      "series_id": 25412,
+      "series_name": "猛士M817",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/09a7f26d13bb462b84b000813ed0b052~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 527,
+      "brand_name": "猛士"
+    },
+    {
+      "series_id": 8798,
+      "series_name": "猛士917",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/eda8bbf3fe2544fb97528240af6dd31c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 527,
+      "brand_name": "猛士"
+    },
+    {
+      "series_id": 6204,
+      "series_name": "蓝电E5",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/a85640b7405f4d3889bc55d63edbd0c8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 868,
+      "brand_name": "蓝电"
+    },
+    {
+      "series_id": 24659,
+      "series_name": "蓝电E5 PLUS",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/570a569e605b4cab869b973480749acc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 868,
+      "brand_name": "蓝电"
+    },
+    {
+      "series_id": 24599,
+      "series_name": "尊界S800",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/602ce128e6024bef912bb7053d22f31e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10293,
+      "brand_name": "尊界"
+    },
+    {
+      "series_id": 5898,
+      "series_name": "易至EV2",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/1b555b0a37b24a7a9a96665ce130381c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 136,
+      "brand_name": "江铃集团新能源"
+    },
+    {
+      "series_id": 3028,
+      "series_name": "易至EV3",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/05599a2e253c4346a691f5eba86ec89b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 136,
+      "brand_name": "江铃集团新能源"
+    },
+    {
+      "series_id": 4858,
+      "series_name": "羿",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/0ac527702eb54802bd818a25aa6a403b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 136,
+      "brand_name": "江铃集团新能源"
+    },
+    {
+      "series_id": 779,
+      "series_name": "江铃E200L",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/9c59e40a351406e94ddb3df6bc686564~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 136,
+      "brand_name": "江铃集团新能源"
+    },
+    {
+      "series_id": 789,
+      "series_name": "江铃E200N",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/133d1e7de6e06fadf35d8cac794bf726~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 136,
+      "brand_name": "江铃集团新能源"
+    },
+    {
+      "series_id": 1587,
+      "series_name": "易至EX5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/3747089064fdb6b38a71621d8f00922e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 136,
+      "brand_name": "江铃集团新能源"
+    },
+    {
+      "series_id": 1580,
+      "series_name": "Lorinser VS系列",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/dd3a1e2ed7ae409a866a72659f1b445d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 145,
+      "brand_name": "Lorinser"
+    },
+    {
+      "series_id": 4655,
+      "series_name": "Lorinser LS系列",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/253ed84aa5c440e0a48cf437bf847114~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 145,
+      "brand_name": "Lorinser"
+    },
+    {
+      "series_id": 3000,
+      "series_name": "Lorinser MAYBACH S级",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/ff54fa6b5bad3561aa43745ba59e7615~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 145,
+      "brand_name": "Lorinser"
+    },
+    {
+      "series_id": 1902,
+      "series_name": "Lorinser S级",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/25e5ca8b5df47cbab2e74f7c2761db4c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 145,
+      "brand_name": "Lorinser"
+    },
+    {
+      "series_id": 9581,
+      "series_name": "艾奈斯威霆",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/2fef4d50e876481b8f082e10f2b51320~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 145,
+      "brand_name": "Lorinser"
+    },
+    {
+      "series_id": 4503,
+      "series_name": "凌宝BOX",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/12472221312f488aa26ee727194a8550~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 384,
+      "brand_name": "凌宝汽车"
+    },
+    {
+      "series_id": 5032,
+      "series_name": "凌宝COCO",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/111284e8347160f59512ad08dab736a3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 384,
+      "brand_name": "凌宝汽车"
+    },
+    {
+      "series_id": 5385,
+      "series_name": "凌宝Uni",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f0549e706e22b4bef069b9e470c55ff3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 384,
+      "brand_name": "凌宝汽车"
+    },
+    {
+      "series_id": 25116,
+      "series_name": "firefly萤火虫",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/3552ee01219b490aad189f48f9ad7b2e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10363,
+      "brand_name": "firefly萤火虫"
+    },
+    {
+      "series_id": 25572,
+      "series_name": "蓝气球",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/415148bb0154452399f5e0b0f6a72ae3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 381,
+      "brand_name": "睿蓝汽车"
+    },
+    {
+      "series_id": 5151,
+      "series_name": "枫叶60s",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/22ab00035ad9fd4ac71b8baf75aa7293~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 381,
+      "brand_name": "睿蓝汽车"
+    },
+    {
+      "series_id": 5911,
+      "series_name": "睿蓝X3 PRO",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/d326a4f1d98f42e69d2d69e4fec18c6c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 381,
+      "brand_name": "睿蓝汽车"
+    },
+    {
+      "series_id": 5997,
+      "series_name": "睿蓝7",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/34076f95094b48af8c6835540dd8227d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 381,
+      "brand_name": "睿蓝汽车"
+    },
+    {
+      "series_id": 6003,
+      "series_name": "睿蓝9",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/7575b7c9d59f478391ec644c2ae07201~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 381,
+      "brand_name": "睿蓝汽车"
+    },
+    {
+      "series_id": 4488,
+      "series_name": "枫叶30X",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/10ee0a7a5f264f45fd261eb0985a64ad~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 381,
+      "brand_name": "睿蓝汽车"
+    },
+    {
+      "series_id": 2471,
+      "series_name": "博速 G级",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/717390eaaa694e9593925eee343e8f9b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 118,
+      "brand_name": "博速"
+    },
+    {
+      "series_id": 107,
+      "series_name": "博速 SLK",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/deb1dd2eef5e30002fc05fbe94483f45~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 118,
+      "brand_name": "博速"
+    },
+    {
+      "series_id": 106,
+      "series_name": "博速 M级",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/fc4f563c693febb9b9c3c1c5adc812f0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 118,
+      "brand_name": "博速"
+    },
+    {
+      "series_id": 105,
+      "series_name": "博速 S级",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/17d85d8d34c34571814c7692210a595b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 118,
+      "brand_name": "博速"
+    },
+    {
+      "series_id": 1916,
+      "series_name": "祺智PHEV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/025078089027af548927078e6cdcd2f4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 237,
+      "brand_name": "广汽集团"
+    },
+    {
+      "series_id": 2854,
+      "series_name": "广汽丰田ix4",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/89909b5df8751a71b79137001ceb39de~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 237,
+      "brand_name": "广汽集团"
+    },
+    {
+      "series_id": 4087,
+      "series_name": "广汽丰田iA5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d615385354694acde6298b463af5aba7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 237,
+      "brand_name": "广汽集团"
+    },
+    {
+      "series_id": 829,
+      "series_name": "金旅海狮",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/22b54ac2b0478b8de8e87d59ad9ff545~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 133,
+      "brand_name": "金旅"
+    },
+    {
+      "series_id": 1838,
+      "series_name": "金旅海狮EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d7d0f2c5130216d24e90e6a0767660a9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 133,
+      "brand_name": "金旅"
+    },
+    {
+      "series_id": 2571,
+      "series_name": "金旅考斯特",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/141304d06baa42bde8e49205c3e4fe4a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 133,
+      "brand_name": "金旅"
+    },
+    {
+      "series_id": 1302,
+      "series_name": "LEON",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/eb8d351077077abe2ad47fa0a05d0036~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 89,
+      "brand_name": "西雅特"
+    },
+    {
+      "series_id": 1303,
+      "series_name": "欧悦搏",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5ea4b1d874b6e6eae3b5e514ec518a08~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 89,
+      "brand_name": "西雅特"
+    },
+    {
+      "series_id": 1301,
+      "series_name": "伊比飒",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/aecbbec07c7143ddab9e9829b4bbf469~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 89,
+      "brand_name": "西雅特"
+    },
+    {
+      "series_id": 1629,
+      "series_name": "汉腾X5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b9dd664f4cf4e99246570c06e7f49e11~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 126,
+      "brand_name": "汉腾汽车"
+    },
+    {
+      "series_id": 2145,
+      "series_name": "汉腾X5 EV",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/2374021211f460c124075a049b18def0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 126,
+      "brand_name": "汉腾汽车"
+    },
+    {
+      "series_id": 682,
+      "series_name": "汉腾X7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/346e444b0b7807df3afcdd666c9e2d69~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 126,
+      "brand_name": "汉腾汽车"
+    },
+    {
+      "series_id": 25387,
+      "series_name": "尚界H5",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9042984641d64c9d9b95205313970475~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10419,
+      "brand_name": "尚界"
+    },
+    {
+      "series_id": 293,
+      "series_name": "比速T3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/65f8ba6662e7a15d3c4fec712aeec0a8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 117,
+      "brand_name": "比速汽车"
+    },
+    {
+      "series_id": 295,
+      "series_name": "比速T5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c5bc8e3e932c4dd5c5669b099c8abeb0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 117,
+      "brand_name": "比速汽车"
+    },
+    {
+      "series_id": 294,
+      "series_name": "比速M3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d4b692e2bccad3a74f27e4f9c350810a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 117,
+      "brand_name": "比速汽车"
+    },
+    {
+      "series_id": 2805,
+      "series_name": "赛力斯SF5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/d3d1e81f816d273258a81a867be42e34~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 231,
+      "brand_name": "SERES赛力斯"
+    },
+    {
+      "series_id": 9428,
+      "series_name": "灵悉L",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/11a62ecc117449038c3ed3271aa6752a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 901,
+      "brand_name": "灵悉"
+    },
+    {
+      "series_id": 5972,
+      "series_name": "克蒂帝亚",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/c1ef30322f5b4995aec269042ad5e74d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 405,
+      "brand_name": "克蒂汽车"
+    },
+    {
+      "series_id": 4746,
+      "series_name": "克蒂巴赫",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6b7d518024a7d982a7a6d0095bbb3e26~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 405,
+      "brand_name": "克蒂汽车"
+    },
+    {
+      "series_id": 4745,
+      "series_name": "克蒂圣姆峰",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/830122729901b5a02caab7417cc6ca38~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 405,
+      "brand_name": "克蒂汽车"
+    },
+    {
+      "series_id": 24869,
+      "series_name": "克蒂山河",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/2dc4f52cfd0142dca8644c6bb56ba2c2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 405,
+      "brand_name": "克蒂汽车"
+    },
+    {
+      "series_id": 24872,
+      "series_name": "克蒂山川",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/373725621002454b89281677bff13394~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 405,
+      "brand_name": "克蒂汽车"
+    },
+    {
+      "series_id": 1024,
+      "series_name": "迈巴赫",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/4e39efce8c7f396c2d7ec729621eb2d4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 25,
+      "brand_name": "迈巴赫"
+    },
+    {
+      "series_id": 1531,
+      "series_name": "威虎",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/1b67abfac87faab6c01a7f8c06e6db8a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 169,
+      "brand_name": "中兴"
+    },
+    {
+      "series_id": 1534,
+      "series_name": "大领主",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7fa69fdb21396206f54c653c2a7fe3de~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 169,
+      "brand_name": "中兴"
+    },
+    {
+      "series_id": 5023,
+      "series_name": "中兴1949",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/306367b143b94fc9a05a8654f4b108ff~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 169,
+      "brand_name": "中兴"
+    },
+    {
+      "series_id": 1060,
+      "series_name": "英速亚",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/924e98dc7e6d80a0ea508b4ba6858ad6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 75,
+      "brand_name": "欧宝"
+    },
+    {
+      "series_id": 1061,
+      "series_name": "安德拉",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/ff07e4d60c113e49cc7d0cfb0b442686~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 75,
+      "brand_name": "欧宝"
+    },
+    {
+      "series_id": 1063,
+      "series_name": "麦瑞纳",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/40a418d477699446c7ef2dab54af7899~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 75,
+      "brand_name": "欧宝"
+    },
+    {
+      "series_id": 1062,
+      "series_name": "赛飞利",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c9c14e74f095ab4e2449097ac08a6b9c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 75,
+      "brand_name": "欧宝"
+    },
+    {
+      "series_id": 1058,
+      "series_name": "雅特",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/a04ff8f40d6c416495a2a5290cb2ffb1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 75,
+      "brand_name": "欧宝"
+    },
+    {
+      "series_id": 3162,
+      "series_name": "钧天勇猛者",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/4ed73033495244babb21ce96e3dd132c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 258,
+      "brand_name": "钧天汽车"
+    },
+    {
+      "series_id": 2036,
+      "series_name": "捷尼赛思G80",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/5e12bc43204c4db4a919b9d59aa67702~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 273,
+      "brand_name": "捷尼赛思"
+    },
+    {
+      "series_id": 2113,
+      "series_name": "捷尼赛思G90",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/91f0d248ad684df59ba70658cc879355~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 273,
+      "brand_name": "捷尼赛思"
+    },
+    {
+      "series_id": 4200,
+      "series_name": "捷尼赛思GV70",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/59eded0c17684d8b978d09f46b96986e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 273,
+      "brand_name": "捷尼赛思"
+    },
+    {
+      "series_id": 2004,
+      "series_name": "捷尼赛思GV80",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/845d6850fa9d55d8e0565ae253ff0fae~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 273,
+      "brand_name": "捷尼赛思"
+    },
+    {
+      "series_id": 1742,
+      "series_name": "捷尼赛思G70",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/edbae0e75b8b4b77ba23ae8ea369474c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 273,
+      "brand_name": "捷尼赛思"
+    },
+    {
+      "series_id": 5126,
+      "series_name": "捷尼赛思GV60",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/a887630336014e87a8447cb1f60af26f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 273,
+      "brand_name": "捷尼赛思"
+    },
+    {
+      "series_id": 5910,
+      "series_name": "吉奥帅凌",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/51ad5683f45b74ba5525546561f652d2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 477,
+      "brand_name": "新吉奥汽车"
+    },
+    {
+      "series_id": 6032,
+      "series_name": "吉奥奥腾",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/ece80e5f541f4205aa187a73a0625cf3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 477,
+      "brand_name": "新吉奥汽车"
+    },
+    {
+      "series_id": 1632,
+      "series_name": "圣达菲7",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/cd760901b363adb53ba57e05c9e8dd67~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 72,
+      "brand_name": "华泰"
+    },
+    {
+      "series_id": 704,
+      "series_name": "圣达菲",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/95b0424d0cbe15f0d1e5a0ec281f1e26~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 72,
+      "brand_name": "华泰"
+    },
+    {
+      "series_id": 702,
+      "series_name": "圣达菲经典",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/706d0c76c82f76eaa9aa51786dfcf5e7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 72,
+      "brand_name": "华泰"
+    },
+    {
+      "series_id": 1192,
+      "series_name": "Saab 9-3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/1456cedeb9805f7fb852bc618dcf1281~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 103,
+      "brand_name": "萨博"
+    },
+    {
+      "series_id": 558,
+      "series_name": "新龙马汽车启腾M70",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/a1bbe4ab1ea3baa5b35e042c79ff6532~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 123,
+      "brand_name": "新龙马汽车"
+    },
+    {
+      "series_id": 1739,
+      "series_name": "新龙马汽车启腾M70 EV",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/a68a5b8d6c5e69397a4979f6f13d889e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 123,
+      "brand_name": "新龙马汽车"
+    },
+    {
+      "series_id": 4689,
+      "series_name": "芒果",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/ea5b03608f6c22fe5e879145907c5cb7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 282,
+      "brand_name": "雷丁"
+    },
+    {
+      "series_id": 4388,
+      "series_name": "悦虎",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/734908e2eb6373bc7e736fae703e25f6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 372,
+      "brand_name": "大运"
+    },
+    {
+      "series_id": 4542,
+      "series_name": "远志M1",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/1391df865bb70731fc6a7ad8cce7f124~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 372,
+      "brand_name": "大运"
+    },
+    {
+      "series_id": 4527,
+      "series_name": "大运星P30",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/56f73f6cd83442dcb5f78d97ef7ffb54~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 372,
+      "brand_name": "大运"
+    },
+    {
+      "series_id": 6164,
+      "series_name": "福特黑武士",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c5db2ce01014a0cb230f1213a4ae1b3f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10439,
+      "brand_name": "沃森威尔"
+    },
+    {
+      "series_id": 433,
+      "series_name": "东风风度MX6",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/f85c4fe519c7cef7085090d349117afe~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 92,
+      "brand_name": "东风风度"
+    },
+    {
+      "series_id": 432,
+      "series_name": "东风风度MX5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/728408b29461c97123561b0335f6207f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 92,
+      "brand_name": "东风风度"
+    },
+    {
+      "series_id": 4960,
+      "series_name": "天际ME5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/04589c1637429c11279347ed0ebb914b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 250,
+      "brand_name": "天际汽车"
+    },
+    {
+      "series_id": 3075,
+      "series_name": "天际ME7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/dae10ce6e631acebd17a14662ee71d1b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 250,
+      "brand_name": "天际汽车"
+    },
+    {
+      "series_id": 6199,
+      "series_name": "Abarth 595",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/58f4f2f59d49747a4d67b123c62c5136~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 538,
+      "brand_name": "Abarth"
+    },
+    {
+      "series_id": 6200,
+      "series_name": "Abarth 695",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/b819daf726971d09571358a9cbee7e51~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 538,
+      "brand_name": "Abarth"
+    },
+    {
+      "series_id": 698,
+      "series_name": "华颂7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/4ddd239d37c4dd0aded32b274753762d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 131,
+      "brand_name": "华颂"
+    },
+    {
+      "series_id": 4209,
+      "series_name": "VGV U70",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/8962f78d7a160bfa32466bf7fc4be7ee~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 162,
+      "brand_name": "中国重汽VGV"
+    },
+    {
+      "series_id": 4495,
+      "series_name": "VGV TX7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/d3c3f3da188f631dbf909b1d8ecfe46c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 162,
+      "brand_name": "中国重汽VGV"
+    },
+    {
+      "series_id": 1919,
+      "series_name": "君马MEET 3(美图3)",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/4a37e325e1d07b94c16134d00e55bdff~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 190,
+      "brand_name": "君马汽车"
+    },
+    {
+      "series_id": 1748,
+      "series_name": "君马S70",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/8b2a02fd23293e5b2e88e79122a4b1ee~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 190,
+      "brand_name": "君马汽车"
+    },
+    {
+      "series_id": 2919,
+      "series_name": "君马SEEK 5(赛克5)",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/a5912d864078a6c6be675be5eb716037~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 190,
+      "brand_name": "君马汽车"
+    },
+    {
+      "series_id": 5122,
+      "series_name": "创维EV6",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/ad946cfb7300451192fd711f0af4ded0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 368,
+      "brand_name": "创维汽车"
+    },
+    {
+      "series_id": 5871,
+      "series_name": "创维HT-i",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/d8e8ac418d1a43228421f53898ed09af~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 368,
+      "brand_name": "创维汽车"
+    },
+    {
+      "series_id": 4497,
+      "series_name": "天美ET5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5fd1eeb8f2de9af4892e73dc2c20bb3f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 368,
+      "brand_name": "创维汽车"
+    },
+    {
+      "series_id": 1261,
+      "series_name": "英致G3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/bf909b741491270a82431fb776aa1508~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 394,
+      "brand_name": "英致汽车"
+    },
+    {
+      "series_id": 1262,
+      "series_name": "英致G5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7a5b3d6016c722fc6dab0789cd6871e7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 394,
+      "brand_name": "英致汽车"
+    },
+    {
+      "series_id": 1263,
+      "series_name": "英致737",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/1291aba44a1f148863497df1384c7394~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 394,
+      "brand_name": "英致汽车"
+    },
+    {
+      "series_id": 25211,
+      "series_name": "纵横G700",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/3a797ab4562b4c988a694f3dd8f8c28f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10429,
+      "brand_name": "捷途纵横"
+    },
+    {
+      "series_id": 715,
+      "series_name": "黄海·翔龙",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/7581235bc7234cc3b62a48e91999297d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 132,
+      "brand_name": "黄海"
+    },
+    {
+      "series_id": 716,
+      "series_name": "黄海·蛟龙",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/643ea355186f4c21a318f6a9c04cddac~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 132,
+      "brand_name": "黄海"
+    },
+    {
+      "series_id": 1595,
+      "series_name": "黄海N3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5c260d057c65bc11edaf0a95e03656bc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 132,
+      "brand_name": "黄海"
+    },
+    {
+      "series_id": 717,
+      "series_name": "瑞途",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/4b0b67eb96a5ce92f1030c1bbd88f2bb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 132,
+      "brand_name": "黄海"
+    },
+    {
+      "series_id": 836,
+      "series_name": "九龙A4",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/d8fd597c5319e81d25103dbb76e53ed1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 134,
+      "brand_name": "九龙"
+    },
+    {
+      "series_id": 833,
+      "series_name": "九龙A5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/c940bc7895238632fb077f05a191f1f8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 134,
+      "brand_name": "九龙"
+    },
+    {
+      "series_id": 834,
+      "series_name": "九龙A6",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/5b7614129bf114a789f0b0fcbc0aca34~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 134,
+      "brand_name": "九龙"
+    },
+    {
+      "series_id": 2927,
+      "series_name": "九龙C6",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/4a6020c9ee0422ac593d749525591700~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 134,
+      "brand_name": "九龙"
+    },
+    {
+      "series_id": 9794,
+      "series_name": "知豆彩虹",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/2423341df9e64b588bf3aa9fa66604d3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 168,
+      "brand_name": "知豆"
+    },
+    {
+      "series_id": 1509,
+      "series_name": "知豆D2",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/134ac333100372a2e33ebab247986eb3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 168,
+      "brand_name": "知豆"
+    },
+    {
+      "series_id": 25527,
+      "series_name": "欧尔法",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/509cd593b87a4b01be0a7cbbf353d1f3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 510,
+      "brand_name": "智锐汽车 "
+    },
+    {
+      "series_id": 783,
+      "series_name": "骐铃T5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/a421f2b22fffa1eaa8641839f98ff232~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 104,
+      "brand_name": "骐铃汽车"
+    },
+    {
+      "series_id": 784,
+      "series_name": "骐铃T7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/292d8a6aee7cf6c3eafee9e3df674666~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 104,
+      "brand_name": "骐铃汽车"
+    },
+    {
+      "series_id": 3,
+      "series_name": "ALPINA B4",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/22b9b513bfdf418ebed4863fec3e7079~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 114,
+      "brand_name": "ALPINA"
+    },
+    {
+      "series_id": 552,
+      "series_name": "揽福",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/97cb0f7ba42c46d1ca12663dbbf6271a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 122,
+      "brand_name": "福迪"
+    },
+    {
+      "series_id": 555,
+      "series_name": "雄师F16",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/46b097b1f83de7fe99b5c033fe7c0148~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 122,
+      "brand_name": "福迪"
+    },
+    {
+      "series_id": 556,
+      "series_name": "雄师F22",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e15b71742303f6231523647157e475ab~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 122,
+      "brand_name": "福迪"
+    },
+    {
+      "series_id": 1596,
+      "series_name": "卡升威霆",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/6767bd43f9304c7ba3e92264ccd2abff~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 137,
+      "brand_name": "卡升"
+    },
+    {
+      "series_id": 1586,
+      "series_name": "卡升V-Class",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/443ec0988d6987cfcd9e36b1551657b4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 137,
+      "brand_name": "卡升"
+    },
+    {
+      "series_id": 3150,
+      "series_name": "大乘G60",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/77dee0b9fa778f5e449d18c694329b98~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 246,
+      "brand_name": "大乘汽车"
+    },
+    {
+      "series_id": 3364,
+      "series_name": "大乘G60S",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/cdd8aa521a426c9800c98af94019e5b4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 246,
+      "brand_name": "大乘汽车"
+    },
+    {
+      "series_id": 3024,
+      "series_name": "大乘G70s",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/9cbd3fc9bd0a3a56a6aac94d23cfe19c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 246,
+      "brand_name": "大乘汽车"
+    },
+    {
+      "series_id": 4092,
+      "series_name": "傲旋",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/94c6b107e26d42039256503858ed1ee9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 336,
+      "brand_name": "AUXUN傲旋"
+    },
+    {
+      "series_id": 4506,
+      "series_name": "金冠V-Class",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d6e375e326a0d0c500373e34a294ada7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 383,
+      "brand_name": "金冠汽车"
+    },
+    {
+      "series_id": 9753,
+      "series_name": "宾歌T10",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/b77f458f22a1460188f76c802705dc20~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 383,
+      "brand_name": "金冠汽车"
+    },
+    {
+      "series_id": 4834,
+      "series_name": "华晨新日i03",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6f94191738bca583a363b6a29c8a5c85~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 413,
+      "brand_name": "华晨新日"
+    },
+    {
+      "series_id": 5407,
+      "series_name": "华晨新日i03A",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/76b290a10547a7aa87424d1f5e02ef78~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 413,
+      "brand_name": "华晨新日"
+    },
+    {
+      "series_id": 4871,
+      "series_name": "朋克美美",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/60a10e5922963f11d17424a6c51dff36~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 420,
+      "brand_name": "朋克汽车"
+    },
+    {
+      "series_id": 4944,
+      "series_name": "朋克多多",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/be6a91bbd5caff44e4aaca634a6d3b03~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 420,
+      "brand_name": "朋克汽车"
+    },
+    {
+      "series_id": 20070,
+      "series_name": "克慕勒阿尔法",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/0f20f4942e1c43129f7d5a90474875c8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 482,
+      "brand_name": "克慕勒"
+    },
+    {
+      "series_id": 24720,
+      "series_name": "凯旋系列",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/038b4e2e8f6a4668a83d3b75abfb4a94~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10305,
+      "brand_name": "中房房车"
+    },
+    {
+      "series_id": 24721,
+      "series_name": "中房之星系列",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/e59b49bc30ba4edcbcdc88b9ea040353~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10305,
+      "brand_name": "中房房车"
+    },
+    {
+      "series_id": 25239,
+      "series_name": "示界06",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9cf15463fa5e4120a1f2f34627ec5f5c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10410,
+      "brand_name": "示界"
+    },
+    {
+      "series_id": 1037,
+      "series_name": "摩根Plus 4",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/e72ce365d0c64ab5932e8b7759bfce64~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 147,
+      "brand_name": "摩根"
+    },
+    {
+      "series_id": 4091,
+      "series_name": "广通艾菲",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/17d2a2ec5ea274befd5ffed8872e2591~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 335,
+      "brand_name": "广通客车"
+    },
+    {
+      "series_id": 4753,
+      "series_name": "SS DOLPHIN",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/4bf176e0de27e9f7ffe8a089622d328f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 408,
+      "brand_name": "松散机车"
+    },
+    {
+      "series_id": 5408,
+      "series_name": "莱茵旅行者",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/1fc977aa36b845baa47e391bc9c667c6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 467,
+      "brand_name": "莱茵汽车"
+    },
+    {
+      "series_id": 5957,
+      "series_name": "新海狮 EV",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/dda7d554c89446eda5c2d467b149ee03~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 516,
+      "brand_name": "金杯新能源"
+    },
+    {
+      "series_id": 8897,
+      "series_name": "钇为3",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/b57f28ba99f947bdb78b7b243b7f602d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 871,
+      "brand_name": "江淮钇为"
+    },
+    {
+      "series_id": 9792,
+      "series_name": "爱跑",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/99c0e84612604e6bb00ed8b4c57a1ab5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 871,
+      "brand_name": "江淮钇为"
+    },
+    {
+      "series_id": 8962,
+      "series_name": "江淮A5 PLUS",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/e5430a14461b4eb6abff5a4265b9dd3a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 882,
+      "brand_name": "江淮汽车"
+    },
+    {
+      "series_id": 8975,
+      "series_name": "江淮QX PHEV",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/5901534bebac4251a0136474f5411173~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 882,
+      "brand_name": "江淮汽车"
+    },
+    {
+      "series_id": 9513,
+      "series_name": "E路福",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/91de4fcebbbe4c85aa04a3a4e333c393~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 905,
+      "brand_name": "江铃晶马汽车"
+    },
+    {
+      "series_id": 25058,
+      "series_name": "奥迪E5 Sportback",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/37b81ebeefd5406c9f7a3e8870c044b1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10362,
+      "brand_name": "奥迪AUDI"
+    },
+    {
+      "series_id": 25720,
+      "series_name": "埃尚",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/a22aae1505f54dd283aa6d99bd22e5a3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10433,
+      "brand_name": "埃尚"
+    },
+    {
+      "series_id": 624,
+      "series_name": "广汽吉奥GX6",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/ef401965a3188532cf51d5cea4770f38~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 97,
+      "brand_name": "广汽吉奥"
+    },
+    {
+      "series_id": 625,
+      "series_name": "星朗",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b661686734cf682affca7171a7260cc5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 97,
+      "brand_name": "广汽吉奥"
+    },
+    {
+      "series_id": 659,
+      "series_name": "海格H6C",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/4d9f391a192d4aae997c26d2d0babf89~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 125,
+      "brand_name": "海格"
+    },
+    {
+      "series_id": 655,
+      "series_name": "龙威",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/85eb93ddfc5679452d96921072444cb7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 125,
+      "brand_name": "海格"
+    },
+    {
+      "series_id": 656,
+      "series_name": "海格H5C",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/db455451f3a7ff99af8e5180e4a387d8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 125,
+      "brand_name": "海格"
+    },
+    {
+      "series_id": 5918,
+      "series_name": "C530系列",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7f80270acf851186bfe459c6ed939f6f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 172,
+      "brand_name": "宇通"
+    },
+    {
+      "series_id": 1597,
+      "series_name": "宇通T7",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/5fddf1fc7b694da2a06953e624b7843c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 172,
+      "brand_name": "宇通"
+    },
+    {
+      "series_id": 1713,
+      "series_name": "云度π1",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/c78fff7eaf72ce07776d0fb1baf5f8d6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 188,
+      "brand_name": "云度"
+    },
+    {
+      "series_id": 5850,
+      "series_name": "骏行",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/7572d244ec05df6da9e5cd6279557e93~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 191,
+      "brand_name": "国金汽车"
+    },
+    {
+      "series_id": 1769,
+      "series_name": "泥瓦",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/196ecc15e14642a2b6d3d419ed772754~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 192,
+      "brand_name": "拉达"
+    },
+    {
+      "series_id": 2818,
+      "series_name": "爱驰U5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/fda5df827c2719c750a5d26cf35d2021~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 232,
+      "brand_name": "爱驰"
+    },
+    {
+      "series_id": 2905,
+      "series_name": "战车",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/2b85ca9dba25d2e6cf5c246c2ab33ae0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 236,
+      "brand_name": "乔治·巴顿"
+    },
+    {
+      "series_id": 5061,
+      "series_name": "迈莎锐V级",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/5d27c534fbc72880030fe233cd3ea3b6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 272,
+      "brand_name": "迈莎锐"
+    },
+    {
+      "series_id": 3757,
+      "series_name": "谢尔比GTE",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/a72fbf41ffbf2b25d44592688ba60d75~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 306,
+      "brand_name": "谢尔比"
+    },
+    {
+      "series_id": 4756,
+      "series_name": "LEVC LX",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/ab6c89e53c96649d8801e39aba4fe665~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 324,
+      "brand_name": "LEVC翼真汽车"
+    },
+    {
+      "series_id": 4603,
+      "series_name": "英力士掷弹兵",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9595db9be1624091ab8dff1e684b082f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 393,
+      "brand_name": "英力士"
+    },
+    {
+      "series_id": 25890,
+      "series_name": "英力士掷弹兵Quartermaster",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/724aca5ed45141a396f7bbcdb0e084eb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 393,
+      "brand_name": "英力士"
+    },
+    {
+      "series_id": 24667,
+      "series_name": "LUMMA 捍卫者",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/c21c42cf40f54682a19a5a4db9724809~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 412,
+      "brand_name": "LUMMA"
+    },
+    {
+      "series_id": 24682,
+      "series_name": "LUMMA 格鲁克",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/c985aa2a87294e299046998f020faab3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 412,
+      "brand_name": "LUMMA"
+    },
+    {
+      "series_id": 4822,
+      "series_name": "LUMMA CLR V",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/60f7fe399047c36208591432805404b0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 412,
+      "brand_name": "LUMMA"
+    },
+    {
+      "series_id": 5212,
+      "series_name": "北汽瑞翔X5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/ce8dad18a9c79b648310c4e7b1c97a54~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 444,
+      "brand_name": "北汽瑞翔"
+    },
+    {
+      "series_id": 9131,
+      "series_name": "极石01",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/e67441b6c5234d90aba5de4e0f2565cc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 878,
+      "brand_name": "ROX极石"
+    },
+    {
+      "series_id": 935,
+      "series_name": "莲花L3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/835271a0f06a6997b7a93450fbefd934~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 43,
+      "brand_name": "莲花汽车"
+    },
+    {
+      "series_id": 936,
+      "series_name": "莲花L5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/eaac32b5aa67186d70b7fa44048304b0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 43,
+      "brand_name": "莲花汽车"
+    },
+    {
+      "series_id": 1064,
+      "series_name": "欧朗",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/770483dc658a0538e2aa4c3fae67c7f5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 110,
+      "brand_name": "欧朗"
+    },
+    {
+      "series_id": 1506,
+      "series_name": "之诺60H",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f3e148c93a2d07838eb22627bacee7b2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 170,
+      "brand_name": "之诺"
+    },
+    {
+      "series_id": 1929,
+      "series_name": "Karma",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/38477f659a87c0de9bc2ea3c8cf2a6b9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 205,
+      "brand_name": "Fisker"
+    },
+    {
+      "series_id": 3408,
+      "series_name": "国机智骏GX5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d82d94ee62b66a881f61ae95ad0544d3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 266,
+      "brand_name": "国机智骏"
+    },
+    {
+      "series_id": 5315,
+      "series_name": "铂驰维努斯",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/f6c04c918060439f856be5139daaa178~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 344,
+      "brand_name": "星驰"
+    },
+    {
+      "series_id": 4678,
+      "series_name": "恒驰5",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/f6a394d645f3d8c62b651f935b3d7000~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 399,
+      "brand_name": "恒驰"
+    },
+    {
+      "series_id": 4985,
+      "series_name": "Novitec Huracán",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/a2113c54506a0af38073a268485780b4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 424,
+      "brand_name": "Novitec"
+    },
+    {
+      "series_id": 5014,
+      "series_name": "小虎FEV",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/9265da77f9e501614776f2afe7afa78f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 429,
+      "brand_name": "小虎"
+    },
+    {
+      "series_id": 5177,
+      "series_name": "雅升V-Class",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/972c78c642ce4016a8056be52379b69d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 439,
+      "brand_name": "雅升汽车"
+    },
+    {
+      "series_id": 5293,
+      "series_name": "YOUNG光小新",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/3521e3d04aa24f698224fa2dbc7e335f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 451,
+      "brand_name": "电动屋"
+    },
+    {
+      "series_id": 25396,
+      "series_name": "焜驰V级",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/6b28ec54f2444a10a97e6a67907af6b3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 513,
+      "brand_name": "焜驰"
+    },
+    {
+      "series_id": 5914,
+      "series_name": "星影VLS",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6cd0fb56943b5ada592f0d7a76b065d1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 513,
+      "brand_name": "焜驰"
+    },
+    {
+      "series_id": 4209,
+      "series_name": "VGV U70",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/8962f78d7a160bfa32466bf7fc4be7ee~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 162,
+      "brand_name": "中国重汽VGV"
+    },
+    {
+      "series_id": 4495,
+      "series_name": "VGV TX7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/d3c3f3da188f631dbf909b1d8ecfe46c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 162,
+      "brand_name": "中国重汽VGV"
+    },
+    {
+      "series_id": 24622,
+      "series_name": "启界",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/5af26cc7586b461594d04d270708690f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10297,
+      "brand_name": "瑞弗"
+    },
+    {
+      "series_id": 24660,
+      "series_name": "瑞弗T系列",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/c41f32bfa2a542bea2cb0281551f1d1f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10297,
+      "brand_name": "瑞弗"
+    },
+    {
+      "series_id": 24696,
+      "series_name": "凯歌系列",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/11dbfe73fdd84848a4cffc378d1427e1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10301,
+      "brand_name": "隆翠房车"
+    },
+    {
+      "series_id": 24698,
+      "series_name": "哆啡系列",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/73cf3cc46db843d6960b1b6bd3084b3d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10301,
+      "brand_name": "隆翠房车"
+    },
+    {
+      "series_id": 24742,
+      "series_name": "长江7号",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/f50a0cc8563b4864a78c7f3aca67a0c9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10315,
+      "brand_name": "骐蔚汽车"
+    },
+    {
+      "series_id": 871,
+      "series_name": "Agera",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/5ee923602f660572485dbb163f4aca6c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 83,
+      "brand_name": "科尼赛克"
+    },
+    {
+      "series_id": 636,
+      "series_name": "赛马",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/f99dbe1293fe5ffc84dc6c627e7ee9bd~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 98,
+      "brand_name": "哈飞"
+    },
+    {
+      "series_id": 606,
+      "series_name": "嘉路",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/1d4306f7d1f064668483e38bf0b8a774~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 124,
+      "brand_name": "光冈"
+    },
+    {
+      "series_id": 3564,
+      "series_name": "恒天L4600",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/adc43f794526260f337fc8dbd1551694~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 127,
+      "brand_name": "恒天"
+    },
+    {
+      "series_id": 25530,
+      "series_name": "X-BOW GT-XR",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/56f028d98672497e85fc68d3222ab72d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 141,
+      "brand_name": "KTM"
+    },
+    {
+      "series_id": 2967,
+      "series_name": "全球鹰EX3",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/570c9c6d82783d42f1b7dd039d12c8f7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 143,
+      "brand_name": "全球鹰"
+    },
+    {
+      "series_id": 1139,
+      "series_name": "前途K50",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/b0378f52b622d1d88574e059d5ca6163~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 149,
+      "brand_name": "前途"
+    },
+    {
+      "series_id": 1185,
+      "series_name": "如虎 XL",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/cc9d1433670b18bac325ec38e6739625~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 150,
+      "brand_name": "如虎"
+    },
+    {
+      "series_id": 1235,
+      "series_name": "斯达泰克-卫士",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/63fbbdafb24e42b88455e1bba5321e71~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 156,
+      "brand_name": "斯达泰克"
+    },
+    {
+      "series_id": 1217,
+      "series_name": "双环SCEO",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/9a7f12138e9b95e441522300c98e1660~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 155,
+      "brand_name": "双环"
+    },
+    {
+      "series_id": 25556,
+      "series_name": "威麟R08",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/29a650968b4e465d92871700994c41ef~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 160,
+      "brand_name": "威麟"
+    },
+    {
+      "series_id": 1253,
+      "series_name": "泰卡特 T9",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/d69b4f39042edaf4fa52a16df6bfafae~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 158,
+      "brand_name": "泰卡特"
+    },
+    {
+      "series_id": 1345,
+      "series_name": "新凯凌特",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/6b8b068b03cced03e7b3a4272bac457a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 164,
+      "brand_name": "新凯"
+    },
+    {
+      "series_id": 1698,
+      "series_name": "华骐300E",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/38bd06fa520fe85bbbffa2d80ac2f3a0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 184,
+      "brand_name": "华骐"
+    },
+    {
+      "series_id": 3012,
+      "series_name": "东风·瑞泰特EM10",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0fa049c08cf09582b16ca3615a36cc29~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 230,
+      "brand_name": "东风·瑞泰特"
+    },
+    {
+      "series_id": 2840,
+      "series_name": "SITECH DEV 1",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/f3e5495a379b33949a8df08bcab9ab73~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 234,
+      "brand_name": "新特汽车"
+    },
+    {
+      "series_id": 9035,
+      "series_name": "红星BOX1",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/96bb933c445340be9519d570203cc4d6~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 241,
+      "brand_name": "红星汽车"
+    },
+    {
+      "series_id": 4680,
+      "series_name": "IMSA S级",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/b0fbbd6dd3dda2b681943acd612c4fa1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 307,
+      "brand_name": "英飒"
+    },
+    {
+      "series_id": 4254,
+      "series_name": "Rover 75",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/031d5afe4a87f031b5402a194757520a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 352,
+      "brand_name": "罗孚"
+    },
+    {
+      "series_id": 4299,
+      "series_name": "上喆V级",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/0b90c18e2d544c2dae47c5a8d95958d7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 365,
+      "brand_name": "上喆"
+    },
+    {
+      "series_id": 4733,
+      "series_name": "飞碟Q2T",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e640dd0c4fbc921a9f367fc0cc29e6e4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 404,
+      "brand_name": "飞碟汽车"
+    },
+    {
+      "series_id": 25745,
+      "series_name": "WALD City系列",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/deb65152b5f24b96a6e84177c9c6e63c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 416,
+      "brand_name": "WALD"
+    },
+    {
+      "series_id": 4919,
+      "series_name": "橙仕01",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/cd15f5ca5ea545e79ffc431ccecba5a7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 421,
+      "brand_name": "橙仕"
+    },
+    {
+      "series_id": 5181,
+      "series_name": "小泰迪",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/603eabe41412ec92229403525a5a4234~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 441,
+      "brand_name": "恒润汽车"
+    },
+    {
+      "series_id": 5320,
+      "series_name": "申龙DST神州5号",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/3624ffe2227c02b2e5990d6192d00e82~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 454,
+      "brand_name": "申龙客车"
+    },
+    {
+      "series_id": 5373,
+      "series_name": "鲲",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c1f2ae354ad0fe0f7f1154e8eacdccda~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 463,
+      "brand_name": "上汽集团"
+    },
+    {
+      "series_id": 8904,
+      "series_name": "骏航ES",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/8192fff87b364cbdb3134dfb8f5cc9cd~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 470,
+      "brand_name": "凯马汽车"
+    },
+    {
+      "series_id": 20052,
+      "series_name": "凌际卫士",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/9a6d11e365bf4f8cb13d3187c7a5eeef~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 508,
+      "brand_name": "LIMGENE凌际"
+    },
+    {
+      "series_id": 6196,
+      "series_name": "拓锐斯特V-Class",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/791897e8a3854e13b039461b8832d827~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 518,
+      "brand_name": "拓锐斯特"
+    },
+    {
+      "series_id": 9469,
+      "series_name": "越界R6",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/482478f0043d49f8b08aa585032083e2~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 536,
+      "brand_name": "越界"
+    },
+    {
+      "series_id": 6288,
+      "series_name": "金琥EV48",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/d2aef69b24b94c0d8648f3d845acf5e0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 553,
+      "brand_name": "金琥新能源"
+    },
+    {
+      "series_id": 9603,
+      "series_name": "菱势黄金仓",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/b0ae892feb51492b8d2ee7775575f61b~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 877,
+      "brand_name": "菱势汽车"
+    },
+    {
+      "series_id": 9073,
+      "series_name": "世极",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/4804b3e2f21e439287948de59446a90d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 922,
+      "brand_name": "世极"
+    },
+    {
+      "series_id": 24707,
+      "series_name": "星领",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/d6d0c149adfa4a04b6eb2e88803dc04e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10303,
+      "brand_name": "齐星房车"
+    },
+    {
+      "series_id": 24703,
+      "series_name": "福犀牛",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/1846a63d94984d82803f35e1c28540b5~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10302,
+      "brand_name": "江铃旅居房车"
+    },
+    {
+      "series_id": 24718,
+      "series_name": "白鲸",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/4dc5a6abc2bf42568d224f91d1f4b0a7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10308,
+      "brand_name": "赛德房车"
+    },
+    {
+      "series_id": 24946,
+      "series_name": "NAJA系列",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/lpa-efe3bf42d433ad2c44870ebe16d117b4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10343,
+      "brand_name": "亚特房车"
+    },
+    {
+      "series_id": 24953,
+      "series_name": "C型系列",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/lpa-68860287d56502f58c9faf7e65c7226c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10344,
+      "brand_name": "爱旅房车"
+    },
+    {
+      "series_id": 25144,
+      "series_name": "予风黄金仓",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/67ce7fc08f244162bfef8552799fe234~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10402,
+      "brand_name": "予风汽车"
+    },
+    {
+      "series_id": 25685,
+      "series_name": "普曼VLS",
+      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/1c92f2b3de5a495d9b3c1feec98d54a9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10430,
+      "brand_name": "普曼·巅峰"
+    },
+    {
+      "series_id": 25622,
+      "series_name": "多拉大面",
+      "image_url": "http://p3-dcd.byteimg.com/tos-cn-i-dcdx/819c8847b05845c8b9c62e971a0a5ba7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 10428,
+      "brand_name": "货拉拉多拉"
     }
   ]
 }
