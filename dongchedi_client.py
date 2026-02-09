@@ -1,0 +1,538 @@
+#!/usr/bin/env python3
+"""
+懂车帝二手车采集客户端 - 支持断点续采
+- 品牌 -> 车系 -> 列表概览 -> 详情(含图片/配置/参数)
+- 输出：brands.json / series.json / overviews.json / details.json / images.json / configs.json
+- progress.json 记录采集进度，支持任意阶段断点续采
+"""
+
+import asyncio
+import json
+import os
+import re
+from datetime import datetime
+from typing import Dict, List, Optional
+
+from dongchedi_api import DongchediAPI
+from db_manager import DBManager
+
+DEFAULT_OUTPUT_DIR = "client_output"
+DEFAULT_MAX_WORKERS = 10
+DEFAULT_MAX_PAGES = 167
+
+# ================================================================
+# 进度管理
+# ================================================================
+
+STAGES = ["brands", "series", "overviews", "details"]
+
+
+def _progress_path(output_dir: str) -> str:
+    return os.path.join(output_dir, "progress.json")
+
+
+def _load_progress(output_dir: str) -> Dict:
+    path = _progress_path(output_dir)
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {
+        "config": {},
+        "stages": {s: {"status": "pending", "updated_at": None} for s in STAGES},
+        "completed_brands_series": [],   # 车系阶段：已完成的brand_id列表
+        "completed_overviews": [],       # 概览阶段：已完成的series_id列表
+        "completed_details": [],         # 详情阶段：已完成的sku_id列表
+    }
+
+
+def _save_progress(output_dir: str, progress: Dict):
+    progress["updated_at"] = datetime.now().isoformat()
+    path = _progress_path(output_dir)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(progress, f, ensure_ascii=False, indent=2)
+
+
+def _mark_stage(progress: Dict, stage: str, status: str):
+    progress["stages"][stage] = {
+        "status": status,
+        "updated_at": datetime.now().isoformat(),
+    }
+
+
+def _stage_status(progress: Dict, stage: str) -> str:
+    return progress["stages"].get(stage, {}).get("status", "pending")
+
+
+# ================================================================
+# JSON 读写
+# ================================================================
+
+def _file_path(output_dir: str, name: str) -> str:
+    return os.path.join(output_dir, f"{name}.json")
+
+
+def _write_json(path: str, payload):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+
+def _read_json(path: str):
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"⚠️ JSON文件损坏，将重建: {path} ({e})")
+        return None
+
+
+def _append_to_json_array(path: str, items: List[Dict]):
+    """追加数据到JSON文件的data数组中（增量保存）"""
+    existing = _read_json(path)
+    if existing and "data" in existing:
+        existing["data"].extend(items)
+        existing["metadata"]["total"] = len(existing["data"])
+        existing["metadata"]["updated_at"] = datetime.now().isoformat()
+    else:
+        existing = {
+            "metadata": {"total": len(items), "created_at": datetime.now().isoformat(), "updated_at": datetime.now().isoformat()},
+            "data": items,
+        }
+    _write_json(path, existing)
+
+
+# ================================================================
+# 品牌选择（仅首次运行时交互）
+# ================================================================
+
+def _print_brand_list(brands: List[Dict]):
+    print("\n可选品牌（前60个）：")
+    for idx, b in enumerate(brands[:60], 1):
+        print(f"{idx:>2}. {b['brand_name']} (ID: {b['brand_id']})")
+    if len(brands) > 60:
+        print(f"... 共 {len(brands)} 个品牌")
+
+
+def _select_brands(brands: List[Dict]) -> List[Dict]:
+    _print_brand_list(brands)
+    print("\n选择品牌：")
+    print("- 输入 all 或直接回车：采集全部品牌")
+    print("- 输入编号列表（例如 1,3,5）")
+    print("- 输入关键词（例如 '大众,比亚迪'）")
+
+    raw = input("请输入：").strip()
+    if not raw or raw.lower() == "all":
+        return brands
+
+    selections: List[Dict] = []
+    tokens = [t.strip() for t in raw.split(",") if t.strip()]
+
+    if all(t.isdigit() for t in tokens):
+        for t in tokens:
+            idx = int(t) - 1
+            if 0 <= idx < len(brands):
+                selections.append(brands[idx])
+        return selections or brands
+
+    for name in tokens:
+        match = next((b for b in brands if name in b["brand_name"]), None)
+        if match:
+            selections.append(match)
+
+    return selections or brands
+
+
+# ================================================================
+# 阶段1：品牌采集
+# ================================================================
+
+async def stage_brands(api: DongchediAPI, output_dir: str, progress: Dict, db: Optional[DBManager] = None) -> List[Dict]:
+    brands_path = _file_path(output_dir, "brands")
+
+    # 已完成 -> 直接读取
+    if _stage_status(progress, "brands") == "done":
+        data = _read_json(brands_path)
+        if data and data.get("data"):
+            brands = data["data"]
+            print(f"✅ [品牌] 已有 {len(brands)} 个品牌，跳过采集")
+            return brands
+
+    print("\n[阶段1] 采集品牌...")
+    _mark_stage(progress, "brands", "running")
+    _save_progress(output_dir, progress)
+
+    result = await api.fetch_brands_and_series()
+    if not result or not result.get("brands"):
+        print("❌ 品牌采集失败")
+        return []
+
+    all_brands = result["brands"]
+
+    # 首次运行：交互选择品牌
+    selected = _select_brands(all_brands)
+    print(f"\n已选择 {len(selected)} 个品牌")
+
+    _write_json(brands_path, {
+        "metadata": {
+            "created_at": datetime.now().isoformat(),
+            "total_available": len(all_brands),
+            "total_selected": len(selected),
+        },
+        "data": selected,
+    })
+
+    if db:
+        await db.upsert_brands(selected)
+
+    _mark_stage(progress, "brands", "done")
+    _save_progress(output_dir, progress)
+    return selected
+
+
+# ================================================================
+# 阶段2：车系采集（逐品牌增量保存）
+# ================================================================
+
+async def stage_series(api: DongchediAPI, output_dir: str, progress: Dict, brands: List[Dict], db: Optional[DBManager] = None) -> List[Dict]:
+    series_path = _file_path(output_dir, "series")
+    completed_ids = set(int(x) for x in progress.get("completed_brands_series", []))
+
+    # 全部完成
+    if _stage_status(progress, "series") == "done":
+        data = _read_json(series_path)
+        if data and data.get("data"):
+            print(f"✅ [车系] 已有 {len(data['data'])} 个车系，跳过采集")
+            return data["data"]
+
+    # 部分完成 -> 读取已有数据
+    existing_series = []
+    if os.path.exists(series_path):
+        data = _read_json(series_path)
+        if data and data.get("data"):
+            existing_series = data["data"]
+
+    remaining = [b for b in brands if b["brand_id"] not in completed_ids]
+    if not remaining:
+        _mark_stage(progress, "series", "done")
+        _save_progress(output_dir, progress)
+        return existing_series
+
+    total = len(brands)
+    done_count = total - len(remaining)
+    print(f"\n[阶段2] 采集车系... (已完成 {done_count}/{total} 个品牌)")
+    _mark_stage(progress, "series", "running")
+    _save_progress(output_dir, progress)
+
+    from playwright.async_api import async_playwright
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        try:
+            for i, brand in enumerate(remaining, done_count + 1):
+                bid = brand["brand_id"]
+                bname = brand["brand_name"]
+                print(f"   [{i}/{total}] {bname}...")
+                try:
+                    result = await api.fetch_series_for_brand(bid, bname, browser=browser)
+                    if result:
+                        # 增量追加
+                        _append_to_json_array(series_path, result)
+                        existing_series.extend(result)
+                        if db:
+                            await db.upsert_series_list(result)
+                        print(f"   ✅ {bname}: {len(result)} 个车系")
+                    else:
+                        print(f"   ⚠️ {bname}: 无车系")
+                except Exception as e:
+                    print(f"   ❌ {bname}: {e}")
+
+                # 标记该品牌完成
+                completed_ids.add(bid)
+                progress["completed_brands_series"] = list(completed_ids)
+                _save_progress(output_dir, progress)
+        finally:
+            await browser.close()
+
+    _mark_stage(progress, "series", "done")
+    _save_progress(output_dir, progress)
+    print(f"   ✅ 车系采集完成，共 {len(existing_series)} 个车系")
+    return existing_series
+
+
+# ================================================================
+# 阶段3：列表概览（逐车系增量保存）
+# ================================================================
+
+async def stage_overviews(api: DongchediAPI, output_dir: str, progress: Dict,
+                          brands: List[Dict], series_list: List[Dict], max_pages: int,
+                          db: Optional[DBManager] = None) -> List[Dict]:
+    overviews_path = _file_path(output_dir, "overviews")
+    completed_ids = set(int(x) for x in progress.get("completed_overviews", []))
+
+    if _stage_status(progress, "overviews") == "done":
+        data = _read_json(overviews_path)
+        if data and data.get("data"):
+            print(f"✅ [概览] 已有 {len(data['data'])} 条概览，跳过采集")
+            return data["data"]
+
+    existing = []
+    if os.path.exists(overviews_path):
+        data = _read_json(overviews_path)
+        if data and data.get("data"):
+            existing = data["data"]
+
+    # 按品牌分组
+    brand_map = {b["brand_id"]: b for b in brands}
+    remaining = [s for s in series_list if s["series_id"] not in completed_ids]
+
+    if not remaining:
+        _mark_stage(progress, "overviews", "done")
+        _save_progress(output_dir, progress)
+        return existing
+
+    total = len(series_list)
+    done_count = total - len(remaining)
+    print(f"\n[阶段3] 采集列表概览... (已完成 {done_count}/{total} 个车系)")
+    _mark_stage(progress, "overviews", "running")
+    _save_progress(output_dir, progress)
+
+    for i, s in enumerate(remaining, done_count + 1):
+        sid = s["series_id"]
+        sname = s.get("series_name", str(sid))
+        bid = s.get("brand_id")
+        brand = brand_map.get(bid, {})
+        bname = brand.get("brand_name", "")
+
+        print(f"   [{i}/{total}] {bname}/{sname}...")
+        try:
+            cars = await api.fetch_all_car_list(
+                brand_id=bid, brand_name=bname,
+                series_id=sid, series_name=sname,
+                max_pages=max_pages,
+            )
+            if cars:
+                _append_to_json_array(overviews_path, cars)
+                existing.extend(cars)
+                if db:
+                    await db.upsert_overviews(cars)
+                print(f"   ✅ {sname}: {len(cars)} 条")
+            else:
+                print(f"   ⚠️ {sname}: 无数据")
+        except Exception as e:
+            print(f"   ❌ {sname}: {e}")
+
+        completed_ids.add(sid)
+        progress["completed_overviews"] = list(completed_ids)
+        _save_progress(output_dir, progress)
+
+    _mark_stage(progress, "overviews", "done")
+    _save_progress(output_dir, progress)
+    print(f"   ✅ 概览采集完成，共 {len(existing)} 条")
+    return existing
+
+
+# ================================================================
+# 阶段4：详情采集（逐批增量保存）
+# ================================================================
+
+async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
+                        overviews: List[Dict], max_workers: int,
+                        db: Optional[DBManager] = None):
+    details_path = _file_path(output_dir, "details")
+    images_path = _file_path(output_dir, "images")
+    configs_path = _file_path(output_dir, "configs")
+    completed_ids = set(int(x) for x in progress.get("completed_details", []))
+
+    if _stage_status(progress, "details") == "done":
+        data = _read_json(details_path)
+        cnt = len(data["data"]) if data and data.get("data") else 0
+        print(f"✅ [详情] 已有 {cnt} 条详情，跳过采集")
+        return
+
+    remaining = [c for c in overviews if c.get("sku_id") and c["sku_id"] not in completed_ids]
+
+    if not remaining:
+        _mark_stage(progress, "details", "done")
+        _save_progress(output_dir, progress)
+        return
+
+    total = len(overviews)
+    done_count = total - len(remaining)
+    print(f"\n[阶段4] 采集详情... (已完成 {done_count}/{total})")
+    _mark_stage(progress, "details", "running")
+    _save_progress(output_dir, progress)
+
+    BATCH_SIZE = max_workers * 2
+    from playwright.async_api import async_playwright
+
+    for batch_start in range(0, len(remaining), BATCH_SIZE):
+        batch = remaining[batch_start:batch_start + BATCH_SIZE]
+        print(f"   批次 {batch_start // BATCH_SIZE + 1}: {len(batch)} 条")
+
+        semaphore = asyncio.Semaphore(max_workers)
+        batch_results: List[Optional[Dict]] = [None] * len(batch)
+
+        async def _task(idx, sku_id, page):
+            async with semaphore:
+                batch_results[idx] = await api.fetch_car_detail(page, sku_id)
+
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+            pages = [await browser.new_page() for _ in range(min(max_workers, len(batch)))]
+            try:
+                tasks = []
+                for idx, car in enumerate(batch):
+                    pg = pages[idx % len(pages)]
+                    tasks.append(_task(idx, car["sku_id"], pg))
+                await asyncio.gather(*tasks)
+            finally:
+                for pg in pages:
+                    await pg.close()
+                await browser.close()
+
+        # 拆分并增量保存
+        batch_details_for_db: List[Dict] = []
+        for idx, d in enumerate(batch_results):
+            if not d or not d.get("sku_id"):
+                continue
+            sku_id = d["sku_id"]
+
+            detail_row = {k: d.get(k) for k in [
+                "sku_id", "spu_id", "title", "important_text",
+                "sh_price", "official_price", "include_tax_price",
+                "source_sh_price", "source_offical_price",
+                "brand_id", "brand_name", "series_id", "series_name",
+                "car_id", "car_name", "year", "body_color",
+                "params", "shop", "report", "financial",
+                "tags", "highlights", "description",
+                "detail_url", "detail_params_url", "collected_at",
+            ]}
+            image_row = {"sku_id": sku_id, "images": d.get("images", [])}
+            config_row = {"sku_id": sku_id, "config": d.get("config"),
+                          "detail_params": d.get("detail_params"),
+                          "detail_params_raw": d.get("detail_params_raw")}
+
+            _append_to_json_array(details_path, [detail_row])
+            _append_to_json_array(images_path, [image_row])
+            _append_to_json_array(configs_path, [config_row])
+
+            batch_details_for_db.append(d)
+            completed_ids.add(sku_id)
+
+        if db and batch_details_for_db:
+            await db.upsert_details(batch_details_for_db)
+
+        progress["completed_details"] = list(completed_ids)
+        _save_progress(output_dir, progress)
+        print(f"   ✅ 批次完成，累计 {len(completed_ids)}/{total}")
+
+    _mark_stage(progress, "details", "done")
+    _save_progress(output_dir, progress)
+    print(f"   ✅ 详情采集完成，共 {len(completed_ids)} 条")
+
+
+# ================================================================
+# 主流程
+# ================================================================
+
+async def main():
+    print("=" * 60)
+    print("🚀 懂车帝采集客户端（支持断点续采）")
+    print("=" * 60)
+
+    output_dir = input(f"输出目录（默认 {DEFAULT_OUTPUT_DIR}）：").strip() or DEFAULT_OUTPUT_DIR
+    os.makedirs(output_dir, exist_ok=True)
+
+    progress = _load_progress(output_dir)
+
+    # 检测是否有未完成的任务
+    has_progress = any(_stage_status(progress, s) in ("done", "running") for s in STAGES)
+    if has_progress:
+        status_str = " | ".join(f"{s}={_stage_status(progress, s)}" for s in STAGES)
+        print(f"\n📋 检测到上次进度: {status_str}")
+        choice = input("继续上次采集？(Y/n)：").strip().lower()
+        if choice == "n":
+            progress = {
+                "config": {},
+                "stages": {s: {"status": "pending", "updated_at": None} for s in STAGES},
+                "completed_brands_series": [],
+                "completed_overviews": [],
+                "completed_details": [],
+            }
+            # 清空旧文件
+            for name in ["brands", "series", "overviews", "details", "images", "configs", "progress"]:
+                p = _file_path(output_dir, name)
+                if os.path.exists(p):
+                    os.remove(p)
+            print("🗑️ 已清空旧数据，重新开始")
+
+    # 配置（仅首次）
+    if not progress.get("config", {}).get("max_workers"):
+        mw = input(f"线程数（默认 {DEFAULT_MAX_WORKERS}）：").strip()
+        max_workers = int(mw) if mw.isdigit() else DEFAULT_MAX_WORKERS
+        mp = input(f"最大页数（默认 {DEFAULT_MAX_PAGES}）：").strip()
+        max_pages = int(mp) if mp.isdigit() else DEFAULT_MAX_PAGES
+        progress["config"] = {"max_workers": max_workers, "max_pages": max_pages}
+        _save_progress(output_dir, progress)
+    else:
+        max_workers = progress["config"]["max_workers"]
+        max_pages = progress["config"]["max_pages"]
+        print(f"📋 使用上次配置: 线程={max_workers}, 最大页数={max_pages}")
+
+    api = DongchediAPI(headless=True)
+
+    # 数据库连接（可选）
+    db: Optional[DBManager] = None
+    enable_db = progress.get("config", {}).get("enable_db")
+    if enable_db is None:
+        db_choice = input("是否同步到MySQL数据库？(y/N)：").strip().lower()
+        enable_db = db_choice == "y"
+        progress["config"]["enable_db"] = enable_db
+        _save_progress(output_dir, progress)
+
+    if enable_db:
+        try:
+            db = DBManager()
+            await db.connect()
+        except Exception as e:
+            print(f"⚠️ 数据库连接失败: {e}")
+            print("   将仅保存到JSON文件，不同步数据库")
+            db = None
+
+    try:
+        # 阶段1：品牌
+        brands = await stage_brands(api, output_dir, progress, db=db)
+        if not brands:
+            print("❌ 无品牌数据，退出")
+            return
+
+        # 阶段2：车系（全自动，不再逐品牌询问）
+        series_list = await stage_series(api, output_dir, progress, brands, db=db)
+        if not series_list:
+            print("⚠️ 无车系数据")
+
+        # 阶段3：概览
+        overviews = await stage_overviews(api, output_dir, progress, brands, series_list, max_pages, db=db)
+
+        # 阶段4：详情
+        await stage_details(api, output_dir, progress, overviews, max_workers, db=db)
+
+        print("\n" + "=" * 60)
+        print("✅ 全部采集完成!")
+        print(f"   品牌: {len(brands)}")
+        print(f"   车系: {len(series_list)}")
+        print(f"   概览: {len(overviews)}")
+        det = _read_json(_file_path(output_dir, "details"))
+        det_count = len(det["data"]) if det and det.get("data") else 0
+        print(f"   详情: {det_count}")
+        print(f"   输出: {os.path.abspath(output_dir)}")
+        if db:
+            print(f"   数据库: {db._pool.db}")
+        print("=" * 60)
+    finally:
+        if db:
+            await db.close()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

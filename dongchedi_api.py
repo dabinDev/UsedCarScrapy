@@ -39,24 +39,37 @@ class DongchediAPI:
         # 备用：正则匹配
         try:
             html = await page.content()
-            match = re.search(r'__NEXT_DATA__[^>]*>(.*?)</script>', html)
-            if match:
-                return json.loads(match.group(1))
+            return self._extract_next_data_from_html(html)
         except Exception:
             pass
         return None
 
-    def _build_list_url(self, brand_id=None, series_id=None, page_num=1):
+    def _extract_next_data_from_html(self, html):
+        """从HTML字符串中提取 __NEXT_DATA__ JSON"""
+        if not html:
+            return None
+        match = re.search(r'__NEXT_DATA__[^>]*>(.*?)</script>', html)
+        if match:
+            return json.loads(match.group(1))
+        return None
+
+    def _build_list_url(self, brand_id=None, series_id=None, page_num=1, city_id=1):
         """构建列表页URL
-        URL格式: /usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand}-x-{series}-{page}-x-x-x-x-x
+        URL格式: /usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand}-{series}-{city}-{page}-x-x-x-x-x
+        city_id: 1=全国, 330100=杭州 等
         """
         brand_part = str(brand_id) if brand_id else "x"
         series_part = str(series_id) if series_id else "1"
-        return f"{self.USEDCAR_URL}/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_part}-x-{series_part}-{page_num}-x-x-x-x-x"
+        city_part = str(city_id)
+        return f"{self.USEDCAR_URL}/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_part}-{series_part}-{city_part}-{page_num}-x-x-x-x-x"
 
     def _build_detail_url(self, sku_id):
         """构建详情页URL"""
         return f"{self.USEDCAR_URL}/{sku_id}"
+
+    def _build_params_url(self, car_id):
+        """构建参数页URL"""
+        return f"{self.BASE_URL}/auto/params-carIds-{car_id}"
 
     # ================================================================
     # 阶段1+2：品牌 + 车系采集
@@ -92,30 +105,38 @@ class DongchediAPI:
 
                 brands = []
                 seen_ids = set()
-                # brand_groups 是按字母分组的列表
-                for group in brand_groups:
-                    if isinstance(group, dict):
-                        # 单个品牌
-                        bid = group.get("brand_id")
+
+                # allBrand.brand 结构: [{type:1000, info:{pinyin:"A"}}, {type:1001, info:{brand_id, brand_name, ...}}, ...]
+                # type 1000 = 字母分组头, type 1001 = 品牌
+                for item in brand_groups:
+                    if isinstance(item, dict):
+                        info = item.get("info", {})
+                        bid = info.get("brand_id")
                         if bid and bid not in seen_ids:
                             seen_ids.add(bid)
-                            brands.append(self._normalize_brand(group))
-                    elif isinstance(group, list):
-                        # 一组品牌
-                        for item in group:
-                            if isinstance(item, dict):
-                                bid = item.get("brand_id")
-                                if bid and bid not in seen_ids:
-                                    seen_ids.add(bid)
-                                    brands.append(self._normalize_brand(item))
+                            brands.append(self._normalize_brand(item))
+
+                # 备用: props.brands 是按字母分组的嵌套列表
+                if not brands:
+                    brands_nested = props.get("brands", [])
+                    for group in brands_nested:
+                        if isinstance(group, list):
+                            for item in group:
+                                if isinstance(item, dict):
+                                    info = item.get("info", {})
+                                    bid = info.get("brand_id")
+                                    if bid and bid not in seen_ids:
+                                        seen_ids.add(bid)
+                                        brands.append(self._normalize_brand(item))
 
                 hot_brands = []
                 for hb in hot_brands_raw:
-                    bid = hb.get("brand_id")
+                    info = hb.get("info", {})
+                    bid = info.get("brand_id")
                     if bid:
                         hot_brands.append(self._normalize_brand(hb))
 
-                # 如果 brand_groups 解析为空，从 hot_brands 补充
+                # 如果都解析为空，从 hot_brands 补充
                 if not brands and hot_brands:
                     brands = hot_brands
 
@@ -316,24 +337,58 @@ class DongchediAPI:
         if not sku:
             return None
 
-        return self._normalize_car_detail(sku, sku_id)
+        car_info = sku.get("car_info") or {}
+        car_id = car_info.get("car_id") or sku.get("car_id")
+        params_payload = None
+        if car_id:
+            params_payload = await self.fetch_car_params(page, car_id)
 
-    def _normalize_car_detail(self, sku, sku_id):
+        return self._normalize_car_detail(sku, sku_id, params_payload=params_payload)
+
+    async def fetch_car_params(self, page, car_id):
+        """获取详情页的详细参数（/auto/params-carIds-{car_id}）"""
+        url = self._build_params_url(car_id)
+        try:
+            resp = await page.request.get(url)
+            if not resp or not resp.ok:
+                print(f"      ⚠️ 参数页请求失败: {car_id} status={getattr(resp, 'status', '?')}")
+                return None
+            html = await resp.text()
+            data = self._extract_next_data_from_html(html)
+            if not data:
+                print(f"      ⚠️ 参数页无__NEXT_DATA__: {car_id}")
+                return None
+            page_props = data.get("props", {}).get("pageProps", {})
+            raw_data = page_props.get("rawData", {})
+            if not raw_data:
+                print(f"      ⚠️ 参数页无rawData: {car_id}")
+                return None
+            parsed = self._parse_param_groups(raw_data)
+            return {
+                "url": url,
+                "raw_data": raw_data,
+                "param_groups": parsed,
+            }
+        except Exception as e:
+            print(f"      ⚠️ 参数页异常: {car_id} - {e}")
+            return None
+
+    def _normalize_car_detail(self, sku, sku_id, params_payload=None):
         """标准化详情页数据"""
-        car_info = sku.get("car_info", {})
-        config = sku.get("car_config_overview", {})
-        power = config.get("power", {})
-        space = config.get("space", {})
-        manipulation = config.get("manipulation", {})
-        shop = sku.get("shop_info", {})
-        report = sku.get("report", {})
-        financial = sku.get("financial_info", {})
+        car_info = sku.get("car_info") or {}
+        config = sku.get("car_config_overview") or {}
+        power = config.get("power") or {}
+        space = config.get("space") or {}
+        manipulation = config.get("manipulation") or {}
+        shop = sku.get("shop_info") or {}
+        report = sku.get("report") or {}
+        financial = sku.get("financial_info") or {}
 
-        # 真实价格（分→万元）
+        # 真实价格（分→万元，1万元 = 1,000,000分）
         source_sh = sku.get("source_sh_price", 0)
         source_official = sku.get("source_offical_price", 0)
-        sh_price_wan = round(source_sh / 10000, 2) if source_sh else None
-        official_price_wan = round(source_official / 10000, 2) if source_official else None
+        sh_price_wan = round(source_sh / 1000000, 2) if source_sh else None
+        official_price_wan = round(source_official / 1000000, 2) if source_official else None
 
         # other_params → dict
         other_params = {}
@@ -359,7 +414,7 @@ class DongchediAPI:
         for t in (sku.get("tags") or []):
             tags.append(t.get("text", ""))
 
-        return {
+        detail = {
             "sku_id": str(sku_id),
             "spu_id": str(sku.get("spu_id", "")),
             "title": sku.get("title", ""),
@@ -448,3 +503,57 @@ class DongchediAPI:
             "detail_url": self._build_detail_url(sku_id),
             "collected_at": datetime.now().isoformat(),
         }
+
+        if params_payload:
+            detail["detail_params_url"] = params_payload.get("url")
+            detail["detail_params"] = params_payload.get("param_groups")
+            # raw_data ~300KB/条，不存储，只保留解析后的 param_groups (~20KB)
+
+        return detail
+
+    def _parse_param_groups(self, raw_data):
+        """解析参数页的 rawData 结构
+        
+        rawData 结构:
+          properties: [{text, key, type, ...}, ...]
+            type=0 分组标题, type=1/2/3 具体参数
+          car_info: [{car_name, car_id, info: {key: {value, icon_type, ...}}, ...}]
+        
+        返回: [{group: '基本信息', params: [{key, name, value, icon_type}, ...]}, ...]
+        """
+        if not isinstance(raw_data, dict):
+            return None
+
+        properties = raw_data.get("properties") or []
+        car_info_list = raw_data.get("car_info") or []
+        if not properties or not car_info_list:
+            return None
+
+        # 取第一辆车的参数值
+        car_values = car_info_list[0].get("info") or {}
+
+        groups = []
+        current_group = None
+
+        for prop in properties:
+            ptype = prop.get("type", -1)
+            text = prop.get("text", "")
+            key = prop.get("key", "")
+
+            if ptype == 0:
+                # 分组标题
+                current_group = {"group": text, "group_key": key, "params": []}
+                groups.append(current_group)
+            elif current_group is not None and key:
+                # 具体参数项
+                val_info = car_values.get(key, {})
+                value = val_info.get("value", "") if isinstance(val_info, dict) else ""
+                icon_type = val_info.get("icon_type", 0) if isinstance(val_info, dict) else 0
+                current_group["params"].append({
+                    "key": key,
+                    "name": text,
+                    "value": value,
+                    "icon_type": icon_type,
+                })
+
+        return groups
