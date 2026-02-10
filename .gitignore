@@ -54,6 +54,14 @@ dongchedi_brand.json
 dongchedi_series.json
 dongchedi_car_overview.json
 dongchedi_car_detail.json
+guazi_output/
+guazi_config_cache.json
 
 # 临时测试脚本
 test_*.py
+_test_*.py
+
+# Windsurf
+.windsurf_chat_port
+.windsurfrules
+34565513f585d473/

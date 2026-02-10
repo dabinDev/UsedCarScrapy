@@ -43,32 +43,27 @@
 
 ## 📁 项目结构
 
-```
-carInfoHandle/
-├── dongchedi_api.py          # 页面数据提取模块
-├── dongchedi_client.py       # 流程编排（支持断点续采）
+```text
+UsedCarScrapy/
+├── dongchedi_api.py          # 懂车帝 - 页面数据提取模块
+├── dongchedi_client.py       # 懂车帝 - 流程编排（支持断点续采）
+├── guazi_api.py              # 瓜子 - 移动端数据提取模块
+├── guazi_client.py           # 瓜子 - 流程编排（支持断点续采）
+├── guazi_config.py           # 瓜子 - 城市代码表 + 本地缓存
 ├── ocr_price.py              # OCR 文字识别模块
 ├── db_manager.py             # 数据库管理
-├── client_output/            # 输出目录（自动生成，已 gitignore，不上传）
+├── client_output/            # 懂车帝输出（自动生成，已 gitignore）
+├── guazi_output/             # 瓜子输出（自动生成，已 gitignore）
 └── README.md
 ```
 
-## 🔑 学习要点
+### 瓜子移动端采集
 
-### Next.js SSR 数据结构
-
-Next.js 应用在服务端渲染时，会将页面数据序列化到 `<script id="__NEXT_DATA__">` 标签中。这是 Next.js 框架的公开机制，本项目通过分析该标签的 JSON 结构，学习 SSR 框架的数据传递方式。
-
-### 分阶段采集架构
-
-项目实现了分阶段的架构模式，学习了以下工程实践：
-
-1. **品牌列表** — 从聚合页提取索引数据
-2. **车系信息** — 按品牌分组获取子分类
-3. **列表概览** — 翻页采集概览数据
-4. **详情页** — 获取完整参数信息
-
-每个阶段支持**断点续采**，学习了进度持久化、容错重试、并发控制等工程设计。
+通过模拟 iPhone 设备访问 `m.guazi.com`，学习了：
+- **移动端设备模拟** — Playwright 设备描述符与 BrowserContext 配置
+- **移动端 DOM 解析** — 与 PC 端不同的 HTML 结构和 CSS 类名
+- **无验证码策略** — 移动端页面无滑块验证码，采集更稳定
+- **多城市×多车系组合遍历** — 大规模任务的断点续采设计
 
 ### OCR 文字识别
 
