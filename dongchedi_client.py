@@ -546,17 +546,25 @@ async def stage_ocr_price(api: DongchediAPI, output_dir: str, progress: Dict,
 
     completed_ocr = set(str(x) for x in progress.get("completed_ocr", []))
 
-    # 找出有截图但缺少价格的 sku_id
+    # 找出有截图但缺少二手价格的 sku_id
+    # 业务规则：
+    #   - 无详情 = 车已售出，无需OCR
+    #   - official_price 为空 = 厂家未公开指导价，属正常情况
+    #   - 只有 sh_price（二手价）缺失才需要OCR补充
     missing_ids = []
+    sold_count = 0
     for sku_id, shot_path in shot_files.items():
         if sku_id in completed_ocr:
             continue
         target = detail_index.get(sku_id)
-        if target and (not target.get("sh_price") or not target.get("official_price")):
+        if not target:
+            sold_count += 1
+            continue
+        if not target.get("sh_price"):
             missing_ids.append(sku_id)
-        elif not target:
-            # 详情还没采集到的也可以先OCR，后续合并
-            missing_ids.append(sku_id)
+
+    if sold_count:
+        print(f"   ℹ️ {sold_count} 辆车无详情（已售出），跳过")
 
     if not missing_ids:
         print("✅ [OCR价格] 所有有截图的车辆价格已完整，无需OCR")
@@ -600,46 +608,34 @@ async def stage_ocr_price(api: DongchediAPI, output_dir: str, progress: Dict,
 
             completed_ocr.add(sku_id)
 
-            if result and result.get("sh_price"):
-                target = detail_index.get(sku_id)
-                if target:
-                    # 已有详情记录 → 补充缺失的价格
-                    changed = False
-                    if result.get("sh_price") and not target.get("sh_price"):
-                        target["sh_price"] = result["sh_price"]
-                        target["price_source"] = "ocr"
-                        changed = True
-                    if result.get("official_price") and not target.get("official_price"):
-                        target["official_price"] = result["official_price"]
-                        changed = True
+            # 补充价格到已有详情记录
+            # 业务规则：sh_price=二手价（核心），official_price=厂家指导价（可为空=未公开）
+            target = detail_index.get(sku_id)
+            if result and result.get("sh_price") and target:
+                changed = False
+                if not target.get("sh_price"):
+                    target["sh_price"] = result["sh_price"]
+                    target["price_source"] = "ocr"
+                    changed = True
+                if result.get("official_price") and not target.get("official_price"):
+                    target["official_price"] = result["official_price"]
+                    changed = True
 
-                    if changed:
-                        success_count += 1
-                        print(f"   💰 [{sku_id}] 补充: 二手={target.get('sh_price')}万, 新车={target.get('official_price')}万")
-
-                        if db:
-                            try:
-                                await db._execute(
-                                    "UPDATE car_detail SET sh_price=%s, official_price=%s, updated_at=NOW() "
-                                    "WHERE sku_id=%s",
-                                    (target.get("sh_price"), target.get("official_price"), sku_id)
-                                )
-                            except Exception:
-                                pass
-                    elif processed_count <= 10:
-                        print(f"      ℹ️ 价格已存在: sh={target.get('sh_price')}, off={target.get('official_price')}")
-                else:
-                    # 详情未采集到 → 创建一条仅含价格的记录
-                    new_record = {
-                        "sku_id": sku_id,
-                        "sh_price": result.get("sh_price"),
-                        "official_price": result.get("official_price"),
-                        "price_source": "ocr",
-                    }
-                    all_details.append(new_record)
-                    detail_index[sku_id] = new_record
+                if changed:
                     success_count += 1
-                    print(f"   💰 [{sku_id}] (新) 二手={result.get('sh_price')}万, 新车={result.get('official_price')}万")
+                    print(f"   💰 [{sku_id}] 补充: 二手={target.get('sh_price')}万, 新车={target.get('official_price', '暂无')}万")
+
+                    if db:
+                        try:
+                            await db._execute(
+                                "UPDATE car_detail SET sh_price=%s, official_price=%s, updated_at=NOW() "
+                                "WHERE sku_id=%s",
+                                (target.get("sh_price"), target.get("official_price"), sku_id)
+                            )
+                        except Exception:
+                            pass
+                elif processed_count <= 10:
+                    print(f"      ℹ️ 价格已存在: sh={target.get('sh_price')}, off={target.get('official_price', '暂无')}")
 
             # 定期保存进度
             if processed_count % SAVE_EVERY == 0:
