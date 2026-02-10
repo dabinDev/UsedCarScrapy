@@ -15,6 +15,7 @@ from typing import Dict, List, Optional
 
 from dongchedi_api import DongchediAPI
 from db_manager import DBManager
+from ocr_price import LocalOCR, parse_price_from_ocr_text
 
 DEFAULT_OUTPUT_DIR = "client_output"
 DEFAULT_MAX_WORKERS = 10
@@ -24,7 +25,7 @@ DEFAULT_MAX_PAGES = 167
 # 进度管理
 # ================================================================
 
-STAGES = ["brands", "series", "overviews", "details"]
+STAGES = ["brands", "series", "overviews", "details", "ocr_price"]
 
 
 def _progress_path(output_dir: str) -> str:
@@ -72,6 +73,7 @@ def _file_path(output_dir: str, name: str) -> str:
 
 
 def _write_json(path: str, payload):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
@@ -227,13 +229,14 @@ async def stage_series(api: DongchediAPI, output_dir: str, progress: Dict, brand
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        context = await browser.new_context(accept_downloads=True)
         try:
             for i, brand in enumerate(remaining, done_count + 1):
                 bid = brand["brand_id"]
                 bname = brand["brand_name"]
                 print(f"   [{i}/{total}] {bname}...")
                 try:
-                    result = await api.fetch_series_for_brand(bid, bname, browser=browser)
+                    result = await api.fetch_series_for_brand(bid, bname, browser=context)
                     if result:
                         # 增量追加
                         _append_to_json_array(series_path, result)
@@ -251,6 +254,7 @@ async def stage_series(api: DongchediAPI, output_dir: str, progress: Dict, brand
                 progress["completed_brands_series"] = list(completed_ids)
                 _save_progress(output_dir, progress)
         finally:
+            await context.close()
             await browser.close()
 
     _mark_stage(progress, "series", "done")
@@ -265,9 +269,16 @@ async def stage_series(api: DongchediAPI, output_dir: str, progress: Dict, brand
 
 async def stage_overviews(api: DongchediAPI, output_dir: str, progress: Dict,
                           brands: List[Dict], series_list: List[Dict], max_pages: int,
-                          db: Optional[DBManager] = None) -> List[Dict]:
+                          db: Optional[DBManager] = None,
+                          enable_screenshot: bool = False) -> List[Dict]:
     overviews_path = _file_path(output_dir, "overviews")
     completed_ids = set(int(x) for x in progress.get("completed_overviews", []))
+
+    # 截图目录
+    screenshot_dir = None
+    if enable_screenshot:
+        screenshot_dir = os.path.join(output_dir, "screenshots")
+        os.makedirs(screenshot_dir, exist_ok=True)
 
     if _stage_status(progress, "overviews") == "done":
         data = _read_json(overviews_path)
@@ -293,6 +304,8 @@ async def stage_overviews(api: DongchediAPI, output_dir: str, progress: Dict,
     total = len(series_list)
     done_count = total - len(remaining)
     print(f"\n[阶段3] 采集列表概览... (已完成 {done_count}/{total} 个车系)")
+    if screenshot_dir:
+        print(f"   📸 截图已启用，保存到: {screenshot_dir}")
     _mark_stage(progress, "overviews", "running")
     _save_progress(output_dir, progress)
 
@@ -309,6 +322,7 @@ async def stage_overviews(api: DongchediAPI, output_dir: str, progress: Dict,
                 brand_id=bid, brand_name=bname,
                 series_id=sid, series_name=sname,
                 max_pages=max_pages,
+                screenshot_dir=screenshot_dir,
             )
             if cars:
                 _append_to_json_array(overviews_path, cars)
@@ -327,7 +341,9 @@ async def stage_overviews(api: DongchediAPI, output_dir: str, progress: Dict,
 
     _mark_stage(progress, "overviews", "done")
     _save_progress(output_dir, progress)
-    print(f"   ✅ 概览采集完成，共 {len(existing)} 条")
+    shot_count = len(os.listdir(screenshot_dir)) if screenshot_dir and os.path.isdir(screenshot_dir) else 0
+    suffix = f"，截图: {shot_count}" if screenshot_dir else ""
+    print(f"   ✅ 概览采集完成，共 {len(existing)} 条{suffix}")
     return existing
 
 
@@ -439,7 +455,8 @@ async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
             queue.task_done()
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        # 详情页强制用无头浏览器，支持并发
+        browser = await p.chromium.launch(headless=True, slow_mo=api.slow_mo)
         try:
             # 每个 worker 创建独立的 page
             num_workers = min(max_workers, len(remaining))
@@ -461,6 +478,144 @@ async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
     _mark_stage(progress, "details", "done")
     _save_progress(output_dir, progress)
     print(f"   ✅ 详情采集完成，共 {len(completed_ids)} 条")
+
+
+# ================================================================
+# 阶段5：OCR价格补充（读取本地截图 + WinOCR 异步解析价格）
+# ================================================================
+
+async def stage_ocr_price(api: DongchediAPI, output_dir: str, progress: Dict,
+                          max_workers: int = 10, db: Optional[DBManager] = None):
+    if _stage_status(progress, "ocr_price") == "done":
+        print("✅ [OCR价格] 已完成，跳过")
+        return
+
+    screenshot_dir = os.path.join(output_dir, "screenshots")
+    if not os.path.isdir(screenshot_dir):
+        print("⚠️ 无截图目录，跳过OCR价格解析")
+        return
+
+    # 获取所有截图文件 -> sku_id 集合
+    shot_files = {f.replace(".png", ""): os.path.join(screenshot_dir, f)
+                  for f in os.listdir(screenshot_dir) if f.endswith(".png")}
+    if not shot_files:
+        print("⚠️ 截图目录为空，跳过OCR价格解析")
+        return
+
+    details_path = _file_path(output_dir, "details")
+    details_data = _read_json(details_path)
+
+    # 构建 sku_id -> detail 索引
+    all_details = details_data["data"] if details_data and details_data.get("data") else []
+    detail_index = {str(d["sku_id"]): d for d in all_details if d.get("sku_id")}
+
+    completed_ocr = set(str(x) for x in progress.get("completed_ocr", []))
+
+    # 找出有截图但缺少价格的 sku_id
+    missing_ids = []
+    for sku_id, shot_path in shot_files.items():
+        if sku_id in completed_ocr:
+            continue
+        target = detail_index.get(sku_id)
+        if target and (not target.get("sh_price") or not target.get("official_price")):
+            missing_ids.append(sku_id)
+        elif not target:
+            # 详情还没采集到的也可以先OCR，后续合并
+            missing_ids.append(sku_id)
+
+    if not missing_ids:
+        print("✅ [OCR价格] 所有有截图的车辆价格已完整，无需OCR")
+        _mark_stage(progress, "ocr_price", "done")
+        _save_progress(output_dir, progress)
+        return
+
+    print(f"\n[阶段5] OCR价格补充（EasyOCR本地识别）...")
+    print(f"   截图: {len(shot_files)} 张, 待OCR: {len(missing_ids)}, 已处理: {len(completed_ocr)}")
+
+    _mark_stage(progress, "ocr_price", "running")
+    _save_progress(output_dir, progress)
+
+    print("   ⏳ 初始化本地OCR引擎（EasyOCR）...")
+    ocr_client = LocalOCR()
+    print("   ✅ EasyOCR 引擎就绪")
+
+    import time as _time
+    success_count = 0
+    processed_count = 0
+    SAVE_EVERY = 100
+    t0 = _time.time()
+
+    for sku_id in missing_ids:
+        shot_path = shot_files[sku_id]
+        processed_count += 1
+
+        try:
+            # 两次OCR：全图 + 裁剪底部放大（提高新车指导价识别率）
+            full_text, crop_text = await ocr_client.recognize_file_twpass_async(shot_path)
+            result = parse_price_from_ocr_text(full_text, crop_text) if full_text else None
+
+            # 前5条打印OCR原文用于调试
+            if processed_count <= 5:
+                preview = full_text.replace('\n', ' | ')[:80] if full_text else "(空)"
+                print(f"   🔍 [{sku_id}] OCR: {preview}")
+                if result:
+                    print(f"      解析: sh={result.get('sh_price')}, official={result.get('official_price')}")
+
+            completed_ocr.add(sku_id)
+
+            target = detail_index.get(sku_id)
+            if target and result:
+                changed = False
+                if result.get("sh_price") and not target.get("sh_price"):
+                    target["sh_price"] = result["sh_price"]
+                    changed = True
+                if result.get("official_price") and not target.get("official_price"):
+                    target["official_price"] = result["official_price"]
+                    changed = True
+
+                if changed:
+                    success_count += 1
+                    print(f"   💰 [{sku_id}] 二手={result.get('sh_price')}万, 新车={result.get('official_price')}万")
+
+                    if db:
+                        try:
+                            await db._execute(
+                                "UPDATE car_detail SET sh_price=%s, official_price=%s, updated_at=NOW() "
+                                "WHERE sku_id=%s",
+                                (target.get("sh_price"), target.get("official_price"), sku_id)
+                            )
+                        except Exception:
+                            pass
+
+            # 定期保存进度
+            if processed_count % SAVE_EVERY == 0:
+                elapsed = _time.time() - t0
+                speed = processed_count / elapsed if elapsed > 0 else 0
+                if all_details:
+                    details_data["data"] = all_details
+                    details_data["metadata"]["updated_at"] = datetime.now().isoformat()
+                    _write_json(details_path, details_data)
+                progress["completed_ocr"] = list(completed_ocr)
+                _save_progress(output_dir, progress)
+                print(f"   ✅ OCR进度: {processed_count}/{len(missing_ids)} "
+                      f"(成功: {success_count}, {speed:.1f}张/秒)")
+
+        except Exception as e:
+            completed_ocr.add(sku_id)
+            print(f"   ⚠️ [{sku_id}] OCR失败: {str(e)[:60]}")
+
+    elapsed = _time.time() - t0
+    # 最终保存
+    if all_details:
+        details_data["data"] = all_details
+        details_data["metadata"]["updated_at"] = datetime.now().isoformat()
+        _write_json(details_path, details_data)
+    progress["completed_ocr"] = list(completed_ocr)
+    _save_progress(output_dir, progress)
+
+    _mark_stage(progress, "ocr_price", "done")
+    _save_progress(output_dir, progress)
+    print(f"   ✅ OCR价格补充完成，成功解析 {success_count}/{len(missing_ids)} 条，耗时 {elapsed:.1f}秒")
 
 
 # ================================================================
@@ -511,7 +666,7 @@ async def main():
         max_pages = progress["config"]["max_pages"]
         print(f"📋 使用上次配置: 线程={max_workers}, 最大页数={max_pages}")
 
-    api = DongchediAPI(headless=True)
+    api = DongchediAPI(headless=False)
 
     # 数据库连接（可选）
     db: Optional[DBManager] = None
@@ -531,6 +686,14 @@ async def main():
             print("   将仅保存到JSON文件，不同步数据库")
             db = None
 
+    # OCR价格解析配置（可选）
+    enable_ocr = progress.get("config", {}).get("enable_ocr")
+    if enable_ocr is None:
+        ocr_choice = input("采集完成后是否用OCR解析加密价格？(y/N)：").strip().lower()
+        enable_ocr = ocr_choice == "y"
+        progress["config"]["enable_ocr"] = enable_ocr
+        _save_progress(output_dir, progress)
+
     try:
         # 阶段1：品牌
         brands = await stage_brands(api, output_dir, progress, db=db)
@@ -543,11 +706,16 @@ async def main():
         if not series_list:
             print("⚠️ 无车系数据")
 
-        # 阶段3：概览
-        overviews = await stage_overviews(api, output_dir, progress, brands, series_list, max_pages, db=db)
+        # 阶段3：概览（启用OCR时同时截图车辆卡片）
+        overviews = await stage_overviews(api, output_dir, progress, brands, series_list, max_pages,
+                                          db=db, enable_screenshot=enable_ocr)
 
-        # 阶段4：详情
+        # 阶段4：详情（强制无头浏览器并发）
         await stage_details(api, output_dir, progress, overviews, max_workers, db=db)
+
+        # 阶段5：OCR价格补充（读取本地截图文件）
+        if enable_ocr:
+            await stage_ocr_price(api, output_dir, progress, db=db)
 
         print("\n" + "=" * 60)
         print("✅ 全部采集完成!")
@@ -557,6 +725,9 @@ async def main():
         det = _read_json(_file_path(output_dir, "details"))
         det_count = len(det["data"]) if det and det.get("data") else 0
         print(f"   详情: {det_count}")
+        shot_dir = os.path.join(output_dir, "screenshots")
+        if os.path.isdir(shot_dir):
+            print(f"   截图: {len(os.listdir(shot_dir))}")
         print(f"   输出: {os.path.abspath(output_dir)}")
         if db:
             from db_config import DB_CONFIG

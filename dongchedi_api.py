@@ -19,7 +19,7 @@ class DongchediAPI:
     BASE_URL = "https://www.dongchedi.com"
     USEDCAR_URL = f"{BASE_URL}/usedcar"
 
-    def __init__(self, headless=True, slow_mo=0):
+    def __init__(self, headless=False, slow_mo=0):
         self.headless = headless
         self.slow_mo = slow_mo
 
@@ -86,9 +86,22 @@ class DongchediAPI:
 
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
-            page = await browser.new_page()
+            context = await browser.new_context(accept_downloads=True)
+            page = await context.new_page()
             try:
-                await page.goto(url, wait_until="domcontentloaded")
+                for _attempt in range(5):
+                    try:
+                        await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                        break
+                    except Exception as e:
+                        if "Download" in str(e) and _attempt < 4:
+                            wait_sec = 5 + _attempt * 5  # 5s, 10s, 15s, 20s
+                            print(f"   ⚠️ 页面触发下载，{wait_sec}秒后重试 ({_attempt+1}/5)...")
+                            await page.close()
+                            await asyncio.sleep(wait_sec)
+                            page = await context.new_page()
+                            continue
+                        raise
                 await page.wait_for_timeout(5000)
 
                 data = await self._extract_next_data(page)
@@ -157,6 +170,7 @@ class DongchediAPI:
                     "tab_brands": tab_brands,
                 }
             finally:
+                await context.close()
                 await browser.close()
 
     async def fetch_series_for_brand(self, brand_id, brand_name, browser=None):
@@ -167,14 +181,26 @@ class DongchediAPI:
         url = self._build_list_url(brand_id=brand_id)
 
         should_close = False
+        _context = None
         if browser is None:
             pw = await async_playwright().start()
-            browser = await pw.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
+            _browser = await pw.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
+            _context = await _browser.new_context(accept_downloads=True)
+            browser = _context
             should_close = True
 
         page = await browser.new_page()
         try:
-            await page.goto(url, wait_until="domcontentloaded")
+            for _attempt in range(3):
+                try:
+                    await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                    break
+                except Exception as e:
+                    if "Download" in str(e) and _attempt < 2:
+                        print(f"   ⚠️ 页面触发下载，重试 ({_attempt+1}/3)...")
+                        await page.wait_for_timeout(3000)
+                        continue
+                    raise
             await page.wait_for_timeout(4000)
 
             data = await self._extract_next_data(page)
@@ -198,7 +224,9 @@ class DongchediAPI:
         finally:
             await page.close()
             if should_close:
-                await browser.close()
+                if _context:
+                    await _context.close()
+                await _browser.close()
 
     def _normalize_brand(self, raw):
         """标准化品牌数据"""
@@ -214,13 +242,27 @@ class DongchediAPI:
     # 阶段3：列表概览采集
     # ================================================================
 
-    async def fetch_car_list_page(self, page, brand_id=None, series_id=None, page_num=1):
+    async def fetch_car_list_page(self, page, brand_id=None, series_id=None, page_num=1,
+                                  screenshot_dir=None):
         """
         获取单页列表概览数据
+        screenshot_dir: 如果提供，对每个车辆卡片截图，以 sku_id.png 命名
         返回: { total, has_more, cars: [...] }
         """
         url = self._build_list_url(brand_id, series_id, page_num)
-        await page.goto(url, wait_until="domcontentloaded")
+
+        # goto 带下载重试
+        for _attempt in range(5):
+            try:
+                await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                break
+            except Exception as e:
+                if "Download" in str(e) and _attempt < 4:
+                    wait_sec = 5 + _attempt * 5
+                    print(f"      ⚠️ 页面触发下载，{wait_sec}秒后重试 ({_attempt+1}/5)...")
+                    await asyncio.sleep(wait_sec)
+                    continue
+                raise
         await page.wait_for_timeout(4000)
 
         data = await self._extract_next_data(page)
@@ -238,6 +280,36 @@ class DongchediAPI:
         for sku in sku_list:
             cars.append(self._normalize_car_overview(sku))
 
+        # 截图价格区域（只截 dd 价格元素，包含二手价+新车指导价）
+        if screenshot_dir and cars:
+            # 构建本页已知 sku_id 集合，只截这些
+            known_sku_ids = {str(c["sku_id"]) for c in cars if c.get("sku_id")}
+            card_selector = 'a[href*="/usedcar/"]'
+            try:
+                card_elements = await page.query_selector_all(card_selector)
+                for card_el in card_elements:
+                    try:
+                        href = await card_el.get_attribute('href') or ""
+                        # 格式: /usedcar/12345678（纯数字，至少7位）
+                        m = re.search(r'/usedcar/(\d{7,})$', href)
+                        if m and m.group(1) in known_sku_ids:
+                            sku_id = m.group(1)
+                            shot_path = os.path.join(screenshot_dir, f"{sku_id}.png")
+                            if not os.path.exists(shot_path):
+                                # 优先截取价格 dd 元素（更小更快）
+                                price_dd = await card_el.query_selector(
+                                    'dd.tw-text-color-red-500'
+                                )
+                                if price_dd:
+                                    await price_dd.screenshot(path=shot_path)
+                                else:
+                                    # 兜底：截整个卡片
+                                    await card_el.screenshot(path=shot_path)
+                    except Exception:
+                        pass
+            except Exception as e:
+                print(f"      ⚠️ 截图失败: {str(e)[:80]}")
+
         return {
             "total": total,
             "has_more": has_more,
@@ -246,9 +318,11 @@ class DongchediAPI:
             "cars": cars,
         }
 
-    async def fetch_all_car_list(self, brand_id, brand_name, series_id=None, series_name=None, max_pages=167):
+    async def fetch_all_car_list(self, brand_id, brand_name, series_id=None, series_name=None,
+                                max_pages=167, screenshot_dir=None):
         """
         翻页获取品牌/车系下所有车辆概览
+        screenshot_dir: 如果提供，对每个车辆卡片截图
         """
         label = f"{brand_name}"
         if series_name:
@@ -260,11 +334,15 @@ class DongchediAPI:
 
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
-            page = await browser.new_page()
+            context = await browser.new_context(accept_downloads=True)
+            page = await context.new_page()
 
             try:
                 for pg in range(1, max_pages + 1):
-                    result = await self.fetch_car_list_page(page, brand_id, series_id, pg)
+                    result = await self.fetch_car_list_page(
+                        page, brand_id, series_id, pg,
+                        screenshot_dir=screenshot_dir,
+                    )
 
                     if not result or not result["cars"]:
                         break
@@ -282,9 +360,14 @@ class DongchediAPI:
                     await asyncio.sleep(0.5)
 
             finally:
+                await context.close()
                 await browser.close()
 
-        print(f"      ✅ 共采集 {len(all_cars)} 条概览数据")
+        shot_count = 0
+        if screenshot_dir and os.path.isdir(screenshot_dir):
+            shot_count = len([f for f in os.listdir(screenshot_dir) if f.endswith('.png')])
+        suffix = f"，截图: {shot_count}" if screenshot_dir else ""
+        print(f"      ✅ 共采集 {len(all_cars)} 条概览数据{suffix}")
         return all_cars
 
     def _normalize_car_overview(self, sku):
