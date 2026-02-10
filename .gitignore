@@ -46,3 +46,14 @@ Thumbs.db
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# 采集输出数据（敏感，不上传）
+client_output/
+car_detail_data/
+dongchedi_brand.json
+dongchedi_series.json
+dongchedi_car_overview.json
+dongchedi_car_detail.json
+
+# 临时测试脚本
+test_*.py

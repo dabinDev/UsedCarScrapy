@@ -74,8 +74,28 @@ def _file_path(output_dir: str, name: str) -> str:
 
 def _write_json(path: str, payload):
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+    # 原子写入：先写临时文件再 rename，避免大文件写入 OSError
+    tmp_path = path + ".tmp"
+    try:
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        # Windows 上 rename 前需要先删除目标
+        if os.path.exists(path):
+            os.remove(path)
+        os.rename(tmp_path, path)
+    except Exception:
+        # 回退：直接写入
+        try:
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+        finally:
+            if os.path.exists(tmp_path):
+                try:
+                    os.remove(tmp_path)
+                except Exception:
+                    pass
 
 
 def _read_json(path: str):
@@ -419,12 +439,21 @@ async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
                                 "detail_params": d.get("detail_params")})
 
         # 一次性批量写入（每个文件只读写一次）
-        _append_to_json_array(details_path, detail_rows)
-        _append_to_json_array(images_path, image_rows)
-        _append_to_json_array(configs_path, config_rows)
+        try:
+            _append_to_json_array(details_path, detail_rows)
+            _append_to_json_array(images_path, image_rows)
+            _append_to_json_array(configs_path, config_rows)
+        except Exception as e:
+            print(f"   ⚠️ 保存JSON失败: {e}，数据暂存内存，下次重试")
+            # 把数据放回缓冲区，下次再保存
+            batch_buffer.extend(to_save)
+            return
 
         if db:
-            await db.upsert_details(to_save)
+            try:
+                await db.upsert_details(to_save)
+            except Exception:
+                pass
 
         progress["completed_details"] = list(completed_ids)
         _save_progress(output_dir, progress)
@@ -442,7 +471,13 @@ async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
             try:
                 detail = await api.fetch_car_detail(page, sku_id)
             except Exception as e:
-                print(f"   ⚠️ worker-{worker_id} sku={sku_id} 异常: {e}")
+                err_msg = str(e).split("\n")[0][:100]
+                # 浏览器/页面已关闭，停止该 worker
+                if "closed" in err_msg.lower() or "Target" in err_msg:
+                    print(f"   ⚠️ worker-{worker_id} 浏览器已关闭，停止")
+                    queue.task_done()
+                    break
+                print(f"   ⚠️ worker-{worker_id} sku={sku_id} 异常: {err_msg}")
                 detail = None
 
             if detail and detail.get("sku_id"):
@@ -554,38 +589,57 @@ async def stage_ocr_price(api: DongchediAPI, output_dir: str, progress: Dict,
             full_text, crop_text = await ocr_client.recognize_file_twpass_async(shot_path)
             result = parse_price_from_ocr_text(full_text, crop_text) if full_text else None
 
-            # 前5条打印OCR原文用于调试
-            if processed_count <= 5:
+            # 前10条打印OCR原文用于调试
+            if processed_count <= 10:
                 preview = full_text.replace('\n', ' | ')[:80] if full_text else "(空)"
                 print(f"   🔍 [{sku_id}] OCR: {preview}")
                 if result:
                     print(f"      解析: sh={result.get('sh_price')}, official={result.get('official_price')}")
+                else:
+                    print(f"      解析: 无结果")
 
             completed_ocr.add(sku_id)
 
-            target = detail_index.get(sku_id)
-            if target and result:
-                changed = False
-                if result.get("sh_price") and not target.get("sh_price"):
-                    target["sh_price"] = result["sh_price"]
-                    changed = True
-                if result.get("official_price") and not target.get("official_price"):
-                    target["official_price"] = result["official_price"]
-                    changed = True
+            if result and result.get("sh_price"):
+                target = detail_index.get(sku_id)
+                if target:
+                    # 已有详情记录 → 补充缺失的价格
+                    changed = False
+                    if result.get("sh_price") and not target.get("sh_price"):
+                        target["sh_price"] = result["sh_price"]
+                        target["price_source"] = "ocr"
+                        changed = True
+                    if result.get("official_price") and not target.get("official_price"):
+                        target["official_price"] = result["official_price"]
+                        changed = True
 
-                if changed:
+                    if changed:
+                        success_count += 1
+                        print(f"   💰 [{sku_id}] 补充: 二手={target.get('sh_price')}万, 新车={target.get('official_price')}万")
+
+                        if db:
+                            try:
+                                await db._execute(
+                                    "UPDATE car_detail SET sh_price=%s, official_price=%s, updated_at=NOW() "
+                                    "WHERE sku_id=%s",
+                                    (target.get("sh_price"), target.get("official_price"), sku_id)
+                                )
+                            except Exception:
+                                pass
+                    elif processed_count <= 10:
+                        print(f"      ℹ️ 价格已存在: sh={target.get('sh_price')}, off={target.get('official_price')}")
+                else:
+                    # 详情未采集到 → 创建一条仅含价格的记录
+                    new_record = {
+                        "sku_id": sku_id,
+                        "sh_price": result.get("sh_price"),
+                        "official_price": result.get("official_price"),
+                        "price_source": "ocr",
+                    }
+                    all_details.append(new_record)
+                    detail_index[sku_id] = new_record
                     success_count += 1
-                    print(f"   💰 [{sku_id}] 二手={result.get('sh_price')}万, 新车={result.get('official_price')}万")
-
-                    if db:
-                        try:
-                            await db._execute(
-                                "UPDATE car_detail SET sh_price=%s, official_price=%s, updated_at=NOW() "
-                                "WHERE sku_id=%s",
-                                (target.get("sh_price"), target.get("official_price"), sku_id)
-                            )
-                        except Exception:
-                            pass
+                    print(f"   💰 [{sku_id}] (新) 二手={result.get('sh_price')}万, 新车={result.get('official_price')}万")
 
             # 定期保存进度
             if processed_count % SAVE_EVERY == 0:
