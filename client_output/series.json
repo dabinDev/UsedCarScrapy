@@ -1,184 +1,135 @@
 {
   "metadata": {
-    "total": 25,
-    "created_at": "2026-02-10T16:32:44.338687",
-    "updated_at": "2026-02-10T16:32:44.338696"
+    "total": 18,
+    "created_at": "2026-02-11T10:31:26.063346",
+    "updated_at": "2026-02-11T10:31:26.063355"
   },
   "data": [
     {
-      "series_id": 10154,
-      "series_name": "红旗天工05",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/b13d78fbe4f9477795996e2021c38aa8~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 4201,
+      "series_name": "海马7X",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/0ccdcce434e8438ddd85acf1f1502c03~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 6132,
-      "series_name": "红旗H5",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/4e5a38bacf99a7c63567e63f3bde1216~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 5934,
+      "series_name": "海马7X-E",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/83764d01c17f4ed726bfa1c8da24270c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 3801,
-      "series_name": "红旗H5 PHEV",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/f24bd38b015840f588c5179d9dee6a0c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1583,
+      "series_name": "海马爱尚EV",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/fd3ae8d2d731be26505bd843367f37cb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 10162,
-      "series_name": "红旗天工06",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/b5bd7a7f1e484d4095f4020c70e90c89~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 662,
+      "series_name": "福美来",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/64f797c3cb00b72115d5999db1303d7f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 5417,
-      "series_name": "红旗H6",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/9e73ae112bfb43a595a78e593002ac8f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 2824,
+      "series_name": "福美来F5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/7d542324b7a84d4df53f0a1543aa571e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 5092,
-      "series_name": "红旗E-QM5",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/b037b30e070943928eff5eb972564e56~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 678,
+      "series_name": "海马S5青春版",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/7b9057f2d3d27f128d4b70f176608e1a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 8947,
-      "series_name": "红旗EH7",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/f8c654abc2ba49948ec26d1ea30defef~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 679,
+      "series_name": "海马S5",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/3dfc3112a614b33410383b3e56ea4b90~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 4355,
-      "series_name": "红旗H9",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/2fab95bdc40a42daa3519f17382af761~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 668,
+      "series_name": "海马S7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/9c9a40ed2a28852dc26a57c386a298cb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 10122,
-      "series_name": "红旗金葵花国雅",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/82a7048d558c42349828a5d5f4b70a89~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 661,
+      "series_name": "丘比特",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/570ac844563db22a2c4ea42e8635c7a0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 6359,
-      "series_name": "红旗HS3",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/911d71f82dc04e3eb2708969989e687a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 674,
+      "series_name": "海马爱尚",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/97f0ce1ae545eb04ed78bd67bb358655~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 10120,
-      "series_name": "红旗HS3 PHEV",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/a819a1fda2d148b6a6e49c7110c38be4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 675,
+      "series_name": "海马M3",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/c78db2b9374e08a0749c8b2706c55d34~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 3159,
-      "series_name": "红旗HS5",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/ab8b7403cc8b4fb9a988e66dc53d5163~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 677,
+      "series_name": "海马M6",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/2c3e318fbe32c339d66f77bcf879be95~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 25598,
-      "series_name": "红旗HS6 PHEV",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/47e95923cec94166b410a8f9be7e3b57~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 666,
+      "series_name": "海马M8",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/8adf386eb9ecf496fc17820fa2db8c57~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 2151,
-      "series_name": "红旗HS7",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/a2923428f5184443b04d251e0b636559~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 667,
+      "series_name": "海马骑士",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/efd340e0ff6fdab3244174b4f9b88f10~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 9825,
-      "series_name": "红旗HS7 PHEV",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/17d4a93987364e6d86b916aba5d8ab99~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 671,
+      "series_name": "普力马",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/ff75e0e755aefcb5952315077e59f7c3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 8835,
-      "series_name": "红旗天工08",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/8f051743f0de47e0832d4b7ed0eb4d7d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 672,
+      "series_name": "海马V70",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/05f23f7099e4d3710da0304e029e9e4c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 4146,
-      "series_name": "红旗E-HS9",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/fb5c6d20cd6044b28f6eec55dcd6c61c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 1715,
+      "series_name": "福美来F7",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/6aa892d911c26fe9b41ee6f7e58344f4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     },
     {
-      "series_id": 5418,
-      "series_name": "红旗金葵花国耀",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/0b094b3ada0704b3ef49fa69acb10d59~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
-    },
-    {
-      "series_id": 5905,
-      "series_name": "红旗HQ9",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/b690e5fd5c48d8da3726a893a2d296cf~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
-    },
-    {
-      "series_id": 8948,
-      "series_name": "红旗HQ9 PHEV",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/e6cfd90ea6404a79a9ede056d4cbfee1~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
-    },
-    {
-      "series_id": 8804,
-      "series_name": "红旗金葵花国悦",
-      "image_url": "http://p9-dcd.byteimg.com/tos-cn-i-dcdx/69e5605fa7dd4f20933077601eb518dc~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
-    },
-    {
-      "series_id": 1701,
-      "series_name": "红旗H5经典",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/29e57294483a5f98bc133b090b194087~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
-    },
-    {
-      "series_id": 690,
-      "series_name": "红旗H7",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/78023a6567ddb717ea22b1f44fd9d4d3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
-    },
-    {
-      "series_id": 2861,
-      "series_name": "红旗E-HS3",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/aeb1737f0f84e056a8e71d440b1a3b24~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
-    },
-    {
-      "series_id": 689,
-      "series_name": "红旗盛世",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/b635a0a45490b66b3443f8c6ab9797a7~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 59,
-      "brand_name": "红旗"
+      "series_id": 669,
+      "series_name": "福美来MPV",
+      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/42dbb116211c971a45400f19966569dd~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 53,
+      "brand_name": "海马"
     }
   ]
 }

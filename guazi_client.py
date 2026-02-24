@@ -408,7 +408,7 @@ async def stage_details(api: GuaziAPI, output_dir: str, progress: Dict,
     total = len(overviews)
     done_count = total - len(remaining)
     print(f"\n[阶段4] 采集详情... (已完成 {done_count}/{total}，剩余 {len(remaining)})")
-    print(f"   并发数: {max_workers}，每 {max_workers} 条保存一次进度")
+    print(f"   并发数: {max_workers}，每 300 条保存一次进度")
     _mark_stage(progress, "details", "running")
     _save_progress(output_dir, progress)
 
@@ -420,7 +420,7 @@ async def stage_details(api: GuaziAPI, output_dir: str, progress: Dict,
 
     lock = asyncio.Lock()
     batch_buffer: List[Dict] = []
-    SAVE_EVERY = max_workers
+    SAVE_EVERY = 300
 
     async def _save_batch():
         nonlocal batch_buffer
@@ -457,7 +457,7 @@ async def stage_details(api: GuaziAPI, output_dir: str, progress: Dict,
 
         progress["completed_details"] = list(completed_ids)
         _save_progress(output_dir, progress)
-        print(f"   ✅ 进度: {len(completed_ids)}/{total}")
+        print(f"   ✅ 进度: {len(completed_ids)}/{total} (本次保存 {len(to_save)} 条)")
 
     async def _worker(worker_id: int, page):
         while True:
@@ -470,6 +470,10 @@ async def stage_details(api: GuaziAPI, output_dir: str, progress: Dict,
             try:
                 detail = await api.fetch_car_detail(page, sku_id, detail_url=car.get("detail_url"))
             except Exception as e:
+                # 检测浏览器/页面关闭错误，优雅退出
+                if "TargetClosedError" in str(e) or "Target page, context or browser has been closed" in str(e):
+                    print(f"   ⚠️ worker-{worker_id} 检测到浏览器关闭，停止工作")
+                    break
                 print(f"   ⚠️ worker-{worker_id} sku={sku_id} 异常: {e}")
                 detail = None
 

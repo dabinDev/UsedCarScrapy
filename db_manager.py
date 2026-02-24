@@ -85,18 +85,21 @@ class DBManager:
 
     async def upsert_brand(self, brand: Dict):
         sql = """
-            INSERT INTO brand (brand_id, brand_name, brand_logo, pinyin)
-            VALUES (%s, %s, %s, %s)
+            INSERT INTO brand (brand_id, brand_name, brand_logo, pinyin, source)
+            VALUES (%s, %s, %s, %s, %s)
             ON DUPLICATE KEY UPDATE
                 brand_name=VALUES(brand_name),
                 brand_logo=VALUES(brand_logo),
                 pinyin=VALUES(pinyin)
         """
+        bid = str(brand.get("brand_id") or brand.get("brand_slug", ""))
+        source = "guazi" if brand.get("brand_slug") else "dongchedi"
         await self._execute(sql, (
-            brand.get("brand_id"),
+            bid,
             brand.get("brand_name", ""),
             brand.get("brand_logo", ""),
-            brand.get("pinyin", ""),
+            brand.get("pinyin") or brand.get("brand_slug", ""),
+            source,
         ))
 
     async def upsert_brands(self, brands: List[Dict]):
@@ -110,18 +113,22 @@ class DBManager:
 
     async def upsert_series(self, s: Dict):
         sql = """
-            INSERT INTO series (series_id, brand_id, series_name, image_url)
-            VALUES (%s, %s, %s, %s)
+            INSERT INTO series (series_id, brand_id, series_name, image_url, source)
+            VALUES (%s, %s, %s, %s, %s)
             ON DUPLICATE KEY UPDATE
                 brand_id=VALUES(brand_id),
                 series_name=VALUES(series_name),
                 image_url=VALUES(image_url)
         """
+        sid = str(s.get("series_id") or s.get("series_slug", ""))
+        bid = str(s.get("brand_id") or s.get("brand_slug", ""))
+        source = "guazi" if s.get("series_slug") else "dongchedi"
         await self._execute(sql, (
-            s.get("series_id"),
-            s.get("brand_id"),
+            sid,
+            bid,
             s.get("series_name", ""),
             s.get("image_url", ""),
+            source,
         ))
 
     async def upsert_series_list(self, series_list: List[Dict]):
@@ -134,18 +141,21 @@ class DBManager:
     # ================================================================
 
     async def upsert_overview(self, car: Dict):
+        source = "guazi" if str(car.get("sku_id", "")).startswith("c") else "dongchedi"
         sql = """
             INSERT INTO car_overview (
                 sku_id, spu_id, brand_id, series_id, car_id,
-                title, car_name, car_year, image,
-                car_source_city, transfer_cnt, shop_id,
-                car_source_type, authentication_method, tags, detail_url, collected_at
-            ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                title, car_name, car_year, image, sh_price,
+                car_source_city, transfer_cnt, mileage, shop_id,
+                car_source_type, authentication_method, tags, detail_url,
+                source, collected_at
+            ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
             ON DUPLICATE KEY UPDATE
                 title=VALUES(title), car_name=VALUES(car_name),
                 car_year=VALUES(car_year), image=VALUES(image),
+                sh_price=VALUES(sh_price),
                 car_source_city=VALUES(car_source_city),
-                transfer_cnt=VALUES(transfer_cnt),
+                transfer_cnt=VALUES(transfer_cnt), mileage=VALUES(mileage),
                 tags=VALUES(tags), collected_at=VALUES(collected_at)
         """
         tags = car.get("tags")
@@ -153,22 +163,25 @@ class DBManager:
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         await self._execute(sql, (
-            car.get("sku_id"),
-            car.get("spu_id"),
-            car.get("brand_id"),
-            car.get("series_id"),
-            car.get("car_id"),
+            str(car.get("sku_id", "")),
+            _safe_str(car.get("spu_id"), None),
+            _safe_str(car.get("brand_id"), None),
+            _safe_str(car.get("series_id"), None),
+            _safe_str(car.get("car_id"), None),
             car.get("title", ""),
             car.get("car_name", ""),
-            car.get("car_year"),
+            _safe_str(car.get("car_year"), None),
             car.get("image", ""),
+            _clean_price(car.get("sh_price")),
             car.get("car_source_city", ""),
             car.get("transfer_cnt", 0),
+            _safe_str(car.get("_encrypted_mileage") or car.get("mileage"), ""),
             str(car.get("shop_id", "")),
             car.get("car_source_type", ""),
             car.get("authentication_method", ""),
             tags_json,
             car.get("detail_url", ""),
+            source,
             now,
         ))
 
@@ -187,6 +200,9 @@ class DBManager:
         if not sku_id:
             return
 
+        # 判断数据来源
+        source = "guazi" if str(sku_id).startswith("c") else "dongchedi"
+
         # --- car_detail ---
         await self._execute("""
             INSERT INTO car_detail (
@@ -195,16 +211,19 @@ class DBManager:
                 source_sh_price, source_official_price,
                 brand_id, brand_name, series_id, series_name,
                 car_id, car_name, year, body_color,
-                description, detail_url, detail_params_url, collected_at
-            ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                description, detail_url, detail_params_url,
+                price_source, source, collected_at
+            ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
             ON DUPLICATE KEY UPDATE
                 title=VALUES(title), sh_price=VALUES(sh_price),
                 official_price=VALUES(official_price),
                 include_tax_price=VALUES(include_tax_price),
-                description=VALUES(description), collected_at=VALUES(collected_at)
+                description=VALUES(description),
+                price_source=VALUES(price_source),
+                collected_at=VALUES(collected_at)
         """, (
-            sku_id,
-            d.get("spu_id"),
+            str(sku_id),
+            _safe_str(d.get("spu_id"), None),
             _safe_str(d.get("title"), ""),
             _safe_str(d.get("important_text"), ""),
             _clean_price(d.get("sh_price")),
@@ -212,29 +231,35 @@ class DBManager:
             _clean_price(d.get("include_tax_price")),
             _clean_price(d.get("source_sh_price")),
             _clean_price(d.get("source_offical_price")),
-            d.get("brand_id"),
+            _safe_str(d.get("brand_id"), None),
             _safe_str(d.get("brand_name"), ""),
-            d.get("series_id"),
+            _safe_str(d.get("series_id"), None),
             _safe_str(d.get("series_name"), ""),
-            d.get("car_id"),
+            _safe_str(d.get("car_id"), None),
             _safe_str(d.get("car_name"), ""),
-            d.get("year"),
+            _safe_str(d.get("year"), None),
             _safe_str(d.get("body_color"), ""),
             _safe_str(d.get("description"), None),
             _safe_str(d.get("detail_url"), ""),
             _safe_str(d.get("detail_params_url"), ""),
+            d.get("price_source", ""),
+            source,
             _safe_str(d.get("collected_at"), None),
         ))
 
         # --- car_params ---
         params = d.get("params") or {}
         if params:
+            # 兼容懂车帝和瓜子的参数键名
+            displacement = params.get("排量") or params.get("发动机") or ""
+            transmission = params.get("变速箱") or ""
             await self._execute("""
                 INSERT INTO car_params (
                     sku_id, register_city, source_city, transfer_cnt,
                     register_date, displacement, transmission,
+                    emission, drive_mode, mileage,
                     maintenance, body_color, interior_color
-                ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                 ON DUPLICATE KEY UPDATE
                     register_city=VALUES(register_city),
                     source_city=VALUES(source_city),
@@ -242,18 +267,24 @@ class DBManager:
                     register_date=VALUES(register_date),
                     displacement=VALUES(displacement),
                     transmission=VALUES(transmission),
+                    emission=VALUES(emission),
+                    drive_mode=VALUES(drive_mode),
+                    mileage=VALUES(mileage),
                     maintenance=VALUES(maintenance),
                     body_color=VALUES(body_color),
                     interior_color=VALUES(interior_color)
             """, (
-                sku_id,
+                str(sku_id),
                 _safe_str(params.get("上牌地"), ""),
                 _safe_str(params.get("车源地"), ""),
                 _safe_str(params.get("过户次数"), ""),
                 _safe_str(params.get("上牌时间"), ""),
-                _safe_str(params.get("排量"), ""),
-                _safe_str(params.get("变速箱"), ""),
-                _safe_str(params.get("保养方式"), ""),
+                _safe_str(displacement, ""),
+                _safe_str(transmission, ""),
+                _safe_str(params.get("排放标准"), ""),
+                _safe_str(params.get("驱动方式"), ""),
+                _safe_str(params.get("里程/车龄"), ""),
+                _safe_str(params.get("保养方式") or params.get("基础车况") or "", ""),
                 _safe_str(params.get("车身颜色"), ""),
                 _safe_str(params.get("内饰颜色"), ""),
             ))
@@ -273,11 +304,11 @@ class DBManager:
                     drive_type=VALUES(drive_type), dimensions=VALUES(dimensions),
                     detail_params=VALUES(detail_params)
             """, (
-                sku_id,
+                str(sku_id),
                 _safe_str(config.get("power"), ""),
                 _safe_str(config.get("transmission"), ""),
-                _safe_str(config.get("drive_type"), ""),
-                _safe_str(config.get("dimensions"), ""),
+                _safe_str(config.get("drive_type") or config.get("manipulation", {}).get("driver_form") or "", ""),
+                _safe_str(config.get("dimensions") or config.get("space") or "", ""),
                 dp_json,
             ))
 
@@ -285,13 +316,13 @@ class DBManager:
         images = d.get("images") or []
         if images:
             # 先删旧图片再插入，保证幂等
-            await self._execute("DELETE FROM car_image WHERE sku_id=%s", (sku_id,))
+            await self._execute("DELETE FROM car_image WHERE sku_id=%s", (str(sku_id),))
             for idx, url in enumerate(images):
                 img_url = url if isinstance(url, str) else url.get("url", "")
                 await self._execute("""
                     INSERT INTO car_image (sku_id, image_url, sort_order)
                     VALUES (%s, %s, %s)
-                """, (sku_id, img_url, idx))
+                """, (str(sku_id), img_url, idx))
 
         # --- shop ---
         shop = d.get("shop") or {}
@@ -299,8 +330,8 @@ class DBManager:
         if shop_id:
             await self._execute("""
                 INSERT INTO shop (shop_id, shop_name, shop_short_name, city, address,
-                                  business_time, sales_range, sales_car_num)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                                  business_time, sales_range, sales_car_num, source)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON DUPLICATE KEY UPDATE
                     shop_name=VALUES(shop_name), shop_short_name=VALUES(shop_short_name),
                     city=VALUES(city), address=VALUES(address),
@@ -315,6 +346,7 @@ class DBManager:
                 _safe_str(shop.get("business_time"), ""),
                 _safe_str(shop.get("sales_range"), ""),
                 shop.get("sales_car_num", 0) or 0,
+                source,
             ))
 
         # --- car_highlight ---
@@ -328,7 +360,7 @@ class DBManager:
                 VALUES (%s, %s, %s)
                 ON DUPLICATE KEY UPDATE
                     highlights=VALUES(highlights), tags=VALUES(tags)
-            """, (sku_id, hl_json, tg_json))
+            """, (str(sku_id), hl_json, tg_json))
 
         # --- car_report ---
         report = d.get("report")
@@ -340,7 +372,7 @@ class DBManager:
                 VALUES (%s, %s, %s)
                 ON DUPLICATE KEY UPDATE
                     has_report=VALUES(has_report), report_data=VALUES(report_data)
-            """, (sku_id, has_report, rp_json))
+            """, (str(sku_id), has_report, rp_json))
 
         # --- car_financial ---
         financial = d.get("financial")
@@ -350,7 +382,7 @@ class DBManager:
                 INSERT INTO car_financial (sku_id, financial_data)
                 VALUES (%s, %s)
                 ON DUPLICATE KEY UPDATE financial_data=VALUES(financial_data)
-            """, (sku_id, fn_json))
+            """, (str(sku_id), fn_json))
 
     async def upsert_details(self, details: List[Dict]):
         for d in details:
