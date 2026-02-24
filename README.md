@@ -25,13 +25,15 @@
 
 ## 📋 项目简介
 
-一个基于 Playwright 的个人学习项目，用于研究以下技术领域：
+一个基于 Playwright 的个人学习项目，支持 **懂车帝 + 瓜子** 双数据源，用于研究以下技术领域：
 
 - **Next.js SSR 渲染机制** — 学习服务端渲染框架的数据传递模式
+- **移动端适配与多源集成** — 瓜子移动端采集 + 统一数据库存储
 - **Playwright 自动化** — 练习浏览器自动化操作、页面导航、元素定位
 - **异步编程模式** — asyncio 协程与并发控制的工程实践
 - **数据清洗与结构化** — JSON 数据提取、转换、存储的处理流程
 - **OCR 文字识别** — EasyOCR 引擎集成、图像预处理与文本后处理
+- **数据库设计与兼容** — 多源数据统一存储、批量提交、断点续采
 
 ## 🛠️ 技术栈
 
@@ -51,7 +53,10 @@ UsedCarScrapy/
 ├── guazi_client.py           # 瓜子 - 流程编排（支持断点续采）
 ├── guazi_config.py           # 瓜子 - 城市代码表 + 本地缓存
 ├── ocr_price.py              # OCR 文字识别模块
-├── db_manager.py             # 数据库管理
+├── db_manager.py             # 数据库管理（支持双源写入）
+├── db_config.py              # 数据库连接配置
+├── schema.sql                # 数据库表结构（懂车帝+瓜子兼容）
+├── reset_db.py               # 数据库重置脚本
 ├── client_output/            # 懂车帝输出（自动生成，已 gitignore）
 ├── guazi_output/             # 瓜子输出（自动生成，已 gitignore）
 └── README.md
@@ -72,6 +77,41 @@ UsedCarScrapy/
 - OCR 文本后处理与正则表达式解析
 - 多 OCR 引擎对比评估（WinOCR / EasyOCR）
 
+### 数据库集成与多源兼容
+
+支持 **懂车帝 + 瓜子** 数据统一存储，学习了：
+- **统一表结构设计** — `sku_id` VARCHAR(50) 兼容数字 ID 与 `c+数字` 格式
+- **来源字段区分** — `source` 字段标识 `dongchedi`/`guazi`
+- **参数键名映射** — 自动适配不同平台的参数命名差异
+- **批量提交优化** — 每 300 条批量写入，提升性能
+- **断点续采** — 实时保存进度，崩溃后可继续
+- **数据库重置工具** — `reset_db.py` 一键重建表结构
+
+#### 快速开始
+
+1. **初始化数据库**（可选）
+   ```bash
+   python reset_db.py  # 删除旧表，用新 schema 重建
+   ```
+
+2. **采集懂车帝数据**
+   ```bash
+   python dongchedi_client.py  # 支持断点续采 + OCR 价格解析
+   ```
+
+3. **采集瓜子数据**
+   ```bash
+   python guazi_client.py  # 移动端采集 + 每 300 条批量保存
+   ```
+
+#### 数据库表结构
+
+- `brand` / `series` — 品牌车系（支持 slug）
+- `car_overview` — 列表页概览（含 `source` 字段）
+- `car_detail` — 详情页数据（含 `source`、`price_source` 字段）
+- `car_params` / `car_config` / `car_image` — 参数、配置、图片
+- `shop` / `car_highlight` / `car_report` / `car_financial` — 扩展信息
+
 ## 📊 输出数据结构示例
 
 ```json
@@ -82,18 +122,33 @@ UsedCarScrapy/
   },
   "data": [
     {
-      "id": "...",
+      "sku_id": "123456789",
+      "source": "dongchedi",
       "title": "...",
-      "brand": "...",
-      "series": "...",
+      "brand_name": "...",
+      "series_name": "...",
       "year": 2022,
-      "params": { "...": "..." }
+      "params": { "排量": "2.0L", "变速箱": "自动" },
+      "price_source": "ocr",
+      "sh_price": 18.5
+    },
+    {
+      "sku_id": "c162856787323491",
+      "source": "guazi",
+      "title": "...",
+      "brand_name": "...",
+      "series_name": "...",
+      "year": 2022,
+      "params": { "发动机": "2.0L", "基础车况": "良好" },
+      "price_source": "api",
+      "sh_price": 17.8
     }
   ]
 }
 ```
 
-> 以上为脱敏后的结构示例，仅展示 JSON 格式设计，不包含任何真实数据。
+> 以上为脱敏后的结构示例，展示多源数据统一存储格式，不包含任何真实数据。  
+> `source` 字段用于区分数据来源，`sku_id` 格式天然不冲突。
 
 ---
 
