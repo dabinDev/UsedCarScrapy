@@ -10,6 +10,7 @@ import re
 import os
 import time
 from datetime import datetime
+from typing import Any, Awaitable, Callable
 from playwright.async_api import async_playwright
 from playwright_launch import build_chromium_launch_kwargs
 
@@ -72,6 +73,41 @@ class DongchediAPI:
         """构建参数页URL"""
         return f"{self.BASE_URL}/auto/params-carIds-{car_id}"
 
+    def _is_download_navigation_error(self, error: Exception) -> bool:
+        message = str(error).lower()
+        return "download is starting" in message or "download" in message
+
+    async def _goto_with_retry(
+        self,
+        page_factory: Callable[[], Awaitable[Any]],
+        url: str,
+        *,
+        attempts: int,
+        timeout: int,
+        retry_delay_seconds: float,
+        retry_label: str,
+    ) -> Any:
+        page = await page_factory()
+        for attempt in range(attempts):
+            try:
+                await page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+                return page
+            except Exception as error:
+                is_last = attempt >= attempts - 1
+                if not self._is_download_navigation_error(error) or is_last:
+                    raise
+                print(
+                    f"   [retry] {retry_label} 页面触发下载，"
+                    f"{retry_delay_seconds:.0f}秒后重试 ({attempt + 1}/{attempts})..."
+                )
+                try:
+                    await page.close()
+                except Exception:
+                    pass
+                await asyncio.sleep(retry_delay_seconds)
+                page = await page_factory()
+        return page
+
     # ================================================================
     # 阶段1+2：品牌 + 车系采集
     # ================================================================
@@ -90,21 +126,16 @@ class DongchediAPI:
                 **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
             )
             context = await browser.new_context(accept_downloads=True)
-            page = await context.new_page()
+            page = None
             try:
-                for _attempt in range(5):
-                    try:
-                        await page.goto(url, wait_until="domcontentloaded", timeout=20000)
-                        break
-                    except Exception as e:
-                        if "Download" in str(e) and _attempt < 4:
-                            wait_sec = 5 + _attempt * 5  # 5s, 10s, 15s, 20s
-                            print(f"   ⚠️ 页面触发下载，{wait_sec}秒后重试 ({_attempt+1}/5)...")
-                            await page.close()
-                            await asyncio.sleep(wait_sec)
-                            page = await context.new_page()
-                            continue
-                        raise
+                page = await self._goto_with_retry(
+                    context.new_page,
+                    url,
+                    attempts=6,
+                    timeout=20000,
+                    retry_delay_seconds=4,
+                    retry_label="品牌目录",
+                )
                 await page.wait_for_timeout(5000)
 
                 data = await self._extract_next_data(page)
@@ -173,6 +204,11 @@ class DongchediAPI:
                     "tab_brands": tab_brands,
                 }
             finally:
+                if page is not None:
+                    try:
+                        await page.close()
+                    except Exception:
+                        pass
                 await context.close()
                 await browser.close()
 
@@ -194,18 +230,16 @@ class DongchediAPI:
             browser = _context
             should_close = True
 
-        page = await browser.new_page()
+        page = None
         try:
-            for _attempt in range(3):
-                try:
-                    await page.goto(url, wait_until="domcontentloaded", timeout=20000)
-                    break
-                except Exception as e:
-                    if "Download" in str(e) and _attempt < 2:
-                        print(f"   ⚠️ 页面触发下载，重试 ({_attempt+1}/3)...")
-                        await page.wait_for_timeout(3000)
-                        continue
-                    raise
+            page = await self._goto_with_retry(
+                browser.new_page,
+                url,
+                attempts=4,
+                timeout=20000,
+                retry_delay_seconds=3,
+                retry_label=f"品牌 {brand_name} 车系目录",
+            )
             await page.wait_for_timeout(4000)
 
             data = await self._extract_next_data(page)
@@ -227,7 +261,11 @@ class DongchediAPI:
 
             return series_list
         finally:
-            await page.close()
+            if page is not None:
+                try:
+                    await page.close()
+                except Exception:
+                    pass
             if should_close:
                 if _context:
                     await _context.close()
