@@ -1,135 +1,58 @@
 {
   "metadata": {
-    "total": 18,
-    "created_at": "2026-02-11T10:31:26.063346",
-    "updated_at": "2026-02-11T10:31:26.063355"
+    "total": 7,
+    "created_at": "2026-04-11T12:27:03.275881",
+    "updated_at": "2026-04-11T12:27:03.275889"
   },
   "data": [
     {
-      "series_id": 4201,
-      "series_name": "海马7X",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/0ccdcce434e8438ddd85acf1f1502c03~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
+      "series_id": 488,
+      "series_name": "凯领",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/0f93ee203b611eb9b0ec95c33334fc10~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 54,
+      "brand_name": "道奇"
     },
     {
-      "series_id": 5934,
-      "series_name": "海马7X-E",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/83764d01c17f4ed726bfa1c8da24270c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
+      "series_id": 3560,
+      "series_name": "道奇D100",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/1ba1a100bc6d2c804f976317ade80007~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 54,
+      "brand_name": "道奇"
     },
     {
-      "series_id": 1583,
-      "series_name": "海马爱尚EV",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/fd3ae8d2d731be26505bd843367f37cb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
+      "series_id": 2276,
+      "series_name": "挑战者",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/c977eaee1cc96a5bdfe46c90194e0556~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 54,
+      "brand_name": "道奇"
     },
     {
-      "series_id": 662,
-      "series_name": "福美来",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/64f797c3cb00b72115d5999db1303d7f~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
+      "series_id": 2351,
+      "series_name": "Charger SRT",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/e553ce53b604c133a0f5f063e2269fac~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 54,
+      "brand_name": "道奇"
     },
     {
-      "series_id": 2824,
-      "series_name": "福美来F5",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/7d542324b7a84d4df53f0a1543aa571e~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
+      "series_id": 420,
+      "series_name": "酷威",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/249ab2615ab1b2f7225b4debdea6551d~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 54,
+      "brand_name": "道奇"
     },
     {
-      "series_id": 678,
-      "series_name": "海马S5青春版",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/7b9057f2d3d27f128d4b70f176608e1a~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
+      "series_id": 2429,
+      "series_name": "凯领(海外)",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/4e5f8dc7d87a43dec3d4771da709a092~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 54,
+      "brand_name": "道奇"
     },
     {
-      "series_id": 679,
-      "series_name": "海马S5",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/3dfc3112a614b33410383b3e56ea4b90~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 668,
-      "series_name": "海马S7",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/9c9a40ed2a28852dc26a57c386a298cb~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 661,
-      "series_name": "丘比特",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/570ac844563db22a2c4ea42e8635c7a0~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 674,
-      "series_name": "海马爱尚",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/97f0ce1ae545eb04ed78bd67bb358655~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 675,
-      "series_name": "海马M3",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/c78db2b9374e08a0749c8b2706c55d34~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 677,
-      "series_name": "海马M6",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/2c3e318fbe32c339d66f77bcf879be95~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 666,
-      "series_name": "海马M8",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/8adf386eb9ecf496fc17820fa2db8c57~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 667,
-      "series_name": "海马骑士",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/efd340e0ff6fdab3244174b4f9b88f10~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 671,
-      "series_name": "普力马",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/ff75e0e755aefcb5952315077e59f7c3~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 672,
-      "series_name": "海马V70",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/05f23f7099e4d3710da0304e029e9e4c~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 1715,
-      "series_name": "福美来F7",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/6aa892d911c26fe9b41ee6f7e58344f4~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
-    },
-    {
-      "series_id": 669,
-      "series_name": "福美来MPV",
-      "image_url": "http://p9-dcd.byteimg.com/motor-mis-img/42dbb116211c971a45400f19966569dd~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
-      "brand_id": 53,
-      "brand_name": "海马"
+      "series_id": 3987,
+      "series_name": "Rampage",
+      "image_url": "http://p3-dcd.byteimg.com/motor-mis-img/95c4bb590b33cb030def999fa41fdbd9~tplv-f042mdwyw7-original:tplv-resize:640:0.image?psm=motor.pc_sh.api",
+      "brand_id": 54,
+      "brand_name": "道奇"
     }
   ]
 }

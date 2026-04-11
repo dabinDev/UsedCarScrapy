@@ -11,6 +11,7 @@ import os
 import time
 from datetime import datetime
 from playwright.async_api import async_playwright
+from playwright_launch import build_chromium_launch_kwargs
 
 
 class DongchediAPI:
@@ -85,7 +86,9 @@ class DongchediAPI:
         print(f"   🔗 {url}")
 
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
+            browser = await p.chromium.launch(
+                **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
+            )
             context = await browser.new_context(accept_downloads=True)
             page = await context.new_page()
             try:
@@ -184,7 +187,9 @@ class DongchediAPI:
         _context = None
         if browser is None:
             pw = await async_playwright().start()
-            _browser = await pw.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
+            _browser = await pw.chromium.launch(
+                **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
+            )
             _context = await _browser.new_context(accept_downloads=True)
             browser = _context
             should_close = True
@@ -333,7 +338,9 @@ class DongchediAPI:
         all_cars = []
 
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
+            browser = await p.chromium.launch(
+                **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
+            )
             context = await browser.new_context(accept_downloads=True)
             page = await context.new_page()
 

@@ -14,6 +14,7 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from playwright.async_api import async_playwright
 from dongchedi_api import DongchediAPI
+from playwright_launch import build_chromium_launch_kwargs
 
 
 class DongchediCollector:
@@ -316,7 +317,9 @@ class DongchediCollector:
             brand_details = []
 
             async with async_playwright() as p:
-                browser = await p.chromium.launch(headless=self.headless, slow_mo=self.api.slow_mo)
+                browser = await p.chromium.launch(
+                    **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.api.slow_mo)
+                )
 
                 # 创建多个页面并发采集
                 pages = []

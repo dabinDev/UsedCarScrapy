@@ -11,6 +11,7 @@ import base64
 from datetime import datetime
 from playwright.async_api import async_playwright
 import requests
+from playwright_launch import build_chromium_launch_kwargs
 
 print("🚗 懂车帝精准爬虫")
 print("="*60)
@@ -113,7 +114,7 @@ class DongchediPreciseCrawler:
         print("🔍 正在获取所有品牌信息...")
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
+            browser = await p.chromium.launch(**build_chromium_launch_kwargs(headless=True))
             page = await browser.new_page()
             
             try:
@@ -211,7 +212,7 @@ class DongchediPreciseCrawler:
         print(f"🔍 正在计算 {brand_name} 品牌的总数据量...")
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
+            browser = await p.chromium.launch(**build_chromium_launch_kwargs(headless=True))
             page = await browser.new_page()
             
             try:
@@ -445,7 +446,7 @@ class DongchediPreciseCrawler:
         collected_data = 0
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=False)  # 保持浏览器打开
+            browser = await p.chromium.launch(**build_chromium_launch_kwargs(headless=False))  # 保持浏览器打开
             page = await browser.new_page()
             
             try:
@@ -545,7 +546,7 @@ class DongchediPreciseCrawler:
         print(f"🔗 URL: {url}")
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=False)
+            browser = await p.chromium.launch(**build_chromium_launch_kwargs(headless=False))
             page = await browser.new_page()
             
             try:
@@ -842,7 +843,7 @@ class DongchediPreciseCrawler:
         """检测总页数"""
         try:
             async with async_playwright() as p:
-                browser = await p.chromium.launch(headless=True)
+                browser = await p.chromium.launch(**build_chromium_launch_kwargs(headless=True))
                 page = await browser.new_page()
                 
                 # 访问第一页

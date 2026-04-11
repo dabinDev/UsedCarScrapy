@@ -14,6 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from queue import Queue, Empty
 from playwright.async_api import async_playwright
 from dongchedi_precise_crawler import DongchediPreciseCrawler
+from playwright_launch import build_chromium_launch_kwargs
 
 class SeriesAnalyzer:
     def __init__(self, max_workers=3):
@@ -127,7 +128,7 @@ class SeriesAnalyzer:
             url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-1-1-x-x-x-x-x"
             
             async with async_playwright() as p:
-                browser = await p.chromium.launch(headless=True)
+                browser = await p.chromium.launch(**build_chromium_launch_kwargs(headless=True))
                 page = await browser.new_page()
                 
                 try:
@@ -247,7 +248,7 @@ class SeriesAnalyzer:
             url = f"https://www.dongchedi.com/usedcar/x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-{brand_id}-x-{series_id}-1-x-x-x-x-x"
             
             async with async_playwright() as p:
-                browser = await p.chromium.launch(headless=True)
+                browser = await p.chromium.launch(**build_chromium_launch_kwargs(headless=True))
                 page = await browser.new_page()
                 
                 try:

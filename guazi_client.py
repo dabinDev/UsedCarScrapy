@@ -19,6 +19,7 @@ from guazi_config import (
     get_cached_series, set_cached_series,
 )
 from db_manager import DBManager
+from playwright_launch import build_chromium_launch_kwargs
 
 DEFAULT_OUTPUT_DIR = "guazi_output"
 DEFAULT_MAX_WORKERS = 8
@@ -189,7 +190,9 @@ async def stage_brands(api: GuaziAPI, output_dir: str, progress: Dict,
     city = cities[0] if cities else "bj"
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        browser = await p.chromium.launch(
+            **build_chromium_launch_kwargs(headless=api.headless, slow_mo=api.slow_mo)
+        )
         try:
             brands = await api.fetch_brands(city, browser=browser)
         finally:
@@ -271,7 +274,9 @@ async def stage_series(api: GuaziAPI, output_dir: str, progress: Dict,
 
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        browser = await p.chromium.launch(
+            **build_chromium_launch_kwargs(headless=api.headless, slow_mo=api.slow_mo)
+        )
         try:
             for i, brand in enumerate(remaining, done_count + 1):
                 slug = brand["brand_slug"]
@@ -347,7 +352,9 @@ async def stage_overviews(api: GuaziAPI, output_dir: str, progress: Dict,
 
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        browser = await p.chromium.launch(
+            **build_chromium_launch_kwargs(headless=api.headless, slow_mo=api.slow_mo)
+        )
         try:
             for idx, (city, brand_slug, brand_name, series_slug, series_name, key) in enumerate(tasks, done_count + 1):
                 city_name = CITY_MAP.get(city, city)
@@ -487,7 +494,9 @@ async def stage_details(api: GuaziAPI, output_dir: str, progress: Dict,
             queue.task_done()
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        browser = await p.chromium.launch(
+            **build_chromium_launch_kwargs(headless=api.headless, slow_mo=api.slow_mo)
+        )
         try:
             num_workers = min(max_workers, len(remaining))
             # 移动端需要用 mobile context

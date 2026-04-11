@@ -19,6 +19,7 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any, Tuple
 
 from playwright.async_api import async_playwright, Page, Browser, BrowserContext
+from playwright_launch import build_chromium_launch_kwargs
 
 
 # iPhone 设备配置
@@ -85,7 +86,9 @@ class GuaziAPI:
         should_close = False
         if browser is None:
             pw = await async_playwright().start()
-            browser = await pw.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
+            browser = await pw.chromium.launch(
+                **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
+            )
             should_close = True
 
         ctx = await self.create_mobile_context(browser)
@@ -136,7 +139,9 @@ class GuaziAPI:
         should_close = False
         if browser is None:
             pw = await async_playwright().start()
-            browser = await pw.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
+            browser = await pw.chromium.launch(
+                **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
+            )
             should_close = True
 
         ctx = await self.create_mobile_context(browser)
@@ -289,7 +294,9 @@ class GuaziAPI:
         should_close = False
         if browser is None:
             pw = await async_playwright().start()
-            browser = await pw.chromium.launch(headless=self.headless, slow_mo=self.slow_mo)
+            browser = await pw.chromium.launch(
+                **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
+            )
             should_close = True
 
         ctx = await self.create_mobile_context(browser)

@@ -10,12 +10,14 @@ import asyncio
 import json
 import os
 import re
+import sys
 from datetime import datetime
 from typing import Dict, List, Optional
 
 from dongchedi_api import DongchediAPI
 from db_manager import DBManager
 from ocr_price import LocalOCR, parse_price_from_ocr_text
+from playwright_launch import build_chromium_launch_kwargs
 
 DEFAULT_OUTPUT_DIR = "client_output"
 DEFAULT_MAX_WORKERS = 10
@@ -26,6 +28,40 @@ DEFAULT_MAX_PAGES = 167
 # ================================================================
 
 STAGES = ["brands", "series", "overviews", "details", "ocr_price"]
+
+
+def _prepare_console() -> None:
+    """尽量让 Windows 控制台使用 UTF-8，避免启动时中文/emoji 输出异常。"""
+    if os.name != "nt":
+        return
+
+    try:
+        import ctypes
+
+        kernel32 = ctypes.windll.kernel32
+        kernel32.SetConsoleCP(65001)
+        kernel32.SetConsoleOutputCP(65001)
+    except Exception:
+        pass
+
+    for stream_name in ("stdin", "stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(encoding="utf-8", errors="replace")
+            except Exception:
+                pass
+
+
+def _prompt(prompt: str, default: str = "") -> str:
+    """交互输入的安全包装，非交互环境下回退到默认值。"""
+    try:
+        return input(prompt).strip()
+    except EOFError:
+        fallback = default.strip()
+        shown = fallback or "<回车默认>"
+        print(f"\n[提示] 未检测到可交互输入，按默认值继续：{shown}")
+        return fallback
 
 
 def _progress_path(output_dir: str) -> str:
@@ -143,7 +179,7 @@ def _select_brands(brands: List[Dict]) -> List[Dict]:
     print("- 输入编号列表（例如 1,3,5）")
     print("- 输入关键词（例如 '大众,比亚迪'）")
 
-    raw = input("请输入：").strip()
+    raw = _prompt("请输入：")
     if not raw or raw.lower() == "all":
         return brands
 
@@ -248,7 +284,9 @@ async def stage_series(api: DongchediAPI, output_dir: str, progress: Dict, brand
 
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=api.headless, slow_mo=api.slow_mo)
+        browser = await p.chromium.launch(
+            **build_chromium_launch_kwargs(headless=api.headless, slow_mo=api.slow_mo)
+        )
         context = await browser.new_context(accept_downloads=True)
         try:
             for i, brand in enumerate(remaining, done_count + 1):
@@ -491,7 +529,9 @@ async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
 
     async with async_playwright() as p:
         # 详情页强制用无头浏览器，支持并发
-        browser = await p.chromium.launch(headless=True, slow_mo=api.slow_mo)
+        browser = await p.chromium.launch(
+            **build_chromium_launch_kwargs(headless=True, slow_mo=api.slow_mo)
+        )
         try:
             # 每个 worker 创建独立的 page
             num_workers = min(max_workers, len(remaining))
@@ -673,11 +713,13 @@ async def stage_ocr_price(api: DongchediAPI, output_dir: str, progress: Dict,
 # ================================================================
 
 async def main():
+    _prepare_console()
+
     print("=" * 60)
     print("🚀 懂车帝采集客户端（支持断点续采）")
     print("=" * 60)
 
-    output_dir = input(f"输出目录（默认 {DEFAULT_OUTPUT_DIR}）：").strip() or DEFAULT_OUTPUT_DIR
+    output_dir = _prompt(f"输出目录（默认 {DEFAULT_OUTPUT_DIR}）：", DEFAULT_OUTPUT_DIR) or DEFAULT_OUTPUT_DIR
     os.makedirs(output_dir, exist_ok=True)
 
     progress = _load_progress(output_dir)
@@ -687,7 +729,7 @@ async def main():
     if has_progress:
         status_str = " | ".join(f"{s}={_stage_status(progress, s)}" for s in STAGES)
         print(f"\n📋 检测到上次进度: {status_str}")
-        choice = input("继续上次采集？(Y/n)：").strip().lower()
+        choice = _prompt("继续上次采集？(Y/n)：").lower()
         if choice == "n":
             progress = {
                 "config": {},
@@ -705,9 +747,9 @@ async def main():
 
     # 配置（仅首次）
     if not progress.get("config", {}).get("max_workers"):
-        mw = input(f"线程数（默认 {DEFAULT_MAX_WORKERS}）：").strip()
+        mw = _prompt(f"线程数（默认 {DEFAULT_MAX_WORKERS}）：")
         max_workers = int(mw) if mw.isdigit() else DEFAULT_MAX_WORKERS
-        mp = input(f"最大页数（默认 {DEFAULT_MAX_PAGES}）：").strip()
+        mp = _prompt(f"最大页数（默认 {DEFAULT_MAX_PAGES}）：")
         max_pages = int(mp) if mp.isdigit() else DEFAULT_MAX_PAGES
         progress["config"] = {"max_workers": max_workers, "max_pages": max_pages}
         _save_progress(output_dir, progress)
@@ -722,7 +764,7 @@ async def main():
     db: Optional[DBManager] = None
     enable_db = progress.get("config", {}).get("enable_db")
     if enable_db is None:
-        db_choice = input("是否同步到MySQL数据库？(y/N)：").strip().lower()
+        db_choice = _prompt("是否同步到MySQL数据库？(y/N)：").lower()
         enable_db = db_choice == "y"
         progress["config"]["enable_db"] = enable_db
         _save_progress(output_dir, progress)
@@ -739,7 +781,7 @@ async def main():
     # OCR价格解析配置（可选）
     enable_ocr = progress.get("config", {}).get("enable_ocr")
     if enable_ocr is None:
-        ocr_choice = input("采集完成后是否用OCR解析加密价格？(y/N)：").strip().lower()
+        ocr_choice = _prompt("采集完成后是否用OCR解析加密价格？(y/N)：").lower()
         enable_ocr = ocr_choice == "y"
         progress["config"]["enable_ocr"] = enable_ocr
         _save_progress(output_dir, progress)
