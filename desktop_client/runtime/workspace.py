@@ -22,6 +22,7 @@ from desktop_client.runtime.source_defaults import resolve_output_dir
 TASK_CONFIG_FILE = "task_config.json"
 TASK_SCOPE_FILE = "task_scope.json"
 PROGRESS_FILE = "progress.json"
+APP_STATE_FILE = ".app_state.json"
 RESULT_FILES = (
     "brand_catalog.json",
     "brands.json",
@@ -65,6 +66,19 @@ class WorkspaceManager:
     def __init__(self, base_dir: str | Path):
         self.base_dir = Path(base_dir)
         self.base_dir.mkdir(parents=True, exist_ok=True)
+
+    def load_app_state(self) -> Dict[str, Any]:
+        state_path = self.base_dir / APP_STATE_FILE
+        if not state_path.exists():
+            return {}
+        return _read_json(state_path)
+
+    def save_app_state(self, payload: Dict[str, Any]) -> Path:
+        data = dict(payload)
+        data["updated_at"] = now_iso()
+        state_path = self.base_dir / APP_STATE_FILE
+        _write_json(state_path, data)
+        return state_path
 
     def create_workspace(self, config: TaskConfig, scope: TaskScope) -> TaskWorkspace:
         workspace_name = f"{slugify(config.task_name)}-{slugify(config.source)}"
@@ -116,6 +130,41 @@ class WorkspaceManager:
         scope = TaskScope.from_dict(_read_json(root_path / TASK_SCOPE_FILE))
         progress = TaskProgress.from_dict(_read_json(root_path / PROGRESS_FILE), source=config.source)
         return TaskWorkspace(root=root_path, config=config, scope=scope, progress=progress)
+
+    def remember_workspace(self, root: str | Path) -> Path:
+        resolved = Path(root).resolve()
+        state = self.load_app_state()
+        state["last_workspace_root"] = str(resolved)
+        self.save_app_state(state)
+        return resolved
+
+    def load_last_workspace_root(self) -> Path | None:
+        payload = self.load_app_state()
+        root = Path(str(payload.get("last_workspace_root", "")).strip())
+        if not root or not self._is_workspace_root(root):
+            return None
+        return root
+
+    def find_recent_workspace(self, *, preferred_roots: Iterable[str | Path] = ()) -> Path | None:
+        remembered = self.load_last_workspace_root()
+        if remembered is not None:
+            return remembered
+
+        candidates: dict[str, Path] = {}
+        for raw_root in preferred_roots:
+            root = Path(raw_root).expanduser()
+            if self._is_workspace_root(root):
+                candidates[str(root.resolve())] = root.resolve()
+
+        for child in self.base_dir.iterdir():
+            if not child.is_dir():
+                continue
+            if self._is_workspace_root(child):
+                candidates[str(child.resolve())] = child.resolve()
+
+        if not candidates:
+            return None
+        return max(candidates.values(), key=self._workspace_sort_key)
 
     def export_workspace(self, root: str | Path, archive_path: str | Path) -> Path:
         root_path = Path(root)
@@ -256,6 +305,16 @@ class WorkspaceManager:
 
     def _scope_is_empty(self, scope: TaskScope) -> bool:
         return not scope.cities and not scope.brands and not scope.series and not scope.enabled_stages
+
+    def _is_workspace_root(self, root: Path) -> bool:
+        return all((root / file_name).exists() for file_name in (TASK_CONFIG_FILE, TASK_SCOPE_FILE, PROGRESS_FILE))
+
+    def _workspace_sort_key(self, root: Path) -> float:
+        return max(
+            (root / TASK_CONFIG_FILE).stat().st_mtime,
+            (root / TASK_SCOPE_FILE).stat().st_mtime,
+            (root / PROGRESS_FILE).stat().st_mtime,
+        )
 
 
 def merge_progress(current: TaskProgress, imported: TaskProgress) -> TaskProgress:

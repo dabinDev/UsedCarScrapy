@@ -108,6 +108,13 @@ def build_scope_progress(workspace_root: str | Path, workspace_manager: Workspac
         detail_done_count = len(sku_ids & detail_ids)
         overview_done = series.item_id in overview_series_ids
         detail_done = overview_done and (not sku_ids or detail_done_count == len(sku_ids))
+        progress_percent = (
+            100
+            if detail_done
+            else round((detail_done_count / len(sku_ids)) * 100)
+            if overview_done and sku_ids
+            else 0
+        )
         if detail_done:
             state = "detail_done"
         elif overview_done:
@@ -119,6 +126,9 @@ def build_scope_progress(workspace_root: str | Path, workspace_manager: Workspac
             "label": ITEM_STATE_LABELS[state],
             "overview_total": len(sku_ids),
             "detail_done_total": detail_done_count,
+            "progress_percent": progress_percent,
+            "overview_percent": 100 if overview_done else 0,
+            "detail_percent": progress_percent,
             "brand_id": series.parent_id,
             "name": series.name,
         }
@@ -130,6 +140,10 @@ def build_scope_progress(workspace_root: str | Path, workspace_manager: Workspac
     brand_states: dict[str, dict[str, Any]] = {}
     for brand in workspace.scope.brands:
         series_ids = selected_series_by_brand.get(brand.item_id, [])
+        series_progress_values = [
+            int(series_states.get(series_id, {}).get("progress_percent", 0) or 0)
+            for series_id in series_ids
+        ]
         all_series_done = bool(series_ids) and all(
             series_states.get(series_id, {}).get("state") == "detail_done"
             for series_id in series_ids
@@ -144,6 +158,15 @@ def build_scope_progress(workspace_root: str | Path, workspace_manager: Workspac
             state = "series_loaded"
         else:
             state = "pending"
+        progress_percent = (
+            100
+            if all_series_done
+            else round(sum(series_progress_values) / len(series_progress_values))
+            if series_progress_values
+            else 100
+            if brand.item_id in completed_brand_ids
+            else 0
+        )
         brand_states[brand.item_id] = {
             "state": state,
             "label": ITEM_STATE_LABELS[state],
@@ -151,6 +174,8 @@ def build_scope_progress(workspace_root: str | Path, workspace_manager: Workspac
             "completed_series_total": sum(
                 1 for series_id in series_ids if series_states.get(series_id, {}).get("state") == "detail_done"
             ),
+            "progress_percent": progress_percent,
+            "catalog_percent": 100 if brand.item_id in completed_brand_ids else 0,
             "name": brand.name,
         }
 

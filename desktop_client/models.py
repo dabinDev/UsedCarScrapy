@@ -13,6 +13,13 @@ STAGES_BY_SOURCE: dict[str, list[str]] = {
     "guazi": ["brands", "series", "overviews", "details"],
 }
 
+LEGACY_PROGRESS_KEYS = {
+    "completed_brand_ids": "completed_brands_series",
+    "completed_overview_series_ids": "completed_overviews",
+    "completed_detail_ids": "completed_details",
+    "completed_ocr_ids": "completed_ocr",
+}
+
 
 def now_iso() -> str:
     return datetime.now().isoformat()
@@ -28,6 +35,14 @@ def _unique_strings(items: List[str]) -> List[str]:
         seen.add(value)
         result.append(value)
     return result
+
+
+def _load_progress_values(payload: Dict[str, Any], modern_key: str) -> List[str]:
+    values = list(payload.get(modern_key, []))
+    legacy_key = LEGACY_PROGRESS_KEYS.get(modern_key)
+    if legacy_key:
+        values.extend(payload.get(legacy_key, []))
+    return _unique_strings(values)
 
 
 @dataclass(slots=True)
@@ -149,7 +164,7 @@ class TaskProgress:
         )
 
     def to_dict(self) -> Dict[str, Any]:
-        return {
+        payload = {
             "source": self.source,
             "stages": {name: value.to_dict() for name, value in self.stages.items()},
             "completed_brand_ids": _unique_strings(self.completed_brand_ids),
@@ -160,6 +175,9 @@ class TaskProgress:
             "last_error": self.last_error,
             "updated_at": self.updated_at,
         }
+        for modern_key, legacy_key in LEGACY_PROGRESS_KEYS.items():
+            payload[legacy_key] = list(payload[modern_key])
+        return payload
 
     @classmethod
     def from_dict(cls, data: Optional[Dict[str, Any]], *, source: Optional[TaskSource] = None) -> "TaskProgress":
@@ -170,11 +188,11 @@ class TaskProgress:
         return cls(
             source=task_source,
             stages={stage: StageStatus.from_dict(stage_data.get(stage)) for stage in stage_names},
-            completed_brand_ids=_unique_strings(list(payload.get("completed_brand_ids", []))),
+            completed_brand_ids=_load_progress_values(payload, "completed_brand_ids"),
             completed_series_ids=_unique_strings(list(payload.get("completed_series_ids", []))),
-            completed_overview_series_ids=_unique_strings(list(payload.get("completed_overview_series_ids", []))),
-            completed_detail_ids=_unique_strings(list(payload.get("completed_detail_ids", []))),
-            completed_ocr_ids=_unique_strings(list(payload.get("completed_ocr_ids", []))),
+            completed_overview_series_ids=_load_progress_values(payload, "completed_overview_series_ids"),
+            completed_detail_ids=_load_progress_values(payload, "completed_detail_ids"),
+            completed_ocr_ids=_load_progress_values(payload, "completed_ocr_ids"),
             last_error=str(payload.get("last_error", "")),
             updated_at=str(payload.get("updated_at", now_iso())),
         )

@@ -362,7 +362,7 @@ class DongchediAPI:
         }
 
     async def fetch_all_car_list(self, brand_id, brand_name, series_id=None, series_name=None,
-                                max_pages=167, screenshot_dir=None):
+                                max_pages=167, screenshot_dir=None, page=None):
         """
         翻页获取品牌/车系下所有车辆概览
         screenshot_dir: 如果提供，对每个车辆卡片截图
@@ -374,39 +374,53 @@ class DongchediAPI:
         print(f"   📋 采集列表: {label}")
 
         all_cars = []
+        owns_page = page is None
+        pw = None
+        browser = None
+        context = None
 
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(
-                **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
-            )
-            context = await browser.new_context(accept_downloads=True)
-            page = await context.new_page()
+        try:
+            if owns_page:
+                pw = await async_playwright().start()
+                browser = await pw.chromium.launch(
+                    **build_chromium_launch_kwargs(headless=self.headless, slow_mo=self.slow_mo)
+                )
+                context = await browser.new_context(accept_downloads=True)
+                page = await context.new_page()
 
-            try:
-                for pg in range(1, max_pages + 1):
-                    result = await self.fetch_car_list_page(
-                        page, brand_id, series_id, pg,
-                        screenshot_dir=screenshot_dir,
-                    )
+            for pg in range(1, max_pages + 1):
+                result = await self.fetch_car_list_page(
+                    page, brand_id, series_id, pg,
+                    screenshot_dir=screenshot_dir,
+                )
 
-                    if not result or not result["cars"]:
-                        break
+                if not result or not result["cars"]:
+                    break
 
-                    all_cars.extend(result["cars"])
-                    total = result["total"]
+                all_cars.extend(result["cars"])
+                total = result["total"]
 
-                    if pg == 1:
-                        print(f"      总数: {total}, 第1页: {result['count']} 条")
+                if pg == 1:
+                    print(f"      总数: {total}, 第1页: {result['count']} 条")
 
-                    if not result["has_more"]:
-                        break
+                if not result["has_more"]:
+                    break
 
-                    # 避免请求过快
-                    await asyncio.sleep(0.5)
-
-            finally:
-                await context.close()
-                await browser.close()
+                # 避免请求过快
+                await asyncio.sleep(0.5)
+        finally:
+            if owns_page:
+                if page is not None:
+                    try:
+                        await page.close()
+                    except Exception:
+                        pass
+                if context is not None:
+                    await context.close()
+                if browser is not None:
+                    await browser.close()
+                if pw is not None:
+                    await pw.stop()
 
         shot_count = 0
         if screenshot_dir and os.path.isdir(screenshot_dir):

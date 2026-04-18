@@ -367,35 +367,48 @@ async def stage_overviews(api: DongchediAPI, output_dir: str, progress: Dict,
     _mark_stage(progress, "overviews", "running")
     _save_progress(output_dir, progress)
 
-    for i, s in enumerate(remaining, done_count + 1):
-        sid = s["series_id"]
-        sname = s.get("series_name", str(sid))
-        bid = s.get("brand_id")
-        brand = brand_map.get(bid, {})
-        bname = brand.get("brand_name", "")
-
-        print(f"   [{i}/{total}] {bname}/{sname}...")
+    from playwright.async_api import async_playwright
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(
+            **build_chromium_launch_kwargs(headless=api.headless, slow_mo=api.slow_mo)
+        )
+        context = await browser.new_context(accept_downloads=True)
+        page = await context.new_page()
         try:
-            cars = await api.fetch_all_car_list(
-                brand_id=bid, brand_name=bname,
-                series_id=sid, series_name=sname,
-                max_pages=max_pages,
-                screenshot_dir=screenshot_dir,
-            )
-            if cars:
-                _append_to_json_array(overviews_path, cars)
-                existing.extend(cars)
-                if db:
-                    await db.upsert_overviews(cars)
-                print(f"   ✅ {sname}: {len(cars)} 条")
-            else:
-                print(f"   ⚠️ {sname}: 无数据")
-        except Exception as e:
-            print(f"   ❌ {sname}: {e}")
+            for i, s in enumerate(remaining, done_count + 1):
+                sid = s["series_id"]
+                sname = s.get("series_name", str(sid))
+                bid = s.get("brand_id")
+                brand = brand_map.get(bid, {})
+                bname = brand.get("brand_name", "")
 
-        completed_ids.add(sid)
-        progress["completed_overviews"] = list(completed_ids)
-        _save_progress(output_dir, progress)
+                print(f"   [{i}/{total}] {bname}/{sname}...")
+                try:
+                    cars = await api.fetch_all_car_list(
+                        brand_id=bid, brand_name=bname,
+                        series_id=sid, series_name=sname,
+                        max_pages=max_pages,
+                        screenshot_dir=screenshot_dir,
+                        page=page,
+                    )
+                    if cars:
+                        _append_to_json_array(overviews_path, cars)
+                        existing.extend(cars)
+                        if db:
+                            await db.upsert_overviews(cars)
+                        print(f"   ✅ {sname}: {len(cars)} 条")
+                    else:
+                        print(f"   ⚠️ {sname}: 无数据")
+                except Exception as e:
+                    print(f"   ❌ {sname}: {e}")
+
+                completed_ids.add(sid)
+                progress["completed_overviews"] = list(completed_ids)
+                _save_progress(output_dir, progress)
+        finally:
+            await page.close()
+            await context.close()
+            await browser.close()
 
     _mark_stage(progress, "overviews", "done")
     _save_progress(output_dir, progress)
@@ -528,9 +541,9 @@ async def stage_details(api: DongchediAPI, output_dir: str, progress: Dict,
             queue.task_done()
 
     async with async_playwright() as p:
-        # 详情页强制用无头浏览器，支持并发
+        # 沿用当前浏览器模式，避免无头模式下详情页返回空白
         browser = await p.chromium.launch(
-            **build_chromium_launch_kwargs(headless=True, slow_mo=api.slow_mo)
+            **build_chromium_launch_kwargs(headless=api.headless, slow_mo=api.slow_mo)
         )
         try:
             # 每个 worker 创建独立的 page

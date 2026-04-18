@@ -263,45 +263,47 @@ class DongchediRunner:
         if screenshot_dir:
             screenshot_dir.mkdir(parents=True, exist_ok=True)
 
-        for series in selected_series:
-            if series.item_id in completed_set:
-                self._emit("debug", f"跳过已完成概览车系 {series.item_id}。")
-                continue
-            self._emit("info", f"开始抓取概览 {series.name}。")
-            cars = await api.fetch_all_car_list(
-                brand_id=series.parent_id,
-                brand_name=brand_name_map.get(series.parent_id, ""),
-                series_id=series.item_id,
-                series_name=series.name,
-                max_pages=workspace.config.max_pages,
-                screenshot_dir=str(screenshot_dir) if screenshot_dir else None,
-            )
-            for car in cars or []:
-                if car.get("sku_id"):
-                    overviews_by_id[str(car["sku_id"])] = car
+        async with self._create_page_session(workspace) as page:
+            for series in selected_series:
+                if series.item_id in completed_set:
+                    self._emit("debug", f"跳过已完成概览车系 {series.item_id}。")
+                    continue
+                self._emit("info", f"开始抓取概览 {series.name}。")
+                cars = await api.fetch_all_car_list(
+                    brand_id=series.parent_id,
+                    brand_name=brand_name_map.get(series.parent_id, ""),
+                    series_id=series.item_id,
+                    series_name=series.name,
+                    max_pages=workspace.config.max_pages,
+                    screenshot_dir=str(screenshot_dir) if screenshot_dir else None,
+                    page=page,
+                )
+                for car in cars or []:
+                    if car.get("sku_id"):
+                        overviews_by_id[str(car["sku_id"])] = car
 
-            completed.append(series.item_id)
-            completed_set.add(series.item_id)
-            workspace.progress.completed_overview_series_ids = completed[:]
-            workspace.progress.stages["overviews"].updated_at = datetime.now().isoformat()
-            self.workspace_manager.write_result_file(
-                workspace.root,
-                OVERVIEWS_FILE,
-                {
-                    "metadata": {
-                        "source": "dongchedi",
-                        "data_type": "overviews",
-                        "created_at": existing_payload.get("metadata", {}).get("created_at", datetime.now().isoformat()),
-                        "updated_at": datetime.now().isoformat(),
-                        "selected_series_total": len(selected_series),
-                        "completed_series_total": len(completed),
-                        "total": len(overviews_by_id),
+                completed.append(series.item_id)
+                completed_set.add(series.item_id)
+                workspace.progress.completed_overview_series_ids = completed[:]
+                workspace.progress.stages["overviews"].updated_at = datetime.now().isoformat()
+                self.workspace_manager.write_result_file(
+                    workspace.root,
+                    OVERVIEWS_FILE,
+                    {
+                        "metadata": {
+                            "source": "dongchedi",
+                            "data_type": "overviews",
+                            "created_at": existing_payload.get("metadata", {}).get("created_at", datetime.now().isoformat()),
+                            "updated_at": datetime.now().isoformat(),
+                            "selected_series_total": len(selected_series),
+                            "completed_series_total": len(completed),
+                            "total": len(overviews_by_id),
+                        },
+                        "data": sorted(overviews_by_id.values(), key=lambda item: str(item.get("sku_id", ""))),
                     },
-                    "data": sorted(overviews_by_id.values(), key=lambda item: str(item.get("sku_id", ""))),
-                },
-            )
-            self.workspace_manager.save_workspace(workspace)
-            self._emit("info", f"概览 {series.name} 抓取完成，累计 {len(overviews_by_id)} 条。")
+                )
+                self.workspace_manager.save_workspace(workspace)
+                self._emit("info", f"概览 {series.name} 抓取完成，累计 {len(overviews_by_id)} 条。")
 
         workspace.progress.stages["overviews"].status = "done"
         workspace.progress.stages["overviews"].updated_at = datetime.now().isoformat()
@@ -346,6 +348,9 @@ class DongchediRunner:
         if limit is not None:
             remaining = remaining[:limit]
         if not remaining:
+            workspace.progress.stages["details"].status = "done"
+            workspace.progress.stages["details"].updated_at = datetime.now().isoformat()
+            self.workspace_manager.save_workspace(workspace)
             return sorted(details_by_id.values(), key=lambda item: str(item.get("sku_id", "")))
 
         workspace.progress.stages["details"].status = "running"
@@ -472,7 +477,7 @@ class DongchediRunner:
             async with async_playwright() as playwright:
                 browser = await playwright.chromium.launch(
                     **build_chromium_launch_kwargs(
-                        headless=workspace.config.headless or worker_total > 1,
+                        headless=workspace.config.headless,
                         slow_mo=getattr(api, "slow_mo", 0),
                     )
                 )
